@@ -4,16 +4,15 @@
 ## 迁移计算资源
 本节提供的信息可帮助您将工作负载从一个 Azure 区域迁移到另一个 Azure 区域。
 
-### 计算 IaaS
+### 计算IaaS
 可以使用 [Azure 站点恢复](https://docs.microsoft.com/azure/site-recovery/site-recovery-overview)将 Azure VM 从一个 Azure 区域迁移到另一个 Azure 区域。 首先应验证源和目标区域组合是否受支持。有关如何将 VM 从一个区域迁移到另一个区域的说明，请参阅[将 Azure VM 移动到另一个区域](https://docs.microsoft.com/azure/site-recovery/azure-to-azure-move-overview)。
 但是，如果您要将 VM 迁移到地理群集之外，则可以使用以下任一方法：
 
  
-#### Azure 站点恢复
+#### Azure站点恢复
 要对非地理组合使用 Azure 站点恢复，您需要在目标环境中设置站点恢复保管库，然后按照将物理服务器移动到 Azure 的相同方式继续操作。在 Azure 门户中，选择标记为未虚拟化的复制路径。复制完成后，执行故障转移。
 
-**注意**
-
+***注意***  
 *以下步骤与将本地运行的物理服务器迁移到 Azure 所需的步骤相同。*
 
 要了解有关此过程的更多信息，请查阅为本地物理服务器设置到 Azure 的灾难恢复教程。以下列表显示了该过程的简短和稍微调整的版本：
@@ -36,8 +35,7 @@
 
 复制最初成功后，通过执行测试故障转移来测试方案。验证并删除测试。最后一步是进行真正的故障转移。
 
-**警告**
-
+***警告***  
 *不会与源 VM 重新同步。如果您想再次迁移，请清理所有内容并从头重新开始。*
 
 #### 使用资源管理器模板导出/导入功能进行复制
@@ -82,15 +80,15 @@
 要使用 REST API 重新部署云服务，请执行以下操作：
 1. 在目标环境中**创建新的云服务**。
 
-    *https://management.core.windows.net/<subscription- id>/services/hostedservices*
+    https://management.core.windows.net/<subscription- id>/services/hostedservices
 
 2. 使用[创建部署 API](https://msdn.microsoft.com/library/azure/ee460813.aspx)创建新的部署。要查找 .cspkg 和 .cscfg 定义，可以调用 Get Package API。
 
-    *https://management.core.windows.net/<subscription- id>/services/hostedservices/<cloudservice- name>/deploymentslots/production*
+    https://management.core.windows.net/<subscription- id>/services/hostedservices/<cloudservice- name>/deploymentslots/production
 
 3. 当流量指向新的云服务时，删除源 Azure 区域中的旧云服务。
 
-    *https://management.core.windows.net/<subscription- id>/services/hostedservices/<old-cloudservice-name>*
+    https://management.core.windows.net/<subscription- id>/services/hostedservices/<old-cloudservice-name>
 
 
 有关更多信息：
@@ -146,7 +144,7 @@
 * 阅读 Azure 位置概述。
 * 了解如何重新部署模板。
 
-##迁移网络资源
+## 迁移网络资源
 
 大多数网络服务不支持跨 Azure 区域的迁移。但是，您可以使用[全局 Vnet 对等互连](https://docs.microsoft.com/azure/virtual-network/virtual-network-peering-overview)将您的网络连接到两个云环境中。全局 Vnet 对等互连让您可以使用 Microsoft Backbone 以私密方式跨区域连接。完成对等互连后，虚拟网络就会出现以进行连接。下面列出了跨区域设置 VNet 对等互连的步骤。创建虚拟网络后，您只需要将其进行对等互连。
 
@@ -345,7 +343,7 @@ Azure 托管磁盘通过管理与 VM 磁盘关联的存储帐户，简化了 Azu
 
 这是完整的命令：
 
-    azcopy -v /source:"https://md- kp4qvrzhj4j5.blob.core.windows.net/r0pmw4z3vk1g/abcd" /sourceSAS:"?sv=2017- 04-17&sr=b&si=22970153-4c56-47c0-8cbb- 156a24b6e4b5&sig=5Hfu0qMw9rkZf6mCjuCE4VMV6W3IR8FXQSY1viji9bg%3D" /dest:"https://migratetarget.blob.core.windows.net/targetcontainer/newdisk.vh d" /DestKey:"o//ucD\... Kdpw=="
+    azcopy -v /source:"https://md-kp4qvrzhj4j5.blob.core.windows.net/r0pmw4z3vk1g/abcd" /sourceSAS:"?sv=2017-04-17&sr=b&si=22970153-4c56-47c0-8cbb-156a24b6e4b5&sig=5Hfu0qMw9rkZf6mCjuCE4VMV6W3IR8FXQSY1viji9bg%3D" /dest:"https://migratetarget.blob.core.windows.net/targetcontainer/newdisk.vh d" /DestKey:"o//ucD\... Kdpw=="
 
 #### 步骤 3：在目标环境中创建新的托管磁盘
 有几种方法可用于创建新的托管磁盘。以下是在 Azure 门户
