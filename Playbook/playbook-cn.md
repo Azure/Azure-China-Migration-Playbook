@@ -1,57 +1,56 @@
 
 # Azure资源跨区域迁移手册
-
+  
 ## 计算资源迁移
 本节提供的信息可帮助您将已部署Azure计算资源从一个Azure区域迁移到其他Azure区域。
-
-### 虚拟机
+  
+### 虚拟机  
 由于目前中国所有Azure区域都处于[Azure 站点恢复（ASR）](https://docs.microsoft.com/zh-cn/azure/site-recovery/site-recovery-overview)所支持的相同地理集群（关于地理群集，[请参阅](https://docs.microsoft.com/zh-cn/azure/site-recovery/azure-to-azure-support-matrix#region-support))。可以参照[迁移Azure虚拟机到另一个区域](https://docs.microsoft.com/zh-cn/azure/site-recovery/azure-to-azure-move-overview)所描述的步骤完成虚拟机的迁移。
- 
+  
 ### 云服务  
 目前还不支持将云服务从一个 Azure 区迁移到另一个区域。您可以利用 .cspkg 和 .cscfg 定义来重新部署 Azure 云服务资源到另一个区域。
-
-#### Azure 门户  
+  
+#### 利用Azure 门户  
 要在 Azure 门户中重新部署云服务，请执行以下操作：
 1. 使用 .cspkg 和 .cscfg 定义[创建新的云服务](https://docs.microsoft.com/zh-cn/azure/cloud-services/cloud-services-how-to-create-deploy-portal)。
 2. 更新[CNAME 或 A 记录](https://docs.microsoft.com/zh-cn/azure/cloud-services/cloud-services-custom-domain-name-portal)以将流量导向新的云服务。
 3. 当流量导向新的云服务后，删除源区域中的旧云服务。
-
-#### PowerShell  
+  
+#### 利用PowerShell  
 要使用 PowerShell 重新部署云服务，请执行以下操作：
-1. 使用 .cspkg 和 .cscfg 定义[创建新的云服务](https://docs.microsoft.com/zh-cn/powershell/module/servicemanagement/azure/new-azureservice)。  
-
-    New-AzureService -ServiceName <yourServiceName> -Label <MyTestService> - Location <targetRegion>  
-
+1. 使用 .cspkg 和 .cscfg 定义[创建新的云服务](https://docs.microsoft.com/zh-cn/powershell/module/servicemanagement/azure/new-azureservice)。
+```
+    New-AzureService -ServiceName <yourServiceName> -Label <MyTestService> -Location <targetRegion>  
+```
 2. 使用 .cspkg 和 .cscfg 定义[创建新的部署](https://docs.microsoft.com/zh-cn/powershell/module/servicemanagement/azure/new-azuredeployment)。  
-
-    New-AzureDeployment -ServiceName <yourServiceName> -Slot <Production> - Package <YourCspkgFile.cspkg> -Configuration <YourConfigFile.cscfg>  
-
+```
+    New-AzureDeployment -ServiceName <yourServiceName> -Slot <Production> -Package <YourCspkgFile.cspkg> -Configuration <YourConfigFile.cscfg>  
+```
 3. 更新[CNAME 或 A 记录](https://docs.microsoft.com/zh-cn/azure/cloud-services/cloud-services-custom-domain-name-portal)以将访问导向新的云服务。
 4. 当访问导向新的云服务后，[删除源 Azure 区域中的旧云服务](https://docs.microsoft.com/zh-cn/powershell/module/servicemanagement/azure/remove-azureservice)。  
-
+```
     Remove-AzureService -ServiceName <yourOldServiceName>
-
-
-#### REST API
+```
+  
+#### 利用REST API  
 要使用 REST API 重新部署云服务，请执行以下操作：
 1. 在目标环境中[创建新的云服务](https://docs.microsoft.com/zh-cn/rest/api/compute/cloudservices/rest-create-cloud-service)。
-
+```
     https://management.core.windows.net/<subscription-id>/services/hostedservices  
-
+```
 2. 使用[创建部署 API](https://msdn.microsoft.com/library/azure/ee460813.aspx)创建新的部署。要获取您的 .cspkg 和 .cscfg 定义，可以调用[Get Package API](https://docs.microsoft.com/en-us/previous-versions/azure/reference/jj154121(v=azure.100))。 
-
+```
     https://management.core.windows.net/<subscription-id>/services/hostedservices/<cloudservice-name>/deploymentslots/production  
-
+```
 3. 当流量指向新的云服务时，[删除源 Azure 区域中的旧云服务](https://docs.microsoft.com/zh-cn/rest/api/compute/cloudservices/rest-delete-cloud-service)。  
-
+```
     https://management.core.windows.net/<subscription-id>/services/hostedservices/<old-cloudservice-name>
-
-
+```
+  
 更多相关信息：
 * 请参考[Azure云服务概述](https://docs.microsoft.com/zh-cn/azure/cloud-services/cloud-services-choose-me)。
-
-### Service Fabric
-
+  
+### Service Fabric  
 要将 Azure Service Fabric 资源从一个 Azure 区域迁移到另一个 Azure 区域，您需要在新区域中创建和重新部署 Service Fabric 群集和应用程序资源。必须备份旧群集中的数据，并将其还原到新群集以实现有状态服务。
 1. 阅读生产准备清单中推荐的指南，使用 Azure 门户或资源管理器资源在目标 Azure 区域的资源组中创建新群集。
 2. 不应该出现新的调用，也不应该有任何服务相互通信或执行工作。
