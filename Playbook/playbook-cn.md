@@ -1,4 +1,3 @@
-
 # Azure资源跨区域迁移手册
   
 ## 计算资源迁移
@@ -19,16 +18,16 @@
 #### 利用PowerShell  
 要使用 PowerShell 重新部署云服务，请执行以下操作：
 1. 使用 .cspkg 和 .cscfg 定义[创建新的云服务](https://docs.microsoft.com/zh-cn/powershell/module/servicemanagement/azure/new-azureservice)。
-```
+```PowerShell
 New-AzureService -ServiceName <yourServiceName> -Label <MyTestService> -Location <targetRegion>  
 ```
 2. 使用 .cspkg 和 .cscfg 定义[创建新的部署](https://docs.microsoft.com/zh-cn/powershell/module/servicemanagement/azure/new-azuredeployment)。  
-```
+```PowerShell
 New-AzureDeployment -ServiceName <yourServiceName> -Slot <Production> -Package <YourCspkgFile.cspkg> -Configuration <YourConfigFile.cscfg>  
 ```
 3. 更新[CNAME 或 A 记录](https://docs.microsoft.com/zh-cn/azure/cloud-services/cloud-services-custom-domain-name-portal)以将访问导向新的云服务。
 4. 当访问导向新的云服务后，[删除源 Azure 区域中的旧云服务](https://docs.microsoft.com/zh-cn/powershell/module/servicemanagement/azure/remove-azureservice)。  
-```
+```PowerShell
 Remove-AzureService -ServiceName <yourOldServiceName>
 ```
   
@@ -127,7 +126,7 @@ Vnet 对等互连仅在连接相同的云环境类型时才起作用。如果您
 
 目前不支持跨 Azure 区域迁移网络安全组。我们建议您在目标区域中创建新的网络安全组，并将网络安全组规则应用于新的应用程序环境。
 从 Azure 门户获取任何网络安全组的当前配置，或者运行以下 PowerShell 命令：
-```
+```PowerShell
 $nsg=Get-AzureRmNetworkSecurityGroup -ResourceName <nsg-name> -ResourceGroupName <resourcegroupname>
 ```
 有关更多信息：
@@ -255,18 +254,43 @@ AzCopy 使用术语 Source 和 Dest 来表示 URI。
 通过使用 PowerShell 或使用 Azure CLI，您可从门户获得 URI 的三个部分（storageaccountname、containername、blobname）。Blob 的名称可以是 URI 的一部分，也可以作为一种模式提供，如vm121314.vhd。
 您还需要使用 Azure Active Directory 或 SAS 令牌进行身份验证才能访问 Azure 存储帐户。有关如何进行身份验证的说明，请参阅身份验证选项。
 
-例如：
-
-    URI part      example           value
-    Source        storageAccount  	migratetest
-    Source        container	        vhds
-    Source        blob	            vm-121314.vhd
-    Target        storageAccount	migratetarget
-    Target        container	        targetcontainer
+例如：  
+<table>   
+  <tr>      
+    <td>URI part</td>      
+    <td>Example</td>   
+    <td>Value</td>
+  </tr>   
+  <tr>      
+    <td>Source</td>      
+    <td>storageAccount</td>   
+    <td>migratetest</td>
+  </tr>   
+  <tr>      
+    <td>Source</td>      
+    <td>container</td>   
+    <td>vhds</td>
+  </tr>
+  <tr>
+    <td>Source</td>
+    <td>blob</td>
+    <td>vm-121314.vhd</td>
+  </tr>
+  <tr>
+    <td>Target</td>
+    <td>storageAccount</td>
+    <td>migratetarget</td>
+  </tr>
+  <tr>
+    <td>Target</td>
+    <td>container</td>
+    <td>targetcontainer</td>
+  </tr>
+</table>
 
 此命令跨 Azure 区域复制虚拟硬盘：
 ```
-azcopy cp https://migratetest.blob.core.windows.net/vhds/vm- 121314.vhd?<sastokenhere> https://migratetarget.blob.core.windows.net/targetcontainer?<sastokenhere>
+azcopy cp https://migratetest.blob.core.windows.net/vhds/vm-121314.vhd?<sastokenhere> https://migratetarget.blob.core.windows.net/targetcontainer?<sastokenhere>
 ```
 要获得 VHD 的一致副本，请在复制 VHD 之前关闭 VM。为复制操作规划一些停机时间。复制 VHD 后，在目标环境中重建 VM。
 
@@ -625,7 +649,7 @@ Azure 服务总线服务没有数据导出或导入功能。要跨 Azure 区域�
 上述导出和重新创建的步骤不会复制与授权规则相关联的共享访问签名密钥。如果需要保留共享访问签名密钥，请使用带有可选参数 -Keyvalue 的 New-AzureRmServiceBuskey cmdlet将密钥作为字符串接受。更新的 cmdlet 可在 PowerShell Gallery release 6.4.0（2018 年 7 月）或 GitHub 上找到。 
 
 用法示例:
-```
+```PowerShell
 New-AzureRmServiceBuskey -ResourceGroupName <resourcegroupname> -Namespace <namespace> -Name <name of Authorization rule> -RegenerateKey <PrimaryKey/SecondaryKey> -KeyValue <string-keyvalue>
 New-AzureRmServiceBuskey -ResourceGroupName <resourcegroupname> -Namespace <namespace> -Queue <queuename> -Name <name of Authorization rule> - RegenerateKey <PrimaryKey/SecondaryKey> -KeyValue <string-keyvalue>
 New-AzureRmServiceBuskey -ResourceGroupName <resourcegroupname> -Namespace <namespace> -Topic <topicname> -Name <name of Authorization rule> - RegenerateKey <PrimaryKey/SecondaryKey> -KeyValue <string-keyvalue>
@@ -679,7 +703,7 @@ Azure 密钥保管库的某些功能无法跨 Azure 区域迁移。
 应用程序密码是证书、存储帐户密钥和其他与应用程序相关的密码。在迁移期间，首先在目标 Azure 区域中创建新的密钥保管库。然后，完成以下操作之一：
 * 创建新的应用程序密码。
 * 读取源 Azure 区域中的当前密码，然后在新保管库中输入值。
-```
+```PowerShell
 Get-AzureKeyVaultSecret -vaultname mysecrets -name Deploydefaultpw
 ```
 有关更多信息：
