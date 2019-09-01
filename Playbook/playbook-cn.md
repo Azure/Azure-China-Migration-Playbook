@@ -20,31 +20,31 @@
 要使用 PowerShell 重新部署云服务，请执行以下操作：
 1. 使用 .cspkg 和 .cscfg 定义[创建新的云服务](https://docs.microsoft.com/zh-cn/powershell/module/servicemanagement/azure/new-azureservice)。
 ```
-    New-AzureService -ServiceName <yourServiceName> -Label <MyTestService> -Location <targetRegion>  
+New-AzureService -ServiceName <yourServiceName> -Label <MyTestService> -Location <targetRegion>  
 ```
 2. 使用 .cspkg 和 .cscfg 定义[创建新的部署](https://docs.microsoft.com/zh-cn/powershell/module/servicemanagement/azure/new-azuredeployment)。  
 ```
-    New-AzureDeployment -ServiceName <yourServiceName> -Slot <Production> -Package <YourCspkgFile.cspkg> -Configuration <YourConfigFile.cscfg>  
+New-AzureDeployment -ServiceName <yourServiceName> -Slot <Production> -Package <YourCspkgFile.cspkg> -Configuration <YourConfigFile.cscfg>  
 ```
 3. 更新[CNAME 或 A 记录](https://docs.microsoft.com/zh-cn/azure/cloud-services/cloud-services-custom-domain-name-portal)以将访问导向新的云服务。
 4. 当访问导向新的云服务后，[删除源 Azure 区域中的旧云服务](https://docs.microsoft.com/zh-cn/powershell/module/servicemanagement/azure/remove-azureservice)。  
 ```
-    Remove-AzureService -ServiceName <yourOldServiceName>
+Remove-AzureService -ServiceName <yourOldServiceName>
 ```
   
 #### 利用REST API  
 要使用 REST API 重新部署云服务，请执行以下操作：
 1. 在目标环境中[创建新的云服务](https://docs.microsoft.com/zh-cn/rest/api/compute/cloudservices/rest-create-cloud-service)。
 ```
-    https://management.core.windows.net/<subscription-id>/services/hostedservices  
+https://management.core.windows.net/<subscription-id>/services/hostedservices  
 ```
 2. 使用[创建部署 API](https://msdn.microsoft.com/library/azure/ee460813.aspx)创建新的部署。要获取您的 .cspkg 和 .cscfg 定义，可以调用[Get Package API](https://docs.microsoft.com/en-us/previous-versions/azure/reference/jj154121(v=azure.100))。 
 ```
-    https://management.core.windows.net/<subscription-id>/services/hostedservices/<cloudservice-name>/deploymentslots/production  
+https://management.core.windows.net/<subscription-id>/services/hostedservices/<cloudservice-name>/deploymentslots/production  
 ```
 3. 当流量指向新的云服务时，[删除源 Azure 区域中的旧云服务](https://docs.microsoft.com/zh-cn/rest/api/compute/cloudservices/rest-delete-cloud-service)。  
 ```
-    https://management.core.windows.net/<subscription-id>/services/hostedservices/<old-cloudservice-name>
+https://management.core.windows.net/<subscription-id>/services/hostedservices/<old-cloudservice-name>
 ```
   
 更多相关信息：
@@ -127,9 +127,9 @@ Vnet 对等互连仅在连接相同的云环境类型时才起作用。如果您
 
 目前不支持跨 Azure 区域迁移网络安全组。我们建议您在目标区域中创建新的网络安全组，并将网络安全组规则应用于新的应用程序环境。
 从 Azure 门户获取任何网络安全组的当前配置，或者运行以下 PowerShell 命令：
-    
-    $nsg=Get-AzureRmNetworkSecurityGroup -ResourceName <nsg-name> -ResourceGroupName <resourcegroupname>
-
+```
+$nsg=Get-AzureRmNetworkSecurityGroup -ResourceName <nsg-name> -ResourceGroupName <resourcegroupname>
+```
 有关更多信息：
 * 刷新您对网络安全组的了解。
 * 查阅网络安全概述
@@ -172,27 +172,27 @@ Vnet 对等互连仅在连接相同的云环境类型时才起作用。如果您
 要在 Azure 区域中迁移 Azure DNS 配置，请导出 DNS 区域文件，然后在新订阅下导入它。目前，导出区域文件的唯一方法是使用 Azure CLI。
  
 登录 Azure 区域中的源订阅后，将 Azure CLI 配置为使用 Azure 资源管理器模式。通过运行以下命令导出区域：
-
-    az network dns zone export -g <resource group> -n <zone name> -f <zone file name>
-
+```
+az network dns zone export -g <resource group> -n <zone name> -f <zone file name>
+```
 示例:
-
-    az network dns zone export -g "myresourcegroup" -n "contoso.com" -f "contoso.com.txt"
-
+```
+az network dns zone export -g "myresourcegroup" -n "contoso.com" -f "contoso.com.txt"
+```
 此命令调用 Azure DNS 服务以导出资源组 myresourcegroup 中的区域 contoso.com。输出作为一个兼容 BIND 的区域文件存储在当前文件夹的 contoso.com.txt 文件中。
 导出完成后，从区域文件中删除 NS 记录。为新区域和订阅创建新的 NS 记录。
 接下来，登录到目标环境，创建新资源组（或选择现有资源组），然后导入区域文件：
-    
-    az network dns zone import -g <resource group> -n <zone name> -f <zone file name>
-
+```    
+az network dns zone import -g <resource group> -n <zone name> -f <zone file name>
+```
 导入区域后，您必须通过运行以下命令来验证区域：
-
-    az network dns record-set list -g <resource group> -z <zone name>
-
+```
+az network dns record-set list -g <resource group> -z <zone name>
+```
 验证完成后，请与您的域名注册商联系并重新授权 NS 记录。要获取 NS 记录信息，请运行以下命令：
-    
-    az network dns record-set ns list -g <resource group> -z --output json
-
+```
+az network dns record-set ns list -g <resource group> -z --output json
+```
 有关更多信息：
 * 通过完成 Azure DNS 教程来刷新您的知识。
 * 查阅 Azure DNS 概述。
@@ -265,9 +265,9 @@ AzCopy 使用术语 Source 和 Dest 来表示 URI。
     Target        container	        targetcontainer
 
 此命令跨 Azure 区域复制虚拟硬盘：
-    
-    azcopy cp https://migratetest.blob.core.windows.net/vhds/vm- 121314.vhd?<sastokenhere> https://migratetarget.blob.core.windows.net/targetcontainer?<sastokenhere>
-
+```
+azcopy cp https://migratetest.blob.core.windows.net/vhds/vm- 121314.vhd?<sastokenhere> https://migratetarget.blob.core.windows.net/targetcontainer?<sastokenhere>
+```
 要获得 VHD 的一致副本，请在复制 VHD 之前关闭 VM。为复制操作规划一些停机时间。复制 VHD 后，在目标环境中重建 VM。
 
 有关更多信息：
@@ -288,18 +288,18 @@ Azure 托管磁盘通过管理与 VM 磁盘关联的存储帐户，简化了 Azu
 #### 步骤 2：AzCopy
 有关如何使用 AzCopy 的示例，请参阅Blob。bookmark25使用 AzCopy 或类似工具将磁盘直接从源环境复制到目标环境。在 AzCopy 中，您必须将 URI 拆分为基础 URI 和共享访问签名部分。URI 的共享访问签名部分以字符 "?" 开头。门户为
 共享访问签名 URI 提供此 URI：
-
-    https://md-kp4qvrzhj4j5.blob.core.windows.net/r0pmw4z3vk1g/abcd?sv=2017-04-17&sr=b&si=22970153-4c56-47c0-8cbb-156a24b6e4b5&sig=5Hfu0qMw9rkZf6mCjuCE4VMV6W3IR8FXQSY1viji9bg%3D>
-
+```
+https://md-kp4qvrzhj4j5.blob.core.windows.net/r0pmw4z3vk1g/abcd?sv=2017-04-17&sr=b&si=22970153-4c56-47c0-8cbb-156a24b6e4b5&sig=5Hfu0qMw9rkZf6mCjuCE4VMV6W3IR8FXQSY1viji9bg%3D>
+```
 以下命令显示了 AzCopy 的源参数：
-
-    /source:"https://md-kp4qvrzhj4j5.blob.core.windows.net/r0pmw4z3vk1g/abcd" 
-    /sourceSAS:"?sv=2017-04-17&sr=b&si=22970153-4c56-47c0-8cbb-156a24b6e4b5&sig=5Hfu0qMw9rkZf6mCjuCE4VMV6W3IR8FXQSY1viji9bg%3D"
-
+```
+/source:"https://md-kp4qvrzhj4j5.blob.core.windows.net/r0pmw4z3vk1g/abcd" 
+/sourceSAS:"?sv=2017-04-17&sr=b&si=22970153-4c56-47c0-8cbb-156a24b6e4b5&sig=5Hfu0qMw9rkZf6mCjuCE4VMV6W3IR8FXQSY1viji9bg%3D"
+```
 这是完整的命令：
-
-    azcopy -v /source:"https://md-kp4qvrzhj4j5.blob.core.windows.net/r0pmw4z3vk1g/abcd" /sourceSAS:"?sv=2017-04-17&sr=b&si=22970153-4c56-47c0-8cbb-156a24b6e4b5&sig=5Hfu0qMw9rkZf6mCjuCE4VMV6W3IR8FXQSY1viji9bg%3D" /dest:"https://migratetarget.blob.core.windows.net/targetcontainer/newdisk.vh d" /DestKey:"o//ucD\... Kdpw=="
-
+```
+azcopy -v /source:"https://md-kp4qvrzhj4j5.blob.core.windows.net/r0pmw4z3vk1g/abcd" /sourceSAS:"?sv=2017-04-17&sr=b&si=22970153-4c56-47c0-8cbb-156a24b6e4b5&sig=5Hfu0qMw9rkZf6mCjuCE4VMV6W3IR8FXQSY1viji9bg%3D" /dest:"https://migratetarget.blob.core.windows.net/targetcontainer/newdisk.vh d" /DestKey:"o//ucD\... Kdpw=="
+```
 #### 步骤 3：在目标环境中创建新的托管磁盘
 有几种方法可用于创建新的托管磁盘。以下是在 Azure 门户
 
@@ -625,12 +625,12 @@ Azure 服务总线服务没有数据导出或导入功能。要跨 Azure 区域�
 上述导出和重新创建的步骤不会复制与授权规则相关联的共享访问签名密钥。如果需要保留共享访问签名密钥，请使用带有可选参数 -Keyvalue 的 New-AzureRmServiceBuskey cmdlet将密钥作为字符串接受。更新的 cmdlet 可在 PowerShell Gallery release 6.4.0（2018 年 7 月）或 GitHub 上找到。 
 
 用法示例:
-
-    New-AzureRmServiceBuskey -ResourceGroupName <resourcegroupname> -Namespace <namespace> -Name <name of Authorization rule> -RegenerateKey <PrimaryKey/SecondaryKey> -KeyValue <string-keyvalue>
-    New-AzureRmServiceBuskey -ResourceGroupName <resourcegroupname> -Namespace <namespace> -Queue <queuename> -Name <name of Authorization rule> - RegenerateKey <PrimaryKey/SecondaryKey> -KeyValue <string-keyvalue>
-    New-AzureRmServiceBuskey -ResourceGroupName <resourcegroupname> -Namespace <namespace> -Topic <topicname> -Name <name of Authorization rule> - RegenerateKey <PrimaryKey/SecondaryKey> -KeyValue <string-keyvalue>
-
-注意:
+```
+New-AzureRmServiceBuskey -ResourceGroupName <resourcegroupname> -Namespace <namespace> -Name <name of Authorization rule> -RegenerateKey <PrimaryKey/SecondaryKey> -KeyValue <string-keyvalue>
+New-AzureRmServiceBuskey -ResourceGroupName <resourcegroupname> -Namespace <namespace> -Queue <queuename> -Name <name of Authorization rule> - RegenerateKey <PrimaryKey/SecondaryKey> -KeyValue <string-keyvalue>
+New-AzureRmServiceBuskey -ResourceGroupName <resourcegroupname> -Namespace <namespace> -Topic <topicname> -Name <name of Authorization rule> - RegenerateKey <PrimaryKey/SecondaryKey> -KeyValue <string-keyvalue>
+```
+注意:  
 即使保存了密钥，也必须更新应用程序以使用新的连接字符串。
 
 有关更多信息：
@@ -679,8 +679,9 @@ Azure 密钥保管库的某些功能无法跨 Azure 区域迁移。
 应用程序密码是证书、存储帐户密钥和其他与应用程序相关的密码。在迁移期间，首先在目标 Azure 区域中创建新的密钥保管库。然后，完成以下操作之一：
 * 创建新的应用程序密码。
 * 读取源 Azure 区域中的当前密码，然后在新保管库中输入值。
-    Get-AzureKeyVaultSecret -vaultname mysecrets -name Deploydefaultpw
-
+```
+Get-AzureKeyVaultSecret -vaultname mysecrets -name Deploydefaultpw
+```
 有关更多信息：
 * 通过完成密钥保管库教程来刷新您的知识。
 * 查阅密钥保管库概述。
