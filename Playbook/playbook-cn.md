@@ -4,15 +4,15 @@
 本节提供的信息可帮助您将已部署Azure计算资源从一个Azure区域迁移到其他Azure区域。
   
 ### 虚拟机  
-由于目前中国所有Azure区域都处于[Azure 站点恢复（ASR）](https://docs.microsoft.com/zh-cn/azure/site-recovery/site-recovery-overview)所支持的相同地理集群（关于地理群集，[请参阅](https://docs.microsoft.com/zh-cn/azure/site-recovery/azure-to-azure-support-matrix#region-support))。可以参照[迁移Azure虚拟机到另一个区域](https://docs.microsoft.com/zh-cn/azure/site-recovery/azure-to-azure-move-overview)所描述的步骤完成虚拟机的迁移。
+由于目前中国所有Azure区域都处于[Azure 站点恢复（ASR）](https://docs.azure.cn/zh-cn/site-recovery/site-recovery-overview)所支持的相同地理集群（关于地理群集，[请参阅](https://docs.azure.cn/zh-cn/site-recovery/azure-to-azure-support-matrix#region-support))。可以参照[迁移Azure虚拟机到另一个区域](https://docs.azure.cn/zh-cn/site-recovery/azure-to-azure-tutorial-migrate)所描述的步骤完成虚拟机的迁移。
   
 ### 云服务  
 目前还不支持将云服务从一个 Azure 区迁移到另一个区域。您可以利用 .cspkg 和 .cscfg 定义来重新部署 Azure 云服务资源到另一个区域。
   
 #### 利用Azure 门户  
 要在 Azure 门户中重新部署云服务，请执行以下操作：
-1. 使用 .cspkg 和 .cscfg 定义[创建新的云服务](https://docs.microsoft.com/zh-cn/azure/cloud-services/cloud-services-how-to-create-deploy-portal)。
-2. 更新[CNAME 或 A 记录](https://docs.microsoft.com/zh-cn/azure/cloud-services/cloud-services-custom-domain-name-portal)以将流量导向新的云服务。
+1. 使用 .cspkg 和 .cscfg 定义[创建新的云服务](https://docs.azure.cn/zh-cn/cloud-services/cloud-services-how-to-create-deploy-portal)。
+2. 更新[CNAME 或 A 记录](https://docs.azure.cn/zh-cn/cloud-services/cloud-services-custom-domain-name-portal)以将流量导向新的云服务。
 3. 当流量导向新的云服务后，删除源区域中的旧云服务。
   
 #### 利用PowerShell  
@@ -25,7 +25,7 @@ New-AzureService -ServiceName <yourServiceName> -Label <MyTestService> -Location
 ```PowerShell
 New-AzureDeployment -ServiceName <yourServiceName> -Slot <Production> -Package <YourCspkgFile.cspkg> -Configuration <YourConfigFile.cscfg>  
 ```
-3. 更新[CNAME 或 A 记录](https://docs.microsoft.com/zh-cn/azure/cloud-services/cloud-services-custom-domain-name-portal)以将访问导向新的云服务。
+3. 更新[CNAME 或 A 记录](https://docs.azure.cn/zh-cn/cloud-services/cloud-services-custom-domain-name-portal)以将访问导向新的云服务。
 4. 当访问导向新的云服务后，[删除源 Azure 区域中的旧云服务](https://docs.microsoft.com/zh-cn/powershell/module/servicemanagement/azure/remove-azureservice)。  
 ```PowerShell
 Remove-AzureService -ServiceName <yourOldServiceName>
@@ -47,41 +47,41 @@ https://management.core.windows.net/<subscription-id>/services/hostedservices/<o
 ```
   
 更多相关信息：
-* 请参考[Azure云服务概述](https://docs.microsoft.com/zh-cn/azure/cloud-services/cloud-services-choose-me)。
+* 请参考[Azure云服务概述](https://docs.azure.cn/zh-cn/cloud-services/cloud-services-choose-me)。
   
 ### Service Fabric  
 要将 Azure Service Fabric 资源从一个 Azure 区域迁移到另一个 Azure 区域，您需要在新区域中创建和重新部署 Service Fabric 群集和应用程序资源。必须备份旧群集中的数据，并将其还原到新群集以保证业务的运行状态。
-1. 阅读[生产准备清单](https://docs.microsoft.com/zh-cn/azure/service-fabric/service-fabric-production-readiness-checklist)中推荐的指南，使用[Azure 门户](https://docs.microsoft.com/zh-cn/azure/service-fabric/service-fabric-cluster-creation-via-portal)或资源管理器资源在目标 Azure 区域的资源组中创建新群集。
+1. 阅读[生产准备清单](https://docs.azure.cn/zh-cn/service-fabric/service-fabric-production-readiness-checklist)中推荐的指南，使用[Azure 门户](https://docs.azure.cn/zh-cn/service-fabric/service-fabric-cluster-creation-via-portal)或资源管理器资源在目标 Azure 区域的资源组中创建新群集。
 2. 不应该出现新的调用，也不应该有任何服务相互通信或执行工作。
-3. 如果它是**有状态服务**，则需要将数据从旧群集移动到新群集。请参阅[从旧群集备份数据](https://docs.microsoft.com/zh-cn/azure/service-fabric/service-fabric-backuprestoreservice-quickstart-azurecluster)，以了解如何将数据从旧群集移动到新群集的信息。
+3. 如果它是**有状态服务**，则需要将数据从旧群集移动到新群集。请参阅[从旧群集备份数据](https://docs.azure.cn/zh-cn/service-fabric/service-fabric-backuprestoreservice-quickstart-azurecluster)，以了解如何将数据从旧群集移动到新群集的信息。
 4. 如果它是**无状态服务**，则不需要移动数据，但您必须重新配置流量。
 5. 更新要部署到新区域的应用程序配置。
-6. [使用资源管理器资源将应用程序部署到新区域](https://docs.microsoft.com/zh-cn/azure/service-fabric/service-fabric-application-arm-resource)。
-7. 对于**有状态服务**，您需要使用上述步骤 #3 中的备份[还原数据](https://docs.microsoft.com/zh-cn/azure/service-fabric/service-fabric-reliable-services-backup-restore#restore-reliable-services)。
+6. [使用资源管理器资源将应用程序部署到新区域](https://docs.azure.cn/zh-cn/service-fabric/service-fabric-application-arm-resource)。
+7. 对于**有状态服务**，您需要使用上述步骤 #3 中的备份[还原数据](https://docs.azure.cn/zh-cn/service-fabric/service-fabric-reliable-services-backup-restore#restore-reliable-services)。
 8. 更新流量管理器服务（**Azure 流量管理器**）以将流量路由到目标区域。
 9. 验证应用程序是否已部署到目标 Azure 区域并接受流量。
 10. 验证没有流量流向源 Azure 区域。 
-11. [通过清除与源 Azure 区域中的群集相关联的资源组删除群集](https://docs.microsoft.com/zh-cn/azure/service-fabric/service-fabric-tutorial-delete-cluster#delete-the-resource-group-containing-the-service-fabric-cluster)。
+11. [通过清除与源 Azure 区域中的群集相关联的资源组删除群集](https://docs.azure.cn/zh-cn/service-fabric/service-fabric-tutorial-delete-cluster#delete-the-resource-group-containing-the-service-fabric-cluster)。
 
 参考文献：
-* [创建 Azure Windows Service Fabric 群集](https://docs.microsoft.com/zh-cn/azure/service-fabric/service-fabric-quickstart-containers)
-* [创建 Linux Azure Linux Service Fabric 群集](https://docs.microsoft.com/zh-cn/azure/service-fabric/service-fabric-quickstart-containers-linux)
-* [使用 PowerShell 部署应用程序](https://docs.microsoft.com/zh-cn/azure/service-fabric/service-fabric-deploy-remove-applications)
+* [创建 Azure Windows Service Fabric 群集](https://docs.azure.cn/zh-cn/service-fabric/service-fabric-quickstart-containers)
+* [创建 Linux Azure Linux Service Fabric 群集](https://docs.azure.cn/zh-cn/service-fabric/service-fabric-quickstart-containers-linux)
+* [使用 PowerShell 部署应用程序](https://docs.azure.cn/zh-cn/service-fabric/service-fabric-deploy-remove-applications)
 
 有关更多信息：
-* 通过完成[Service Fabric教程](https://docs.microsoft.com/zh-cn/azure/service-fabric/#step-by-step-tutorials)来刷新您的知识。
-* 了解如何[创建新群集](https://docs.microsoft.com/zh-cn/azure/service-fabric/service-fabric-cluster-creation-via-portal)。
-* 查阅[Service Fabric概述](https://docs.microsoft.com/zh-cn/azure/service-fabric/service-fabric-overview)。
+* 通过完成[Service Fabric教程](https://docs.azure.cn/zh-cn/service-fabric/#step-by-step-tutorials)来刷新您的知识。
+* 了解如何[创建新群集](https://docs.azure.cn/zh-cn/service-fabric/service-fabric-cluster-creation-via-portal)。
+* 查阅[Service Fabric概述](https://docs.azure.cn/zh-cn/service-fabric/service-fabric-overview)。
 
 ### 批处理
 
 您无法自动将 Azure 批处理帐户和数据从一个区域迁移到另一个区域。如需迁移，您需要完成以下步骤：
-1. 在目标区域中[创建批处理帐户](https://docs.microsoft.com/zh-cn/azure/batch/batch-account-create-portal)。确保目标区域中有存储帐户，或在目标区域创建存储帐户。
+1. 在目标区域中[创建批处理帐户](https://docs.azure.cn/zh-cn/batch/batch-account-create-portal)。确保目标区域中有存储帐户，或在目标区域创建存储帐户。
 2. 将工作负载部署到新的批处理帐户并开始在那里运行作业。
 
 有关更多信息：
-* 通过完成[批处理教程](https://docs.microsoft.com/zh-cn/azure/batch/#step-by-step-tutorials)来刷新您的知识。
-* 查阅[批处理概述](https://docs.microsoft.com/zh-cn/azure/batch/batch-technical-overview)。
+* 通过完成[批处理教程](https://docs.azure.cn/zh-cn/batch/#step-by-step-tutorials)来刷新您的知识。
+* 查阅[批处理概述](https://docs.azure.cn/zh-cn/batch/batch-technical-overview)。
 
 ### 虚拟机规模集
 
@@ -91,19 +91,19 @@ https://management.core.windows.net/<subscription-id>/services/hostedservices/<o
 *更改位置、密钥保管库密码、证书和其他 GUID 以与新区域保持一致。*
  
 有关更多信息：
-* 通过完成[虚拟机规模集教程](https://docs.microsoft.com/zh-cn/azure/virtual-machine-scale-sets/#step-by-step-tutorials)来刷新您的知识。
-* 了解如何[导出 Azure 资源管理器模板](https://docs.microsoft.com/zh-cn/azure/azure-resource-manager/manage-resource-groups-portal#export-resource-groups-to-templates)。
-* 查阅[Azure资源管理器概述](https://docs.microsoft.com/zh-cn/azure/azure-resource-manager/resource-group-overview)。
-* 获取[虚拟机规模集概述](https://docs.microsoft.com/zh-cn/azure/virtual-machine-scale-sets/overview)。
-* 阅读[Azure区域概述](https://azure.microsoft.com/en-us/global-infrastructure/locations/)。
-* 了解如何[重新部署模板](https://docs.microsoft.com/zh-cn/azure/azure-resource-manager/resource-group-template-deploy)。
+* 通过完成[虚拟机规模集教程](https://docs.azure.cn/zh-cn/virtual-machine-scale-sets/#step-by-step-tutorials)来刷新您的知识。
+* 了解如何[导出 Azure 资源管理器模板](https://docs.azure.cn/zh-cn/azure-resource-manager/manage-resource-groups-portal#export-resource-groups-to-templates)。
+* 查阅[Azure资源管理器概述](https://docs.azure.cn/zh-cn/azure-resource-manager/resource-group-overview)。
+* 获取[虚拟机规模集概述](https://docs.azure.cn/zh-cn/virtual-machine-scale-sets/overview)。
+* 阅读[Azure区域概述](https://www.azure.cn/zh-cn/home/features/products-by-region)。
+* 了解如何[重新部署模板](https://docs.azure.cn/zh-cn/azure-resource-manager/resource-group-template-deploy)。
 
 ## 迁移网络资源
 
-大多数网络服务不支持跨 Azure 区域的迁移。但是，您可以使用[全局 Vnet 对等互连](https://docs.microsoft.com/azure/virtual-network/virtual-network-peering-overview)将您的网络连接到两个云环境中。全局 Vnet 对等互连让您可以使用 Microsoft Backbone 以私有的方式将区域利用主干网互联。完成对等互连后，虚拟网络就会出现以进行连接。下面列出了跨区域设置 VNet 对等互连的步骤。一旦新的虚拟网络创建后，您只需要将其进行对等互连。
+大多数网络服务不支持跨 Azure 区域的迁移。但是，您可以使用[全局 Vnet 对等互连](https://docs.azure.cn/zh-cn/virtual-network/virtual-network-peering-overview)将您的网络连接到两个云环境中。全局 Vnet 对等互连让您可以使用 Microsoft Backbone 以私有的方式将区域利用主干网互联。完成对等互连后，虚拟网络就会出现以进行连接。下面列出了跨区域设置 VNet 对等互连的步骤。一旦新的虚拟网络创建后，您只需要将其进行对等互连。
 
 *注意*
-*Vnet 对等互连仅在连接相同的云环境类型时才起作用。如果您要连接不同的云环境站点，例如主权站点和公共站点，请使用 [VPN 网关](https://docs.microsoft.com/zh-cn/azure/vpn-gateway/vpn-gateway-about-vpngateways)。*
+*Vnet 对等互连仅在连接相同的云环境类型时才起作用。如果您要连接不同的云环境站点，例如主权站点和公共站点，请使用 [VPN 网关](https://docs.azure.cn/zh-cn/vpn-gateway/vpn-gateway-about-vpngateways)。*
 
 以下是创建对等互连所需步骤的摘要：
 1. 在目标区域中创建虚拟网络。
@@ -115,12 +115,12 @@ https://management.core.windows.net/<subscription-id>/services/hostedservices/<o
 目前不支持跨 Azure 区域迁移虚拟网络。我们建议您在目标区域中创建新的虚拟网络，并将资源迁移到这些虚拟网络中。
 
 有关更多信息：
-* 通过完成 [Azure 虚拟网络教程](https://docs.microsoft.com/zh-cn/azure/virtual-network/#step-by-step-tutorials)来刷新您的知识。
-* 查阅[虚拟网络概述](https://docs.microsoft.com/zh-cn/azure/virtual-network/virtual-networks-overview)。
-* 了解如何[规划虚拟网络](https://docs.microsoft.com/zh-cn/azure/virtual-network/virtual-network-vnet-plan-design-arm)。
-* 了解如何[创建 Vnet 对等互连](https://docs.microsoft.com/zh-cn/azure/virtual-network/virtual-network-peering-overview)。
-* [如何使用不同的部署模型和订阅创建 Vnet 对等互连](https://docs.microsoft.com/zh-cn/azure/virtual-network/create-peering-different-deployment-models-subscriptions)。
-* [如何使用不同的订阅创建 Vnet 对等互连](https://docs.microsoft.com/zh-cn/azure/virtual-network/create-peering-different-subscriptions)。
+* 通过完成 [Azure 虚拟网络教程](https://docs.azure.cn/zh-cn/virtual-network/#step-by-step-tutorials)来刷新您的知识。
+* 查阅[虚拟网络概述](https://docs.azure.cn/zh-cn/virtual-network/virtual-networks-overview)。
+* 了解如何[规划虚拟网络](https://docs.azure.cn/zh-cn/virtual-network/virtual-network-vnet-plan-design-arm)。
+* 了解如何[创建 Vnet 对等互连](https://docs.azure.cn/zh-cn/virtual-network/virtual-network-peering-overview)。
+* [如何使用不同的部署模型和订阅创建 Vnet 对等互连](https://docs.azure.cn/zh-cn/virtual-network/create-peering-different-deployment-models-subscriptions)。
+* [如何使用不同的订阅创建 Vnet 对等互连](https://docs.azure.cn/zh-cn/virtual-network/create-peering-different-subscriptions)。
 
 ### 网络安全组
 
@@ -131,19 +131,19 @@ $nsg=Get-AzureRmNetworkSecurityGroup -ResourceName <nsg-name> -ResourceGroupName
 Get-AzureRmNetworkSecurityRuleConfig -NetworkSecurityGroup $nsg
 ```
 有关更多信息：
-* 刷新您对[网络安全组](https://docs.microsoft.com/zh-cn/azure/virtual-network/)的了解。
-* 查阅[网络安全概述](https://docs.microsoft.com/zh-cn/azure/virtual-network/)
-* 了解如何[管理网络安全组](https://docs.microsoft.com/zh-cn/azure/virtual-network/manage-network-security-group)。
+* 刷新您对[网络安全组](https://docs.azure.cn/zh-cn/virtual-network/)的了解。
+* 查阅[网络安全概述](https://docs.azure.cn/zh-cn/virtual-network/)
+* 了解如何[管理网络安全组](https://docs.azure.cn/zh-cn/virtual-network/manage-network-security-group)。
 
 ### ExpressRoute
 
 目前不支持跨 Azure 区域迁移 Azure ExpressRoute 实例。对于跨云类型的迁移，我们建议您在目标 Azure 区域中创建新的 ExpressRoute 线路和新的 ExpressRoute 网关。
 
 有关更多信息：
-* 通过完成 [ExpressRoute 教程](https://docs.microsoft.com/zh-cn/azure/expressroute/#step-by-step-tutorials)来刷新您的知识。
-* 了解如何[创建新的 ExpressRoute 网关](https://docs.microsoft.com/zh-cn/azure/expressroute/expressroute-howto-add-gateway-portal-resource-manager)。
-* 了解 [ExpressRoute 位置和服务提供商](https://docs.microsoft.com/zh-cn/azure/expressroute/expressroute-locations)。
-* 阅读有关 [ExpressRoute 的虚拟网络网关](https://docs.microsoft.com/zh-cn/azure/expressroute/expressroute-about-virtual-network-gateways)的内容。
+* 通过完成 [ExpressRoute 教程](https://docs.azure.cn/zh-cn/expressroute/#step-by-step-tutorials)来刷新您的知识。
+* 了解如何[创建新的 ExpressRoute 网关](https://docs.azure.cn/zh-cn/expressroute/expressroute-howto-add-gateway-portal-resource-manager)。
+* 了解 [ExpressRoute 位置和服务提供商](https://docs.azure.cn/zh-cn/expressroute/expressroute-locations)。
+* 阅读有关 [ExpressRoute 的虚拟网络网关](https://docs.azure.cn/zh-cn/expressroute/expressroute-about-virtual-network-gateways)的内容。
  
 ### VPN 网关
 
@@ -152,8 +152,8 @@ Get-AzureRmNetworkSecurityRuleConfig -NetworkSecurityGroup $nsg
 确保更新您的本地配置。此外，在更新 Azure 网络环境后，删除旧 IP 地址范围内的任何现有规则。
 
 有关更多信息：
-* 通过完成 [VPN 网关教程](https://docs.microsoft.com/zh-cn/azure/vpn-gateway/#step-by-step-tutorials)来刷新您的知识。
-* 了解如何[创建站点到站点的连接](https://docs.microsoft.com/zh-cn/azure/vpn-gateway/vpn-gateway-howto-site-to-site-resource-manager-portal)。
+* 通过完成 [VPN 网关教程](https://docs.azure.cn/zh-cn/vpn-gateway/#step-by-step-tutorials)来刷新您的知识。
+* 了解如何[创建站点到站点的连接](https://docs.azure.cn/zh-cn/vpn-gateway/vpn-gateway-howto-site-to-site-resource-manager-portal)。
 * 查阅 [Get-AzureRmVirtualNetworkGateway PowerShell cmdlet](https://docs.microsoft.com/zh-cn/powershell/module/azurerm.network/get-azurermvirtualnetworkgateway?view=azurermps-6.13.0&viewFallbackFrom=azurermps-6.5.0)。
 * 阅读博客文章：[创建站点到站点的连接](https://blogs.technet.microsoft.com/ralfwi/2017/02/02/connecting-clouds/)。
 
@@ -163,8 +163,8 @@ Get-AzureRmNetworkSecurityRuleConfig -NetworkSecurityGroup $nsg
 您可以使用门户网站或 PowerShell 收集有关当前网关配置的信息。在 PowerShell 中，使用以 Get- AzureRmApplicationGateway 开头的一组 cmdlet。
 
 有关更多信息：
-* 通过完成[应用程序网关教程](https://docs.microsoft.com/zh-cn/azure/application-gateway/#step-by-step-tutorials)来刷新您的知识。
-* 了解如何[创建应用程序网关](https://docs.microsoft.com/zh-cn/azure/application-gateway/quick-create-portal)。
+* 通过完成[应用程序网关教程](https://docs.azure.cn/zh-cn/application-gateway/#step-by-step-tutorials)来刷新您的知识。
+* 了解如何[创建应用程序网关](https://docs.azure.cn/zh-cn/application-gateway/quick-create-portal)。
 * 查阅[应用程序网关 PowerShell cmdlet](https://docs.microsoft.com/en-us/powershell/module/azurerm.network/?view=azurermps-6.13.0#application_gateway)。
 
 ### DNS (To Be Checked)
@@ -193,19 +193,19 @@ az network dns record-set list -g <resource group> -z <zone name>
 az network dns record-set ns list -g <resource group> -z --output json
 ```
 有关更多信息：
-* 通过完成 [Azure DNS 教程](https://docs.microsoft.com/zh-cn/azure/dns/#step-by-step-tutorials)来刷新您的知识。
-* 查阅 [Azure DNS 概述](https://docs.microsoft.com/zh-cn/azure/dns/dns-overview)。
-* 了解有关 [Azure DNS 导入和导出的更多信息](https://docs.microsoft.com/zh-cn/azure/dns/dns-import-export)。
+* 通过完成 [Azure DNS 教程](https://docs.azure.cn/zh-cn/dns/#step-by-step-tutorials)来刷新您的知识。
+* 查阅 [Azure DNS 概述](https://docs.azure.cn/zh-cn/dns/dns-overview)。
+* 了解有关 [Azure DNS 导入和导出的更多信息](https://docs.azure.cn/zh-cn/dns/dns-import-export)。
 
 ### 网络观察程序
 
 目前不支持跨 Azure 区域迁移网络观察程序实例。我们建议您在目标区域中创建和配置新网络观察程序。然后，比较旧环境和新环境之间的结果。
  
 有关更多信息：
-* 通过完成[网络观察程序教程](https://docs.microsoft.com/zh-cn/azure/network-watcher/#step-by-step-tutorials)来刷新您的知识。
-* 查阅[网络观察程序概述](https://docs.microsoft.com/zh-cn/azure/network-watcher/network-watcher-monitoring-overview)。
-* 了解有关[网络安全组流日志](https://docs.microsoft.com/zh-cn/azure/network-watcher/network-watcher-nsg-flow-logging-portal)的更多信息。
-* 阅读有关[连接监视器](https://docs.microsoft.com/zh-cn/azure/network-watcher/connection-monitor)的内容。
+* 通过完成[网络观察程序教程](https://docs.azure.cn/zh-cn/network-watcher/#step-by-step-tutorials)来刷新您的知识。
+* 查阅[网络观察程序概述](https://docs.azure.cn/zh-cn/network-watcher/network-watcher-monitoring-overview)。
+* 了解有关[网络安全组流日志](https://docs.azure.cn/zh-cn/network-watcher/network-watcher-nsg-flow-logging-portal)的更多信息。
+* 阅读有关[连接监视器](https://docs.azure.cn/zh-cn/network-watcher/connection-monitor)的内容。
 
 ### 流量管理器
 
@@ -218,27 +218,28 @@ Azure 流量管理器可帮助您更顺畅地完成迁移。在 Azure 区域中�
     1. 将端点迁移到目标 Azure 区域。
     2. 将端点添加到新的流量管理器配置文件中。
 3. 将 DNS CNAME 记录更改为新的流量管理器配置文件。
-4. 通过[查询端点返回的监控指标](https://docs.microsoft.com/zh-cn/azure/traffic-manager/traffic-manager-metrics-alerts#queries-by-endpoint-returned)，监控对旧 ATM 配置文件的查询是否完全停止。有些 LDNS 可能已经缓存了旧的配置文件名称 - 在禁用旧配置文件之前，最好等待一段时间以确保所有查询现在都路由到新的 ATM 配置文件。
+4. 通过[查询端点返回的监控指标](https://docs.microsoft.com/zh-cn/azure/traffic-manager/traffic-manager-metrics-alerts)，监控对旧 ATM 配置文件的查询是否完全停止。有些 LDNS 可能已经缓存了旧的配置文件名称 - 在禁用旧配置文件之前，最好等待一段时间以确保所有查询现在都路由到新的 ATM 配置文件。
 5. 禁用旧的流量管理器配置文件
 6. 一旦确定可以安全删除旧的 ATM 配置文件，则立即删除它。
 
 有关更多信息：
-* 通过完成[流量管理器教程](https://docs.microsoft.com/zh-cn/azure/traffic-manager/#step-by-step-tutorials)来刷新您的知识。
-* 查阅[流量管理器概述](https://docs.microsoft.com/zh-cn/azure/traffic-manager/traffic-manager-overview)。
-* 了解如何[创建流量管理器配置文件](https://docs.microsoft.com/zh-cn/azure/traffic-manager/quickstart-create-traffic-manager-profile)。
+* 通过完成[流量管理器教程](https://docs.azure.cn/zh-cn/traffic-manager/#step-by-step-tutorials)来刷新您的知识。
+* 查阅[流量管理器概述](https://docs.azure.cn/zh-cn/traffic-manager/traffic-manager-overview)。
+* 了解如何[创建流量管理器配置文件](https://docs.azure.cn/zh-cn/traffic-manager/quickstart-create-traffic-manager-profile)。
 
 ### 负载均衡器
 
-目前不支持跨 Azure 区域迁移负载均衡器实例。我们建议您在目标 Azure 区域中创建和配置新的负载均衡器。如果您当前正在使用 [Azure负载均衡器 - **基础版**](https://docs.microsoft.com/zh-cn/azure/load-balancer/quickstart-create-basic-load-balancer-portal)，则建议您升级到 [Azure 负载均衡器 - **标准版**](https://docs.microsoft.com/zh-cn/azure/load-balancer/quickstart-load-balancer-standard-public-portal)。
-了解有关[为何使用标准负载均衡器](https://docs.microsoft.com/zh-cn/azure/load-balancer/load-balancer-standard-overview#why-use-standard-load-balancer)的更多信息，包括[限制](https://docs.microsoft.com/zh-cn/azure/azure-subscription-service-limits#load-balancer)和[定价](https://azure.microsoft.com/en-us/pricing/details/load-balancer/)。
+目前不支持跨 Azure 区域迁移负载均衡器实例。我们建议您在目标 Azure 区域中创建和配置新的负载均衡器。
+如果您当前正在使用 [Azure负载均衡器 - **基础版**](https://docs.azure.cn/zh-cn/load-balancer/quickstart-create-basic-load-balancer-portal)，则建议您升级到 [Azure 负载均衡器 - **标准版**](https://docs.azure.cn/zh-cn/load-balancer/quickstart-load-balancer-standard-public-portal)。
+了解有关[为何使用标准负载均衡器](https://docs.azure.cn/zh-cn/load-balancer/load-balancer-standard-overview#why-use-standard-load-balancer)的更多信息，包括[限制](https://docs.azure.cn/zh-cn/azure-subscription-service-limits#load-balancer)和[定价](https://www.azure.cn/zh-cn/pricing/details/load-balancer/)。
 
 *注意：*
 *由于我们继续为负载均衡器添加新的功能和特性，我们预计它们只能在标准 SKU 上使用。*
 
 有关更多信息：
-* 通过完成[负载均衡器教程](https://docs.microsoft.com/zh-cn/azure/load-balancer/quickstart-create-basic-load-balancer-portal)来刷新您的知识。
-* 查阅[负载均衡器概述](https://docs.microsoft.com/zh-cn/azure/load-balancer/load-balancer-overview)。
-* 了解如何[创建新的负载均衡器](https://docs.microsoft.com/zh-cn/azure/load-balancer/quickstart-load-balancer-standard-public-portal)。
+* 通过完成[负载均衡器教程](https://docs.azure.cn/zh-cn/load-balancer/quickstart-create-basic-load-balancer-portal)来刷新您的知识。
+* 查阅[负载均衡器概述](https://docs.azure.cn/zh-cn/load-balancer/load-balancer-overview)。
+* 了解如何[创建新的负载均衡器](https://docs.azure.cn/zh-cn/load-balancer/quickstart-load-balancer-standard-public-portal)。
 
 ## 迁移存储资源
 
