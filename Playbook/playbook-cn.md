@@ -100,10 +100,10 @@ https://management.core.windows.net/<subscription-id>/services/hostedservices/<o
 
 ## 迁移网络资源
 
-大多数网络服务不支持跨 Azure 区域的迁移。但是，您可以使用[全局 Vnet 对等互连](https://docs.microsoft.com/azure/virtual-network/virtual-network-peering-overview)将您的网络连接到两个云环境中。全局 Vnet 对等互连让您可以使用 Microsoft Backbone 以私密方式跨区域连接。完成对等互连后，虚拟网络就会出现以进行连接。下面列出了跨区域设置 VNet 对等互连的步骤。创建虚拟网络后，您只需要将其进行对等互连。
+大多数网络服务不支持跨 Azure 区域的迁移。但是，您可以使用[全局 Vnet 对等互连](https://docs.microsoft.com/azure/virtual-network/virtual-network-peering-overview)将您的网络连接到两个云环境中。全局 Vnet 对等互连让您可以使用 Microsoft Backbone 以私有的方式将区域利用主干网互联。完成对等互连后，虚拟网络就会出现以进行连接。下面列出了跨区域设置 VNet 对等互连的步骤。一旦新的虚拟网络创建后，您只需要将其进行对等互连。
 
-注意
-Vnet 对等互连仅在连接相同的云环境类型时才起作用。如果您要连接不同的云环境站点，例如主权站点和公共站点，请使用 VPN 网关。
+*注意*
+*Vnet 对等互连仅在连接相同的云环境类型时才起作用。如果您要连接不同的云环境站点，例如主权站点和公共站点，请使用 [VPN 网关](https://docs.microsoft.com/zh-cn/azure/vpn-gateway/vpn-gateway-about-vpngateways)。*
 
 以下是创建对等互连所需步骤的摘要：
 1. 在目标区域中创建虚拟网络。
@@ -115,61 +115,61 @@ Vnet 对等互连仅在连接相同的云环境类型时才起作用。如果您
 目前不支持跨 Azure 区域迁移虚拟网络。我们建议您在目标区域中创建新的虚拟网络，并将资源迁移到这些虚拟网络中。
 
 有关更多信息：
-* 通过完成 Azure 虚拟网络教程来刷新您的知识。
-* 查阅虚拟网络概述。
-* 了解如何规划虚拟网络。
-* 了解如何创建 Vnet 对等互连。
-* 如何使用不同的部署模型和订阅创建 Vnet 对等互连。
-* 如何使用不同的订阅创建 Vnet 对等互连。
+* 通过完成 [Azure 虚拟网络教程](https://docs.microsoft.com/zh-cn/azure/virtual-network/#step-by-step-tutorials)来刷新您的知识。
+* 查阅[虚拟网络概述](https://docs.microsoft.com/zh-cn/azure/virtual-network/virtual-networks-overview)。
+* 了解如何[规划虚拟网络](https://docs.microsoft.com/zh-cn/azure/virtual-network/virtual-network-vnet-plan-design-arm)。
+* 了解如何[创建 Vnet 对等互连](https://docs.microsoft.com/zh-cn/azure/virtual-network/virtual-network-peering-overview)。
+* [如何使用不同的部署模型和订阅创建 Vnet 对等互连](https://docs.microsoft.com/zh-cn/azure/virtual-network/create-peering-different-deployment-models-subscriptions)。
+* [如何使用不同的订阅创建 Vnet 对等互连](https://docs.microsoft.com/zh-cn/azure/virtual-network/create-peering-different-subscriptions)。
 
 ### 网络安全组
 
 目前不支持跨 Azure 区域迁移网络安全组。我们建议您在目标区域中创建新的网络安全组，并将网络安全组规则应用于新的应用程序环境。
-从 Azure 门户获取任何网络安全组的当前配置，或者运行以下 PowerShell 命令：
+可以通过 Azure 门户获取任何网络安全组的当前配置，或者运行以下 PowerShell 命令以获取配置：
 ```PowerShell
 $nsg=Get-AzureRmNetworkSecurityGroup -ResourceName <nsg-name> -ResourceGroupName <resourcegroupname>
+Get-AzureRmNetworkSecurityRuleConfig -NetworkSecurityGroup $nsg
 ```
 有关更多信息：
-* 刷新您对网络安全组的了解。
-* 查阅网络安全概述
-* 了解如何管理网络安全组。
+* 刷新您对[网络安全组](https://docs.microsoft.com/zh-cn/azure/virtual-network/)的了解。
+* 查阅[网络安全概述](https://docs.microsoft.com/zh-cn/azure/virtual-network/)
+* 了解如何[管理网络安全组](https://docs.microsoft.com/zh-cn/azure/virtual-network/manage-network-security-group)。
 
 ### ExpressRoute
 
 目前不支持跨 Azure 区域迁移 Azure ExpressRoute 实例。对于跨云类型的迁移，我们建议您在目标 Azure 区域中创建新的 ExpressRoute 线路和新的 ExpressRoute 网关。
 
 有关更多信息：
-* 通过完成 ExpressRoute 教程来刷新您的知识。
-* 了解如何创建新的 ExpressRoute 网关。
-* 了解 ExpressRoute 位置和服务提供商。
-* 阅读有关 ExpressRoute 的虚拟网络网关的内容。
+* 通过完成 [ExpressRoute 教程](https://docs.microsoft.com/zh-cn/azure/expressroute/#step-by-step-tutorials)来刷新您的知识。
+* 了解如何[创建新的 ExpressRoute 网关](https://docs.microsoft.com/zh-cn/azure/expressroute/expressroute-howto-add-gateway-portal-resource-manager)。
+* 了解 [ExpressRoute 位置和服务提供商](https://docs.microsoft.com/zh-cn/azure/expressroute/expressroute-locations)。
+* 阅读有关 [ExpressRoute 的虚拟网络网关](https://docs.microsoft.com/zh-cn/azure/expressroute/expressroute-about-virtual-network-gateways)的内容。
  
 ### VPN 网关
 
-目前不支持跨 Azure 区域迁移 Azure VPN 网关实例。我们建议您在新区域中创建和配置 VPN 网关的新实例。
-您可以使用门户网站或 PowerShell 收集有关当前 VPN 网关配置的信息。在 PowerShell 中，使用以 Get-AbureRmVirtualNetworkGateway 开头的一组 cmdlet。
+目前不支持跨 Azure 区域迁移 Azure VPN 网关实例。我们建议您在新区域中创建和配置 VPN 网关的新实例。  
+您可以使用门户网站或 PowerShell 收集有关当前 VPN 网关配置的信息。在 PowerShell 中，使用以 `Get-AbureRmVirtualNetworkGateway` 开头的一组 cmdlet。  
 确保更新您的本地配置。此外，在更新 Azure 网络环境后，删除旧 IP 地址范围内的任何现有规则。
 
 有关更多信息：
-* 通过完成 VPN 网关教程来刷新您的知识。
-* 了解如何创建站点到站点的连接。
-* 查阅 Get-AzureRmVirtualNetworkGateway PowerShell cmdlet。
-* 阅读博客文章：创建站点到站点的连接。
+* 通过完成 [VPN 网关教程](https://docs.microsoft.com/zh-cn/azure/vpn-gateway/#step-by-step-tutorials)来刷新您的知识。
+* 了解如何[创建站点到站点的连接](https://docs.microsoft.com/zh-cn/azure/vpn-gateway/vpn-gateway-howto-site-to-site-resource-manager-portal)。
+* 查阅 [Get-AzureRmVirtualNetworkGateway PowerShell cmdlet](https://docs.microsoft.com/zh-cn/powershell/module/azurerm.network/get-azurermvirtualnetworkgateway?view=azurermps-6.13.0&viewFallbackFrom=azurermps-6.5.0)。
+* 阅读博客文章：[创建站点到站点的连接](https://blogs.technet.microsoft.com/ralfwi/2017/02/02/connecting-clouds/)。
 
 ### 应用程序网关
 
-目前不支持跨 Azure 区域迁移 Azure 应用程序网关实例。我们建议您在新区域中创建和配置新网关。
+目前不支持跨 Azure 区域迁移 Azure 应用程序网关实例。我们建议您在新区域中创建和配置新网关。  
 您可以使用门户网站或 PowerShell 收集有关当前网关配置的信息。在 PowerShell 中，使用以 Get- AzureRmApplicationGateway 开头的一组 cmdlet。
 
 有关更多信息：
-* 通过完成 应用程序网关教程来刷新您的知识。
-* 了解如何创建应用程序网关。
-* 查阅应用程序网关 PowerShell cmdlet。
+* 通过完成[应用程序网关教程](https://docs.microsoft.com/zh-cn/azure/application-gateway/#step-by-step-tutorials)来刷新您的知识。
+* 了解如何[创建应用程序网关](https://docs.microsoft.com/zh-cn/azure/application-gateway/quick-create-portal)。
+* 查阅[应用程序网关 PowerShell cmdlet](https://docs.microsoft.com/en-us/powershell/module/azurerm.network/?view=azurermps-6.13.0#application_gateway)。
 
-### DNS
+### DNS (To Be Checked)
 
-要在 Azure 区域中迁移 Azure DNS 配置，请导出 DNS 区域文件，然后在新订阅下导入它。目前，导出区域文件的唯一方法是使用 Azure CLI。
- 
+要在 Azure 区域中迁移 Azure DNS 配置，请导出 DNS 区域文件，然后在新订阅下导入它。目前，导出区域文件的唯一方法是使用 Azure CLI。  
 登录 Azure 区域中的源订阅后，将 Azure CLI 配置为使用 Azure 资源管理器模式。通过运行以下命令导出区域：
 ```
 az network dns zone export -g <resource group> -n <zone name> -f <zone file name>
@@ -193,24 +193,24 @@ az network dns record-set list -g <resource group> -z <zone name>
 az network dns record-set ns list -g <resource group> -z --output json
 ```
 有关更多信息：
-* 通过完成 Azure DNS 教程来刷新您的知识。
-* 查阅 Azure DNS 概述。
-* 了解有关 Azure DNS 导入和导出的更多信息。
+* 通过完成 [Azure DNS 教程](https://docs.microsoft.com/zh-cn/azure/dns/#step-by-step-tutorials)来刷新您的知识。
+* 查阅 [Azure DNS 概述](https://docs.microsoft.com/zh-cn/azure/dns/dns-overview)。
+* 了解有关 [Azure DNS 导入和导出的更多信息](https://docs.microsoft.com/zh-cn/azure/dns/dns-import-export)。
 
 ### 网络观察程序
 
 目前不支持跨 Azure 区域迁移网络观察程序实例。我们建议您在目标区域中创建和配置新网络观察程序。然后，比较旧环境和新环境之间的结果。
  
 有关更多信息：
-* 通过完成网络观察程序教程来刷新您的知识。
-* 查阅网络观察程序概述。
-* 了解有关网络安全组流日志的更多信息。
-* 阅读有关连接监视器的内容。
+* 通过完成[网络观察程序教程](https://docs.microsoft.com/zh-cn/azure/network-watcher/#step-by-step-tutorials)来刷新您的知识。
+* 查阅[网络观察程序概述](https://docs.microsoft.com/zh-cn/azure/network-watcher/network-watcher-monitoring-overview)。
+* 了解有关[网络安全组流日志](https://docs.microsoft.com/zh-cn/azure/network-watcher/network-watcher-nsg-flow-logging-portal)的更多信息。
+* 阅读有关[连接监视器](https://docs.microsoft.com/zh-cn/azure/network-watcher/connection-monitor)的内容。
 
 ### 流量管理器
 
-Azure 流量管理器可帮助您更顺畅地完成迁移。在 Azure 区域中迁移 Azure 资源时，可以在目标区域中添加新的目标端点，并更新流量管理器配置文件以使用新端点。
-但是，您无法跨 Azure 云类型迁移流量管理器配置文件。通过在目标区域中创建新的流量管理器配置文件，您可以在目标环境中定义额外的端点，同时还可以使用源环境。当流量管理器在新环境中运行时，您仍可以在源环境中定义尚未迁移的端点。此场景被称为蓝色-绿色场景。
+Azure 流量管理器可帮助您更顺畅地完成迁移。在 Azure 区域中迁移 Azure 资源时，可以在目标区域中添加新的目标端点，并更新流量管理器配置文件以使用新端点。  
+但是，您无法跨 Azure 云类型迁移流量管理器配置文件。通过在目标区域中创建新的流量管理器配置文件，您可以在目标环境中定义额外的端点，同时还可以使用源环境。当流量管理器在新环境中运行时，您仍可以在源环境中定义尚未迁移的端点。此场景被称为[蓝绿部署](https://azure.microsoft.com/en-us/blog/blue-green-deployments-using-azure-traffic-manager/)场景。
 
 此场景涉及以下步骤：
 1. 在目标 Azure 区域中创建新的流量管理器配置文件。
@@ -218,27 +218,27 @@ Azure 流量管理器可帮助您更顺畅地完成迁移。在 Azure 区域中�
     1. 将端点迁移到目标 Azure 区域。
     2. 将端点添加到新的流量管理器配置文件中。
 3. 将 DNS CNAME 记录更改为新的流量管理器配置文件。
-4. 通过监控使用返回端点进行查询指标，等待对旧 ATM 配置文件的查询完全停止。有些 LDNS 可能已经缓存了旧的配置文件名称 - 在禁用旧配置文件之前，最好等待一段时间以确保所有查询现在都路由到新的 ATM 配置文件。
+4. 通过[查询端点返回的监控指标](https://docs.microsoft.com/zh-cn/azure/traffic-manager/traffic-manager-metrics-alerts#queries-by-endpoint-returned)，监控对旧 ATM 配置文件的查询是否完全停止。有些 LDNS 可能已经缓存了旧的配置文件名称 - 在禁用旧配置文件之前，最好等待一段时间以确保所有查询现在都路由到新的 ATM 配置文件。
 5. 禁用旧的流量管理器配置文件
 6. 一旦确定可以安全删除旧的 ATM 配置文件，则立即删除它。
 
 有关更多信息：
-* 通过完成流量管理器教程来刷新您的知识。
-* 查阅流量管理器概述。
-* 了解如何创建流量管理器配置文件。
+* 通过完成[流量管理器教程](https://docs.microsoft.com/zh-cn/azure/traffic-manager/#step-by-step-tutorials)来刷新您的知识。
+* 查阅[流量管理器概述](https://docs.microsoft.com/zh-cn/azure/traffic-manager/traffic-manager-overview)。
+* 了解如何[创建流量管理器配置文件](https://docs.microsoft.com/zh-cn/azure/traffic-manager/quickstart-create-traffic-manager-profile)。
 
 ### 负载均衡器
 
-目前不支持跨 Azure 区域迁移负载均衡器实例。我们建议您在目标 Azure 区域中创建和配置新的负载均衡器。如果您当前正在使用 Azure负载均衡器 - 基础版，则建议您升级到 Azure 负载均衡器 - 标准版。
-了解有关为何使用标准负载均衡器的更多信息，包括 限制和定价。
+目前不支持跨 Azure 区域迁移负载均衡器实例。我们建议您在目标 Azure 区域中创建和配置新的负载均衡器。如果您当前正在使用 [Azure负载均衡器 - **基础版**](https://docs.microsoft.com/zh-cn/azure/load-balancer/quickstart-create-basic-load-balancer-portal)，则建议您升级到 [Azure 负载均衡器 - **标准版**](https://docs.microsoft.com/zh-cn/azure/load-balancer/quickstart-load-balancer-standard-public-portal)。
+了解有关[为何使用标准负载均衡器](https://docs.microsoft.com/zh-cn/azure/load-balancer/load-balancer-standard-overview#why-use-standard-load-balancer)的更多信息，包括[限制](https://docs.microsoft.com/zh-cn/azure/azure-subscription-service-limits#load-balancer)和[定价](https://azure.microsoft.com/en-us/pricing/details/load-balancer/)。
 
-注意：
-由于我们继续为负载均衡器添加新的功能和特性，我们预计它们只能在标准 SKU 上使用。
+*注意：*
+*由于我们继续为负载均衡器添加新的功能和特性，我们预计它们只能在标准 SKU 上使用。*
 
 有关更多信息：
-* 通过完成负载均衡器教程来刷新您的知识。
-* 查阅负载均衡器概述。
-* 了解如何创建新的负载均衡器。
+* 通过完成[负载均衡器教程](https://docs.microsoft.com/zh-cn/azure/load-balancer/quickstart-create-basic-load-balancer-portal)来刷新您的知识。
+* 查阅[负载均衡器概述](https://docs.microsoft.com/zh-cn/azure/load-balancer/load-balancer-overview)。
+* 了解如何[创建新的负载均衡器](https://docs.microsoft.com/zh-cn/azure/load-balancer/quickstart-load-balancer-standard-public-portal)。
 
 ## 迁移存储资源
 
@@ -377,8 +377,8 @@ Azure 导入/导出元数据
 目前不支持跨 Azure 区域迁移使用 Azure App Service 的 Web 应用功能
 创建的应用。我们建议您将 Web 应用导出为资源管理器模板，备份 Web 应用的文件内容（或确保应用的源代码在源代码控制存储库外部提供），并确保您已脱机存储任何与 Web 应用一同使用的自定义 SSL 证书。然后在将资源管理器模板中的位置属性更改为新区域后重新创建 Web 应用。在新区域中重新创建 Web 应用后，重新发布 Web 应用的文件内容，并上传并重新绑定 Web 应用使用的任何自定义 SSL 证书。
 
-重要事项:
-更改位置、Azure 密钥保管库密码、证书和其他 GUID 以与新区域保持一致。
+*重要事项:*  
+*更改位置、Azure 密钥保管库密码、证书和其他 GUID 以与新区域保持一致。*
 
 有关更多信息：
 * 通过完成应用服务教程来刷新您的知识。
@@ -465,17 +465,16 @@ Azure Cache for Redis 团队的一名成员编写了一个开源工具，可以�
 3. 从目标实例刷新数据。（确保不要从源实例刷新。由于复制工具不会覆盖目标位置中的现有密钥，因此需要刷新。）
 4. 使用以下工具自动将源 Azure Cache for Redis 实例中的数据复制到目标 Azure Cache for Redis 实例：工具源代码和工具下载。
 
-注意:
-此过程可能需要很长时间，具体取决于数据集的大小。
+*注意:*  
+*此过程可能需要很长时间，具体取决于数据集的大小。*
 
 选项 3：从源实例导出并导入到目标实例
 此方法利用仅在 Premium 层中提供的功能。要从源实例导出并导入到目标实例：
 1. 在目标区域中创建新的 Premium 层 Azure Cache for Redis。使用与源 Azure Cache for Redis 实例相同的大小。
 2. 从源缓存导出数据或使用 Export-AzureRmRedisCache PowerShell cmdlet。
 
-注意:
-
-导出 Azure 存储帐户必须与缓存实例位于同一区域。
+*注意:*  
+*导出 Azure 存储帐户必须与缓存实例位于同一区域。*
 
 3. 使用 AzCopy 之类的工具将导出的 blob 复制到目标区域中的存储帐户。
 4. 将数据导入目标缓存或使用 Import-AzureRmRedisCache PowerShell cmdlet。
@@ -506,8 +505,8 @@ Azure Cache for Redis 团队的一名成员编写了一个开源工具，可以�
 
 要跨区域迁移 HDInsight 服务，可以将 HDInsight 资源导出为资源管理器模板，然后针对目标 Azure 区域调整导出的模板并重新创建资源。
 
-注意
-导出 HDInsight 模板不会复制数据（例如，临时数据）。导出模板仅重新创建 HDInsight 元数据。
+*注意：*  
+*导出 HDInsight 模板不会复制数据（例如，临时数据）。导出模板仅重新创建 HDInsight 元数据。*
 
 
 要跨 Azure 区域迁移 Azure HDInsight 群集：
@@ -526,9 +525,11 @@ Azure Cache for Redis 团队的一名成员编写了一个开源工具，可以�
 
 您无法跨 Azure 区域直接迁移 Azure 事件中心资源。事件中心服务没有数据导出或导入功能。您可以将事件中心资源导出为资源管理器模板，然后针对目标 Azure 区域调整导出的模板并重新创建资源。
 
-注意:
-导出事件中心模板不会复制数据（例如，消息）。导出模板仅重新创建事件中心元数据。重要事项
-更改位置、Azure 密钥保管库密码、证书和其他 GUID 以与新区域保持一致。
+*注意:*  
+*导出事件中心模板不会复制数据（例如，消息）。导出模板仅重新创建事件中心元数据。*
+
+*重要事项：*  
+*更改位置、Azure 密钥保管库密码、证书和其他 GUID 以与新区域保持一致。*
 
 #### 事件中心元数据
 
@@ -575,8 +576,8 @@ Azure Cache for Redis 团队的一名成员编写了一个开源工具，可以�
 
 目前不支持跨 Azure 区域迁移 Azure Functions 资源。我们建议您导出资源管理器模板，更改位置，然后重新部署到目标区域。
 
-重要事项
-更改位置、Azure 密钥保管库密码、证书和其他 GUID 以与新区域保持一致。
+*重要事项：*  
+*更改位置、Azure 密钥保管库密码、证书和其他 GUID 以与新区域保持一致。*
 
 有关更多信息：
 * 通过完成 Functions 教程来刷新您的知识。
@@ -600,8 +601,8 @@ Azure Cache for Redis 团队的一名成员编写了一个开源工具，可以�
 
 要迁移 IoT 中心，请重新创建 IoT 中心并使用导出/导入设备标识功能：
 
-注意
-此迁移可能会导致 Azure IoT 应用程序出现停机和数据丢失。所有遥测消息、C2D 命令和与作业相关的信息（计划表和历史记录）都不会迁移。您必须重新配置设备和后端应用程序才能开始使用新的连接字符串。
+*注意：*  
+*此迁移可能会导致 Azure IoT 应用程序出现停机和数据丢失。所有遥测消息、C2D 命令和与作业相关的信息（计划表和历史记录）都不会迁移。您必须重新配置设备和后端应用程序才能开始使用新的连接字符串。*
 
 步骤 1：重新创建 IoT 中心
 IoT 中心不支持本机克隆。但是，您可以使用 Azure 资源管理器功能将资源组导出为模板以导出 IoT 中心元数据。配置的路由和其他 IoT 中心设置包含在导出的元数据中。然后，在全局 Azure 中重新部署模板。通过查看导出的 JSON 中的详细信息，您可以更轻松地在 Azure 门户中重新创建 IoT 中心。
@@ -612,8 +613,8 @@ IoT 中心不支持本机克隆。但是，您可以使用 Azure 资源管理器
 2. 运行 ImportDevices 资源管理器 API，将所有设备标识从存储容器导入到目标 Azure 区域中的克隆 IoT 中心。
 3. 重新配置设备和后端服务，以开始使用步骤 1 中创建的新 IoT 中心的新连接字符串。
 
-注意
-如果要跨云类型迁移资源，则源和目标区域中的根证书颁发机构可能会有所不同。重新配置与 IoT 中心实例交互的设备和后端应用程序时，请考虑此问题。
+*注意：*
+*如果要跨云类型迁移资源，则源和目标区域中的根证书颁发机构可能会有所不同。重新配置与 IoT 中心实例交互的设备和后端应用程序时，请考虑此问题。*
 
 有关更多信息：
 * 了解如何导出 IoT 中心批处理标识。
@@ -628,11 +629,11 @@ IoT 中心不支持本机克隆。但是，您可以使用 Azure 资源管理器
 
 Azure 服务总线服务没有数据导出或导入功能。要跨 Azure 区域迁移服务总线资源，可以将资源导出为[Azure 资源管理器模板](https://docs.microsoft.com/azure/azure-resource-manager/manage-resource-groups-portal%23export-resource-groups-to-templates)。然后，针对目标 Azure 区域调整导出的模板并重新创建资源。
 
-注意:
-导出资源管理器模板不会复制数据（例如，消息）。导出模板仅重新创建元数据。
+*注意:*  
+*导出资源管理器模板不会复制数据（例如，消息）。导出模板仅重新创建元数据。*
 
-重要事项:
-更改位置、Azure 密钥保管库密码、证书和其他 GUID 以与新区域保持一致。
+*重要事项：*  
+*更改位置、Azure 密钥保管库密码、证书和其他 GUID 以与新区域保持一致。*
 
 #### 服务总线元数据
 
@@ -654,8 +655,8 @@ New-AzureRmServiceBuskey -ResourceGroupName <resourcegroupname> -Namespace <name
 New-AzureRmServiceBuskey -ResourceGroupName <resourcegroupname> -Namespace <namespace> -Queue <queuename> -Name <name of Authorization rule> - RegenerateKey <PrimaryKey/SecondaryKey> -KeyValue <string-keyvalue>
 New-AzureRmServiceBuskey -ResourceGroupName <resourcegroupname> -Namespace <namespace> -Topic <topicname> -Name <name of Authorization rule> - RegenerateKey <PrimaryKey/SecondaryKey> -KeyValue <string-keyvalue>
 ```
-注意:  
-即使保存了密钥，也必须更新应用程序以使用新的连接字符串。
+*注意:*  
+*即使保存了密钥，也必须更新应用程序以使用新的连接字符串。*
 
 有关更多信息：
 * 通过完成服务总线教程来刷新您的知识。
