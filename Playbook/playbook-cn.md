@@ -47,15 +47,15 @@ Remove-AzureService -ServiceName <yourOldServiceName>
 #### 利用REST API  
 要使用 REST API 重新部署云服务，请执行以下操作：
 1. 在目标环境中[创建新的云服务](https://docs.microsoft.com/zh-cn/rest/api/compute/cloudservices/rest-create-cloud-service)。
-```
+```http
 https://management.core.windows.net/<subscription-id>/services/hostedservices  
 ```
 2. 使用[创建部署 API](https://msdn.microsoft.com/library/azure/ee460813.aspx)创建新的部署。要获取您的 .cspkg 和 .cscfg 定义，可以调用[Get Package API](https://docs.microsoft.com/en-us/previous-versions/azure/reference/jj154121(v=azure.100))。 
-```
+```http
 https://management.core.windows.net/<subscription-id>/services/hostedservices/<cloudservice-name>/deploymentslots/production  
 ```
 3. 当流量指向新的云服务时，[删除源 Azure 区域中的旧云服务](https://docs.microsoft.com/zh-cn/rest/api/compute/cloudservices/rest-delete-cloud-service)。  
-```
+```http
 https://management.core.windows.net/<subscription-id>/services/hostedservices/<old-cloudservice-name>
 ```
   
@@ -100,8 +100,8 @@ https://management.core.windows.net/<subscription-id>/services/hostedservices/<o
 
 要跨 Azure 区域迁移虚拟机规模集，请导出资源管理器模板，根据新环境对其进行调整，然后重新部署到目标区域。只需导出基本模板并在新环境中重新部署模板。单个虚拟机规模集实例应该都相同。在开始重新部署之前，请确保了解其他资源的依赖关系并将其迁移到目标区域。
 
-*重要事项*:
-*更改位置、密钥保管库密码、证书和其他 GUID 以与新区域保持一致。*
+>*重要事项*:  
+>*更改位置、密钥保管库密码、证书和其他 GUID 以与新区域保持一致。*
  
 有关更多信息：
 * 通过完成[虚拟机规模集教程](https://docs.azure.cn/zh-cn/virtual-machine-scale-sets/#step-by-step-tutorials)来刷新您的知识。
@@ -115,8 +115,8 @@ https://management.core.windows.net/<subscription-id>/services/hostedservices/<o
 
 大多数网络服务不支持跨 Azure 区域的迁移。但是，您可以使用[全局 Vnet 对等互连](https://docs.azure.cn/zh-cn/virtual-network/virtual-network-peering-overview)将您的网络连接到两个云环境中。全局 Vnet 对等互连让您可以使用 Microsoft Backbone 以私有的方式将区域利用主干网互联。完成对等互连后，虚拟网络就会出现以进行连接。下面列出了跨区域设置 VNet 对等互连的步骤。一旦新的虚拟网络创建后，您只需要将其进行对等互连。
 
-*注意*
-*Vnet 对等互连仅在连接相同的云环境类型时才起作用。如果您要连接不同的云环境站点，例如主权站点和公共站点，请使用 [VPN 网关](https://docs.azure.cn/zh-cn/vpn-gateway/vpn-gateway-about-vpngateways)。*
+>*注意*  
+>*Vnet 对等互连仅在连接相同的云环境类型时才起作用。如果您要连接不同的云环境站点，例如主权站点和公共站点，请使用 [VPN 网关](https://docs.azure.cn/zh-cn/vpn-gateway/vpn-gateway-about-vpngateways)。*
 
 以下是创建对等互连所需步骤的摘要：
 1. 在目标区域中创建虚拟网络。
@@ -184,25 +184,25 @@ Get-AzureRmNetworkSecurityRuleConfig -NetworkSecurityGroup $nsg
 
 要在 Azure 区域中迁移 Azure DNS 配置，请导出 DNS 区域文件，然后在新订阅下导入它。目前，导出区域文件的唯一方法是使用 Azure CLI。  
 登录 Azure 区域中的源订阅后，将 Azure CLI 配置为使用 Azure 资源管理器模式。通过运行以下命令导出区域：
-```
+```azurecli
 az network dns zone export -g <resource group> -n <zone name> -f <zone file name>
 ```
 示例:
-```
+```azurecli
 az network dns zone export -g "myresourcegroup" -n "contoso.com" -f "contoso.com.txt"
 ```
 此命令调用 Azure DNS 服务以导出资源组 myresourcegroup 中的区域 contoso.com。输出作为一个兼容 BIND 的区域文件存储在当前文件夹的 contoso.com.txt 文件中。
 导出完成后，从区域文件中删除 NS 记录。为新区域和订阅创建新的 NS 记录。
 接下来，登录到目标环境，创建新资源组（或选择现有资源组），然后导入区域文件：
-```    
+```azurecli    
 az network dns zone import -g <resource group> -n <zone name> -f <zone file name>
 ```
 导入区域后，您必须通过运行以下命令来验证区域：
-```
+```azurecli
 az network dns record-set list -g <resource group> -z <zone name>
 ```
 验证完成后，请与您的域名注册商联系并重新授权 NS 记录。要获取 NS 记录信息，请运行以下命令：
-```
+```azurecli
 az network dns record-set ns list -g <resource group> -z --output json
 ```
 有关更多信息：
@@ -246,8 +246,8 @@ Azure 流量管理器可帮助您更顺畅地完成迁移。在 Azure 区域中�
 如果您当前正在使用 [Azure负载均衡器 - **基础版**](https://docs.azure.cn/zh-cn/load-balancer/quickstart-create-basic-load-balancer-portal)，则建议您升级到 [Azure 负载均衡器 - **标准版**](https://docs.azure.cn/zh-cn/load-balancer/quickstart-load-balancer-standard-public-portal)。
 了解有关[为何使用标准负载均衡器](https://docs.azure.cn/zh-cn/load-balancer/load-balancer-standard-overview#why-use-standard-load-balancer)的更多信息，包括[限制](https://docs.azure.cn/zh-cn/azure-subscription-service-limits#load-balancer)和[定价](https://www.azure.cn/zh-cn/pricing/details/load-balancer/)。
 
-*注意：*
-*由于我们继续为负载均衡器添加新的功能和特性，我们预计它们只能在标准 SKU 上使用。*
+>*注意：*
+>*由于我们继续为负载均衡器添加新的功能和特性，我们预计它们只能在标准 SKU 上使用。*
 
 有关更多信息：
 * 通过完成[负载均衡器教程](https://docs.azure.cn/zh-cn/load-balancer/quickstart-create-basic-load-balancer-portal)来刷新您的知识。
@@ -269,39 +269,17 @@ AzCopy 使用术语 Source 和 Dest 来表示 URI。
 您还需要使用 Azure Active Directory 或 SAS 令牌进行身份验证才能访问 Azure 存储帐户。有关如何进行身份验证的说明，请参阅[身份验证选项](https://docs.azure.cn/zh-cn/storage/common/storage-use-azcopy-v10#authentication-options)。
 
 例如：  
-<table>   
-  <tr>      
-    <td>URI part</td>      
-    <td>ExampleValue</td>
-  </tr>   
-  <tr>      
-    <td>Source storageAccount</td>   
-    <td>migratetest</td>
-  </tr>   
-  <tr>      
-    <td>Source container</td>   
-    <td>vhds</td>
-  </tr>
-  <tr>
-    <td>Source blob</td>
-    <td>vm-121314.vhd</td>
-  </tr>
-  <tr>
-    <td>Target storageAccount</td>
-    <td>migratetarget</td>
-  </tr>
-  <tr>
-    <td>Target container</td>
-    <td>targetcontainer</td>
-  </tr>
-</table>
+URI part | example value
+-------- | --------------
+源 storageAccount | `migratetest`
+源 container | `vhds`
+源 blob | `vm-121314.vhd`
+目标 storageAccount | `migratetarget`
+目标 container | `targetcontainer`
 
 此命令跨 Azure 区域复制虚拟硬盘：
-```
-azcopy cp https://migratetest.blob.core.windows.net/vhds/vm-121314.vhd?<sastokenhere>
-```
-```
-https://migratetarget.blob.core.windows.net/targetcontainer?<sastokenhere>
+```cmd
+azcopy cp https://migratetest.blob.core.windows.net/vhds/vm-121314.vhd?<sastokenhere> https://migratetarget.blob.core.windows.net/targetcontainer?<sastokenhere>
 ```
 要获得 VHD 的一致副本，请在复制 VHD 之前关闭 VM。为复制操作规划一些停机时间。复制 VHD 后，[在目标环境中重建 VM](https://docs.azure.cn/zh-cn/backup/backup-azure-vms-automation#create-a-vm-from-restored-disks)。
 
@@ -324,18 +302,18 @@ Azure 托管磁盘通过管理与 VM 磁盘关联的存储帐户，简化了 Azu
 有关如何使用 AzCopy 的示例，请参阅下面的Blob。使用 AzCopy 或类似工具将磁盘直接从源环境复制到目标环境。
 在 AzCopy 中，您必须将 URI 拆分为基础 URI 和共享访问签名部分。URI 的共享访问签名部分以字符 "?" 开头。
 门户为共享访问签名 URI 提供此 URI：
-```
+```http
 https://md-kp4qvrzhj4j5.blob.core.windows.net/r0pmw4z3vk1g/abcd?sv=2017-04-17&sr=b&si=22970153-4c56-47c0-8cbb-156a24b6e4b5&sig=5Hfu0qMw9rkZf6mCjuCE4VMV6W3IR8FXQSY1viji9bg%3D>
 ```
 以下命令显示了 AzCopy 的源参数：
-```
+```cmd
 /source:"https://md-kp4qvrzhj4j5.blob.core.windows.net/r0pmw4z3vk1g/abcd" 
 ```
-```
+```cmd
 /sourceSAS:"?sv=2017-04-17&sr=b&si=22970153-4c56-47c0-8cbb-156a24b6e4b5&sig=5Hfu0qMw9rkZf6mCjuCE4VMV6W3IR8FXQSY1viji9bg%3D"
 ```
 这是完整的命令：
-```
+```cmd
 azcopy -v /source:"https://md-kp4qvrzhj4j5.blob.core.windows.net/r0pmw4z3vk1g/abcd" /sourceSAS:"?sv=2017-04-17&sr=b&si=22970153-4c56-47c0-8cbb-156a24b6e4b5&sig=5Hfu0qMw9rkZf6mCjuCE4VMV6W3IR8FXQSY1viji9bg%3D" /dest:"https://migratetarget.blob.core.windows.net/targetcontainer/newdisk.vh d" /DestKey:"o//ucD\... Kdpw=="
 ```
 #### 步骤 3：在目标环境中创建新的托管磁盘
@@ -362,8 +340,8 @@ azcopy -v /source:"https://md-kp4qvrzhj4j5.blob.core.windows.net/r0pmw4z3vk1g/ab
 但是，您可以使用新区域中的存储帐户，在新区域中创建新的 Azure 导入/导出作业资源。
 也可以通过将 Azure 导入/导出资源导出为[资源管理器模板](https://docs.azure.cn/zh-cn/azure-resource-manager/manage-resource-groups-portal#export-resource-groups-to-templates)创建新的作业资源，然后调整目标 Azure 区域的导出模板以重新创建资源。
 
-*注意:
-导出 Azure 导入/导出模板不会复制数据（例如，在存储帐户中创建的 Blob）。导出模板仅重新创建 Azure 导入/导出元数据。
+>*注意:*  
+>*导出 Azure 导入/导出模板不会复制数据（例如，在存储帐户中创建的 Blob）。导出模板仅重新创建 Azure 导入/导出元数据。*
 请考虑更改适用于新区域的交付包、送货信息、存储帐户 ID 和其他作业属性。 
 
 #### Azure 导入/导出元数据
@@ -387,8 +365,8 @@ azcopy -v /source:"https://md-kp4qvrzhj4j5.blob.core.windows.net/r0pmw4z3vk1g/ab
 
 目前不支持跨 Azure 区域迁移使用 Azure App Service 的 Web 应用功能创建的应用。我们建议您将 Web 应用导出为资源管理器模板，备份 Web 应用的文件内容（或确保应用的源代码在源代码控制存储库外部提供），并确保您已脱机存储任何与 Web 应用一同使用的自定义 SSL 证书。然后在将资源管理器模板中的位置属性更改为新区域后重新创建 Web 应用。在新区域中重新创建 Web 应用后，重新发布 Web 应用的文件内容，上传并重新绑定 Web 应用使用的任何自定义 SSL 证书。
 
-*重要事项:*  
-*更改位置、Azure 密钥保管库密码、证书和其他 GUID 应与新区域保持一致。*
+>*重要事项:*  
+>*更改位置、Azure 密钥保管库密码、证书和其他 GUID 应与新区域保持一致。*
 
 有关更多信息：
 * 通过完成[应用服务教程](https://docs.azure.cn/zh-cn/app-service/#step-by-step-tutorials)来刷新您的知识。
@@ -400,9 +378,9 @@ azcopy -v /source:"https://md-kp4qvrzhj4j5.blob.core.windows.net/r0pmw4z3vk1g/ab
 ### API 管理
 
 要将 API 管理端点从一个 Azure 区域迁移到另一个 Azure 区域，可以使用[备份和还原](https://docs.azure.cn/zh-cn/api-management/api-management-howto-disaster-recovery-backup-restore)功能。您应该在源和目标区域中选择相同的 API 管理 SKU。
-
-*注意:
-在不同云类型之间迁移时，备份和还原将不起作用。为此，您需要将资源导出为[模板](https://docs.azure.cn/zh-cn/azure-resource-manager/manage-resource-groups-portal#export-resource-groups-to-templates)。然后，针对目标 Azure 区域调整导出的模板并重新创建资源。*
+ 
+>*注意:*  
+>*在不同云类型之间迁移时，备份和还原将不起作用。为此，您需要将资源导出为[模板](https://docs.azure.cn/zh-cn/azure-resource-manager/manage-resource-groups-portal#export-resource-groups-to-templates)。然后，针对目标 Azure 区域调整导出的模板并重新创建资源。*
 
 #### 选项 1：如果您可以接受其他 API 管理实例的名称，请遵循这些说明：
 1. 使用与新名称目标区域中的源 API 管理实例相同的 SKU 创建新的 API 管理实例。
@@ -412,8 +390,8 @@ azcopy -v /source:"https://md-kp4qvrzhj4j5.blob.core.windows.net/r0pmw4z3vk1g/ab
 
 #### 选项 2：如果要保留 API 管理实例名称，请按照以下说明操作
 
-*注意:
-这是一个风险更高的选择，将导致服务停机。*
+>*注意:*  
+>*这是一个风险更高的选择，将导致服务停机。*
 1. 将源区域中的 API 管理实例备份到一个存储帐户。
 2. 删除源区域中的 API 管理实例。
 3. 使用与源区域中相同的名称，在目标区域中创建一个新的 API 管理实例。
@@ -427,8 +405,8 @@ azcopy -v /source:"https://md-kp4qvrzhj4j5.blob.core.windows.net/r0pmw4z3vk1g/ab
 
 要迁移 Azure SQL 数据库工作负载，请使用异地复制。有关详细说明，请参阅博客文章[将 Azure 服务迁移到新区域](https://azure.microsoft.com/zh-cn/blog/migrating-azure-services-to-new-regions/)。
 
-*注意:
-导出操作后连接字符串会更改，因为导出期间服务器的 DNS 名称会更改。*
+>*注意:*  
+>*导出操作后连接字符串会更改，因为导出期间服务器的 DNS 名称会更改。*
 
 有关更多信息：
 * 了解如何[将数据库导出到 BACPAC 文件](https://docs.azure.cn/zh-cn/sql-database/sql-database-export)。
@@ -478,16 +456,16 @@ Azure Cache for Redis 团队的一名成员编写了一个开源工具，可以�
 3. 从**目标**实例刷新数据。（确保不要从**源**实例刷新。由于复制工具不会覆盖目标位置中的现有密钥，因此需要刷新。）
 4. 使用以下工具自动将源 Azure Cache for Redis 实例中的数据复制到目标 Azure Cache for Redis 实例：[工具源代码](https://github.com/deepakverma/redis-copy)和[工具下载](github-production-release-asset-2e65be.s3.amazonaws.com)。
 
-*注意:  
-此过程可能需要很长时间，具体取决于数据集的大小。*
+>*注意:*  
+>*此过程可能需要很长时间，具体取决于数据集的大小。*
 
 #### 选项 3：从源实例导出并导入到目标实例
 
 此方法利用仅在 Premium 层中提供的功能。要从源实例导出并导入到目标实例：
 1. 在目标区域中创建新的 Premium 层 Azure Cache for Redis。使用与源 Azure Cache for Redis 实例相同的大小。
 2. [从源缓存中导出数据](https://docs.azure.cn/zh-cn/azure-cache-for-redis/cache-how-to-import-export-data)或使用 [Export-AzureRmRedisCache PowerShell cmdlet](https://docs.microsoft.com/zh-cn/powershell/module/azurerm.rediscache/export-azurermrediscache?view=azurermps-6.13.0&viewFallbackFrom=azurermps-6.4.0)。
-*注意:
-导出 Azure 存储帐户必须与缓存实例位于同一区域。*
+>*注意:*  
+>*导出 Azure 存储帐户必须与缓存实例位于同一区域。*
 
 3. 使用 AzCopy 之类的工具将导出的 blob 复制到目标区域中的存储帐户。
 4. [将数据导入目标缓存](https://docs.azure.cn/zh-cn/azure-cache-for-redis/cache-how-to-import-export-data)或使用 [Import-AzureRmRedisCache PowerShell cmdlet](https://docs.microsoft.com/zh-cn/powershell/module/azurerm.rediscache/import-azurermrediscache?view=azurermps-6.13.0&viewFallbackFrom=azurermps-6.4.0)。
@@ -519,8 +497,8 @@ Azure Cache for Redis 团队的一名成员编写了一个开源工具，可以�
 
 要跨区域迁移 HDInsight 服务，可以将 HDInsight 资源导出为[资源管理器模板](https://docs.azure.cn/zh-cn/azure-resource-manager/manage-resource-groups-portal#export-resource-groups-to-templates)，然后针对目标 Azure 区域调整导出的模板并重新创建资源。
 
-*注意：*  
-*导出 HDInsight 模板不会复制数据（例如，临时数据）。导出模板仅重新创建 HDInsight 元数据。*
+>*注意：*  
+>*导出 HDInsight 模板不会复制数据（例如，临时数据）。导出模板仅重新创建 HDInsight 元数据。*
 
 要跨 Azure 区域迁移 Azure HDInsight 群集：
 1. 停止 HDInsight 群集。
@@ -539,11 +517,11 @@ Azure Cache for Redis 团队的一名成员编写了一个开源工具，可以�
 
 您无法跨 Azure 区域直接迁移 Azure 事件中心资源。事件中心服务没有数据导出或导入功能。您可以将事件中心资源导出为[资源管理器模板](https://docs.azure.cn/zh-cn/azure-resource-manager/manage-resource-groups-portal#export-resource-groups-to-templates)，然后针对目标 Azure 区域调整导出的模板并重新创建资源。
 
-*注意:*  
-*导出事件中心模板不会复制数据（例如，消息）。导出模板仅重新创建事件中心元数据。*
+>*注意:*  
+>*导出事件中心模板不会复制数据（例如，消息）。导出模板仅重新创建事件中心元数据。*
 
-*重要事项：*  
-*更改位置、Azure 密钥保管库密码、证书和其他 GUID 以与新区域保持一致。*
+>*重要事项：*  
+>*更改位置、Azure 密钥保管库密码、证书和其他 GUID 以与新区域保持一致。*
 
 #### 事件中心元数据
 
@@ -593,8 +571,8 @@ Azure Cache for Redis 团队的一名成员编写了一个开源工具，可以�
 
 目前不支持跨 Azure 区域迁移 Azure Functions 资源。我们建议您导出资源管理器模板，更改位置，然后重新部署到目标区域。
 
-*重要事项：*  
-*更改位置、Azure 密钥保管库密码、证书和其他 GUID 以与新区域保持一致。*
+>*重要事项：*  
+>*更改位置、Azure 密钥保管库密码、证书和其他 GUID 以与新区域保持一致。*
 
 有关更多信息：
 * 通过完成 [Functions 教程](https://docs.azure.cn/zh-cn/azure-functions/#step-by-step-tutorials)来刷新您的知识。
@@ -617,8 +595,8 @@ Azure Cache for Redis 团队的一名成员编写了一个开源工具，可以�
 
 要迁移 IoT 中心，请重新创建 IoT 中心并使用导出/导入设备标识功能：
 
-**注意**  
-此迁移可能会导致 Azure IoT 应用程序出现停机和数据丢失。所有遥测消息、C2D 命令和与作业相关的信息（计划表和历史记录）都不会迁移。您必须重新配置设备和后端应用程序才能开始使用新的连接字符串。
+>*注意*  
+>*此迁移可能会导致 Azure IoT 应用程序出现停机和数据丢失。所有遥测消息、C2D 命令和与作业相关的信息（计划表和历史记录）都不会迁移。您必须重新配置设备和后端应用程序才能开始使用新的连接字符串。*
 
 #### 步骤 1：重新创建 IoT 中心
 IoT 中心不支持本机克隆。但是，您可以使用 Azure 资源管理器功能将资源组[导出为模板](https://docs.azure.cn/zh-cn/azure-resource-manager/manage-resource-groups-portal#export-resource-groups-to-templates)以导出 IoT 中心元数据。配置的路由和其他 IoT 中心设置包含在导出的元数据中。然后，在全局 Azure 中重新部署模板。通过查看导出的 JSON 中的详细信息，您可以更轻松地在 Azure 门户中重新创建 IoT 中心。
@@ -629,8 +607,8 @@ IoT 中心不支持本机克隆。但是，您可以使用 Azure 资源管理器
 2. 运行 [ImportDevices](https://docs.azure.cn/en-us/iot-hub/iot-hub-bulk-identity-mgmt) 资源管理器 API，将所有设备标识从存储容器导入到目标 Azure 区域中的克隆 IoT 中心。
 3. 重新配置设备和后端服务，以开始使用步骤 1 中创建的新 IoT 中心的新连接字符串。
 
-**注意**
-如果要跨云类型迁移资源，则源和目标区域中的根证书颁发机构可能会有所不同。重新配置与 IoT 中心实例交互的设备和后端应用程序时，请考虑此问题。
+>*注意*  
+>*如果要跨云类型迁移资源，则源和目标区域中的根证书颁发机构可能会有所不同。重新配置与 IoT 中心实例交互的设备和后端应用程序时，请考虑此问题。*
 
 有关更多信息：
 * 了解如何[导出 IoT 中心批处理标识](https://docs.azure.cn/zh-cn/iot-hub/iot-hub-bulk-identity-mgmt#export-devices)。
@@ -645,11 +623,11 @@ IoT 中心不支持本机克隆。但是，您可以使用 Azure 资源管理器
 
 Azure 服务总线服务没有数据导出或导入功能。要跨 Azure 区域迁移服务总线资源，可以将资源导出为[Azure 资源管理器模板](https://docs.azure.cn/zh-cn/azure-resource-manager/manage-resource-groups-portal#export-resource-groups-to-templates)。然后，针对目标 Azure 区域调整导出的模板并重新创建资源。
 
-*注意:*  
-*导出资源管理器模板不会复制数据（例如，消息）。导出模板仅重新创建元数据。*
+>*注意:*  
+>*导出资源管理器模板不会复制数据（例如，消息）。导出模板仅重新创建元数据。*
 
-*重要事项：*  
-*更改位置、Azure 密钥保管库密码、证书和其他 GUID 以与新区域保持一致。*
+>*重要事项：*  
+>*更改位置、Azure 密钥保管库密码、证书和其他 GUID 以与新区域保持一致。*
 
 #### 服务总线元数据
 
@@ -668,11 +646,15 @@ Azure 服务总线服务没有数据导出或导入功能。要跨 Azure 区域�
 #### 用法示例:
 ```PowerShell
 New-AzureRmServiceBuskey -ResourceGroupName <resourcegroupname> -Namespace <namespace> -Name <name of Authorization rule> -RegenerateKey <PrimaryKey/SecondaryKey> -KeyValue <string-keyvalue>
+```
+```powershell
 New-AzureRmServiceBuskey -ResourceGroupName <resourcegroupname> -Namespace <namespace> -Queue <queuename> -Name <name of Authorization rule> - RegenerateKey <PrimaryKey/SecondaryKey> -KeyValue <string-keyvalue>
+```
+```powershell
 New-AzureRmServiceBuskey -ResourceGroupName <resourcegroupname> -Namespace <namespace> -Topic <topicname> -Name <name of Authorization rule> - RegenerateKey <PrimaryKey/SecondaryKey> -KeyValue <string-keyvalue>
 ```
-*注意:*  
-*即使保存了密钥，也必须更新应用程序以使用新的连接字符串。*
+>*注意:*  
+>*即使保存了密钥，也必须更新应用程序以使用新的连接字符串。*
 
 有关更多信息：
 * 通过完成[服务总线教程](https://docs.azure.cn/zh-cn/service-bus-messaging/#step-by-step-tutorials)来刷新您的知识。
