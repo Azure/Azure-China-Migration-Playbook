@@ -1,3 +1,16 @@
+---
+title: Azure China资源跨区域迁移手册
+description: This article provides the guidance and tools on migrating resources between different Azure China regions.
+author: msfrankchen
+
+ms.service: china 
+ms.topic: migrate
+layout: ContentPage 
+ms.date: 09/03/2019
+ms.author: frankch
+
+---
+
 # Azure资源跨区域迁移手册
   
 ## 计算资源迁移
