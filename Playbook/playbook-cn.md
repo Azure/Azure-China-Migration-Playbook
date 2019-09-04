@@ -6,7 +6,7 @@ author: msfrankchen
 ms.service: china 
 ms.topic: migrate
 layout: ContentPage 
-ms.date: 09/03/2019
+ms.date: 09/04/2019
 ms.author: frankch
 
 ---
@@ -454,7 +454,7 @@ Azure Cache for Redis 团队的一名成员编写了一个开源工具，可以�
 1. 在源区域中创建 VM。如果 Azure Cache for Redis 中的数据集很大，请确保选择相对较大的 VM 大小以尽量减少复制时间。
 2. 在新目标区域中创建新的 Azure Cache for Redis。
 3. 从**目标**实例刷新数据。（确保不要从**源**实例刷新。由于复制工具不会覆盖目标位置中的现有密钥，因此需要刷新。）
-4. 使用以下工具自动将源 Azure Cache for Redis 实例中的数据复制到目标 Azure Cache for Redis 实例：[工具源代码](https://github.com/deepakverma/redis-copy)和[工具下载](github-production-release-asset-2e65be.s3.amazonaws.com)。
+4. 使用以下工具自动将源 Azure Cache for Redis 实例中的数据复制到目标 Azure Cache for Redis 实例：[工具源代码](https://github.com/deepakverma/redis-copy)和[工具下载](./playbook-cn-database-radis-tool)。
 
 >*注意:*  
 >*此过程可能需要很长时间，具体取决于数据集的大小。*
@@ -535,7 +535,7 @@ Azure Cache for Redis 团队的一名成员编写了一个开源工具，可以�
 有关更多信息：
 * 查阅[事件中心概述](https://docs.azure.cn/zh-cn/event-hubs/event-hubs-about)。
 * 通过完成[事件中心教程](https://docs.azure.cn/zh-cn/event-hubs/#step-by-step-tutorials)来刷新您的知识。
-* 检查[Azure 服务总线]()的迁移步骤。
+* 检查**Azure 服务总线**章节的迁移步骤。
 * 熟悉如何[导出 Azure 资源管理器模板](https://docs.azure.cn/zh-cn/azure-resource-manager/manage-resource-groups-portal#export-resource-groups-to-templates)，或阅读[ Azure 资源管理器](https://docs.azure.cn/zh-cn/azure-resource-manager/resource-group-overview)的概述。
  
 ### 流分析
