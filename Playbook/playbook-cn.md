@@ -180,10 +180,10 @@ Get-AzureRmNetworkSecurityRuleConfig -NetworkSecurityGroup $nsg
 * 了解如何[创建应用程序网关](https://docs.azure.cn/zh-cn/application-gateway/quick-create-portal)。
 * 查阅[应用程序网关 PowerShell cmdlet](https://docs.microsoft.com/en-us/powershell/module/azurerm.network/?view=azurermps-6.13.0#application_gateway)。
 
-### DNS (To Be Checked)
+### DNS
 
-要在 Azure 区域中迁移 Azure DNS 配置，请导出 DNS 区域文件，然后在新订阅下导入它。目前，导出区域文件的唯一方法是使用 Azure CLI。  
-登录 Azure 区域中的源订阅后，将 Azure CLI 配置为使用 Azure 资源管理器模式。通过运行以下命令导出区域：
+要在 Azure 区域间迁移 Azure DNS 配置，首先需要从源区域中导出 DNS 区域文件，然后在目标区域新建 DNS 区域并导入它。目前，导出 DNS 区域文件的唯一方法是使用 Azure CLI。  
+登录 Azure ，将 Azure CLI 配置为使用 Azure 资源管理器模式。通过运行以下命令导出区域：
 ```azurecli
 az network dns zone export -g <resource group> -n <zone name> -f <zone file name>
 ```
@@ -191,13 +191,13 @@ az network dns zone export -g <resource group> -n <zone name> -f <zone file name
 ```azurecli
 az network dns zone export -g "myresourcegroup" -n "contoso.com" -f "contoso.com.txt"
 ```
-此命令调用 Azure DNS 服务以导出资源组 myresourcegroup 中的区域 contoso.com。输出作为一个兼容 BIND 的区域文件存储在当前文件夹的 contoso.com.txt 文件中。
-导出完成后，从区域文件中删除 NS 记录。为新区域和订阅创建新的 NS 记录。
-接下来，登录到目标环境，创建新资源组（或选择现有资源组），然后导入区域文件：
+此命令调用 DNS 服务以导出资源组 myresourcegroup 中的 DNS 区域 contoso.com。输出作为一个 BIND 兼容的 DNS 区域文件存储在当前文件夹的 contoso.com.txt 文件中。
+导出完成后，从 DNS 区域文件中删除 NS 记录，并为新 Azure 区域创建新的 NS 记录。
+接下来，创建新资源组（或选择现有资源组），然后导入 DNS 区域文件：
 ```azurecli    
 az network dns zone import -g <resource group> -n <zone name> -f <zone file name>
 ```
-导入区域后，您必须通过运行以下命令来验证区域：
+DNS 区域导入完成后，您需要通过运行以下命令来验证 DNS 区域：
 ```azurecli
 az network dns record-set list -g <resource group> -z <zone name>
 ```
@@ -242,8 +242,8 @@ Azure 流量管理器可帮助您更顺畅地完成迁移。在 Azure 区域中�
 
 ### 负载均衡器
 
-目前不支持跨 Azure 区域迁移负载均衡器实例。我们建议您在目标 Azure 区域中创建和配置新的负载均衡器。
-如果您当前正在使用 [Azure负载均衡器 - **基础版**](https://docs.azure.cn/zh-cn/load-balancer/quickstart-create-basic-load-balancer-portal)，则建议您升级到 [Azure 负载均衡器 - **标准版**](https://docs.azure.cn/zh-cn/load-balancer/quickstart-load-balancer-standard-public-portal)。
+目前不支持跨 Azure 区域迁移负载均衡器实例。我们建议您在目标 Azure 区域中创建和配置新的负载均衡器。  
+如果您当前正在使用 [Azure负载均衡器 - **基础版**](https://docs.azure.cn/zh-cn/load-balancer/quickstart-create-basic-load-balancer-portal)，则建议您升级到 [Azure 负载均衡器 - **标准版**](https://docs.azure.cn/zh-cn/load-balancer/quickstart-load-balancer-standard-public-portal)。  
 了解有关[为何使用标准负载均衡器](https://docs.azure.cn/zh-cn/load-balancer/load-balancer-standard-overview#why-use-standard-load-balancer)的更多信息，包括[限制](https://docs.azure.cn/zh-cn/azure-subscription-service-limits#load-balancer)和[定价](https://www.azure.cn/zh-cn/pricing/details/load-balancer/)。
 
 >*注意：*
@@ -256,16 +256,16 @@ Azure 流量管理器可帮助您更顺畅地完成迁移。在 Azure 区域中�
 
 ## 迁移存储资源
 
-本节包含的信息可以帮助您跨Azure区域迁移Azure存储资源。
+本节包含的信息可以帮助您跨 Azure 区域迁移 Azure 存储资源。
 
 ### Blobs
 
-AzCopy 是一个免费工具，可用于复制 blob、文件和表。使用 AzCopy 进行迁移，以便跨 Azure 区域复制 blob。
-如果不对源 VM 使用托管磁盘，请使用 AzCopy 将 .vhd 文件复制到目标环境。如果使用托管磁盘，请参阅**托管磁盘**。
-以下示例显示了 AzCopy 的工作原理。有关完整参考文献，请参阅[AzCopy文档](https://docs.azure.cn/zh-cn/storage/common/storage-use-azcopy-v10)。
-AzCopy 使用术语 Source 和 Dest 来表示 URI。
+AzCopy 是一个免费工具，可用于复制 blob、文件和表。使用 AzCopy 进行迁移，可以实现跨 Azure 区域的 blob 复制。  
+如果不对源 VM 使用托管磁盘，请使用 AzCopy 将 .vhd 文件复制到目标环境。如果使用托管磁盘，请参阅**托管磁盘**。  
+以下示例显示了 AzCopy 的使用方法。有关完整参考文献，请参阅[AzCopy文档](https://docs.azure.cn/zh-cn/storage/common/storage-use-azcopy-v10)。  
+AzCopy 使用 Source 和 Dest 来表示 URI。
  
-通过使用 PowerShell 或使用 Azure CLI，您可从门户获得 URI 的三个部分（storageaccountname、containername、blobname）。Blob 的名称可以是 URI 的一部分，也可以作为一种模式提供，如vm121314.vhd。
+通过使用 PowerShell 或使用 Azure CLI，您可从门户获得 URI 的三个部分（storageaccountname、containername、blobname）。Blob 的名称可以是 URI 的一部分，或以固定模板提供，如vm121314.vhd。
 您还需要使用 Azure Active Directory 或 SAS 令牌进行身份验证才能访问 Azure 存储帐户。有关如何进行身份验证的说明，请参阅[身份验证选项](https://docs.azure.cn/zh-cn/storage/common/storage-use-azcopy-v10#authentication-options)。
 
 例如：  
@@ -277,19 +277,19 @@ URI part | example value
 目标 storageAccount | `migratetarget`
 目标 container | `targetcontainer`
 
-此命令跨 Azure 区域复制虚拟硬盘：
+此命令可以实现跨 Azure 区域的虚拟硬盘复制：
 ```cmd
 azcopy cp https://migratetest.blob.core.windows.net/vhds/vm-121314.vhd?<sastokenhere> https://migratetarget.blob.core.windows.net/targetcontainer?<sastokenhere>
 ```
-要获得 VHD 的一致副本，请在复制 VHD 之前关闭 VM。为复制操作规划一些停机时间。复制 VHD 后，[在目标环境中重建 VM](https://docs.azure.cn/zh-cn/backup/backup-azure-vms-automation#create-a-vm-from-restored-disks)。
+要获得与源 VHD 一致的副本，请为复制操作规划适当的停机时间，并在复制 VHD 之前关闭 VM。复制完成后，[在目标环境中重建 VM](https://docs.azure.cn/zh-cn/backup/backup-azure-vms-automation#create-a-vm-from-restored-disks)。
 
 有关更多信息：
 * 查阅 [AzCopy 文档](https://docs.microsoft.com/zh-cn/azure/storage/common/storage-use-azcopy-v10)。
 * 了解如何[从还原的磁盘创建 VM](https://docs.azure.cn/zh-cn/backup/backup-azure-vms-automation#create-a-vm-from-restored-disks)。
 
 ### 托管磁盘
-Azure 托管磁盘通过管理与 VM 磁盘关联的存储帐户，简化了 Azure 基础结构即服务 (IaaS) VM 的磁盘管理。
-由于您无法直接访问 .vhd 文件，因此无法直接使用 AzCopy 等工具来复制文件。解决方法是首先通过获取临时共享访问签名 URI 来导出托管磁盘，然后使用此信息下载或复制它。以下部分显示了如何获取共享访问签名 URI 以及如何处理它的示例：
+Azure 托管磁盘通过管理与 VM 磁盘关联的存储帐户，简化了 Azure 基础设施即服务 (IaaS) VM 的磁盘管理。  
+由于您无法直接访问 .vhd 文件，因此无法直接使用 AzCopy 等工具来复制文件。解决方法是首先通过获取临时共享访问签名 URI 来导出托管磁盘，然后使用此信息下载或复制它。以下部分介绍了如何获取共享访问签名 URI 以及如何操作的示例：
  
 #### 步骤 1：获取共享访问签名 URI
 1. 在门户中，搜索托管磁盘。它与 VM 位于同一资源组中，其资源类型为**磁盘**。
@@ -299,9 +299,8 @@ Azure 托管磁盘通过管理与 VM 磁盘关联的存储帐户，简化了 Azu
 5. 复制该 URL。该 URL 只会在创建后显示一次。
 
 #### 步骤 2：AzCopy
-有关如何使用 AzCopy 的示例，请参阅下面的Blob。使用 AzCopy 或类似工具将磁盘直接从源环境复制到目标环境。
-在 AzCopy 中，您必须将 URI 拆分为基础 URI 和共享访问签名部分。URI 的共享访问签名部分以字符 "?" 开头。
-门户为共享访问签名 URI 提供此 URI：
+有关如何使用 AzCopy 的示例，请参阅**Blobs**。使用 AzCopy 或类似工具将磁盘直接从源环境复制到目标环境。  
+在 AzCopy 中，您必须将 URI 拆分为基础 URI 和共享访问签名部分。URI 的共享访问签名部分以字符 "**?**" 开头。共享访问签名 URI 格式类似此 URI：
 ```http
 https://md-kp4qvrzhj4j5.blob.core.windows.net/r0pmw4z3vk1g/abcd?sv=2017-04-17&sr=b&si=22970153-4c56-47c0-8cbb-156a24b6e4b5&sig=5Hfu0qMw9rkZf6mCjuCE4VMV6W3IR8FXQSY1viji9bg%3D>
 ```
@@ -312,9 +311,9 @@ https://md-kp4qvrzhj4j5.blob.core.windows.net/r0pmw4z3vk1g/abcd?sv=2017-04-17&sr
 ```cmd
 /sourceSAS:"?sv=2017-04-17&sr=b&si=22970153-4c56-47c0-8cbb-156a24b6e4b5&sig=5Hfu0qMw9rkZf6mCjuCE4VMV6W3IR8FXQSY1viji9bg%3D"
 ```
-这是完整的命令：
+以下是完整的命令：
 ```cmd
-azcopy -v /source:"https://md-kp4qvrzhj4j5.blob.core.windows.net/r0pmw4z3vk1g/abcd" /sourceSAS:"?sv=2017-04-17&sr=b&si=22970153-4c56-47c0-8cbb-156a24b6e4b5&sig=5Hfu0qMw9rkZf6mCjuCE4VMV6W3IR8FXQSY1viji9bg%3D" /dest:"https://migratetarget.blob.core.windows.net/targetcontainer/newdisk.vh d" /DestKey:"o//ucD\... Kdpw=="
+azcopy -v /source:"https://md-kp4qvrzhj4j5.blob.core.windows.net/r0pmw4z3vk1g/abcd" /sourceSAS:"?sv=2017-04-17&sr=b&si=22970153-4c56-47c0-8cbb-156a24b6e4b5&sig=5Hfu0qMw9rkZf6mCjuCE4VMV6W3IR8FXQSY1viji9bg%3D" /dest:"https://migratetarget.blob.core.windows.net/targetcontainer/newdisk.vhd" /DestKey:"o//ucD\... Kdpw=="
 ```
 #### 步骤 3：在目标环境中创建新的托管磁盘
 有几种方法可用于创建新的托管磁盘。以下是在 Azure 门户执行该操作的方法：
@@ -322,30 +321,31 @@ azcopy -v /source:"https://md-kp4qvrzhj4j5.blob.core.windows.net/r0pmw4z3vk1g/ab
 2. 输入新磁盘的名称。
 3. 选择资源组。
 4. 在**源类型**下，选择**存储 blob**。然后，从 AzCopy 命令复制目标 URI，或进行浏览以选择目标 URI。
-5. 如果复制了 OS 磁盘，请选择**OS**类型。对于其他磁盘类型，请选择**创建**。
+5. 如果复制的是 OS 磁盘，请选择**OS**类型。对于其他磁盘类型，请选择**创建**。
 
 #### 步骤 4：创建 VM
 如前所述，有多种方法可以使用此新托管磁盘创建 VM。以下是两种选项：
 * 在门户中，选择磁盘，然后选择**创建 VM**。像往常一样定义 VM 的其他参数。
-* 有关 PowerShell 的更多信息，请参阅[从还原的磁盘创建 VM](https://docs.azure.cn/zh-cn/backup/backup-azure-vms-automation#create-a-vm-from-restored-disks)。
+* 利用 PowerShell 的创建，请参阅[从还原磁盘创建 VM](https://docs.azure.cn/zh-cn/backup/backup-azure-vms-automation#create-a-vm-from-restored-disks)。
 
 有关更多信息：
-* 通过获取共享访问签名 URI，了解如何[通过 API](https://docs.microsoft.com/zh-cn/rest/api/compute/disks/grantaccess) 导出到磁盘。
-* 了解如何[通过 API](https://docs.microsoft.com/zh-cn/rest/api/compute/disks/createorupdate#create_a_managed_disk_by_importing_an_unmanaged_blob_from_a_different_subscription.) 从非托管 blob 创建托管磁盘。
+* 了解如何[通过 API](https://docs.microsoft.com/zh-cn/rest/api/compute/disks/grantaccess) 获取共享访问签名 URI，以导出到磁盘。
+* 了解如何[通过 API 从非托管 blob 创建托管磁盘](https://docs.microsoft.com/zh-cn/rest/api/compute/disks/createorupdate#create_a_managed_disk_by_importing_an_unmanaged_blob_from_a_different_subscription.)。
 
 ### 导入/导出
 
-您无法跨 Azure 区域直接迁移 Azure 导入/导出作业资源。Azure 导入/导出服务不支持资源导出或资源导入。
-在区域中创建的 Azure 导入/导出作业资源需要在该区域中完成，以便将数据提取到该区域中的存储帐户或从该区域中的存储帐户导出。
-但是，您可以使用新区域中的存储帐户，在新区域中创建新的 Azure 导入/导出作业资源。
-也可以通过将 Azure 导入/导出资源导出为[资源管理器模板](https://docs.azure.cn/zh-cn/azure-resource-manager/manage-resource-groups-portal#export-resource-groups-to-templates)创建新的作业资源，然后调整目标 Azure 区域的导出模板以重新创建资源。
+您无法跨 Azure 区域直接迁移 Azure 导入/导出作业资源。Azure 导入/导出服务不支持资源导出或资源导入。  
+在区域中创建的 Azure 导入/导出作业资源需要在该区域中完成作业，以便将数据提取到该区域中的存储帐户或从该区域中的存储帐户导出。  
+但是，您可以使用新区域中的存储帐户，在新区域中创建新的 Azure 导入/导出作业资源。  
+也可以通过将 Azure 导入/导出资源从源 Azure 区域以[资源管理器模板](https://docs.azure.cn/zh-cn/azure-resource-manager/manage-resource-groups-portal#export-resource-groups-to-templates)形式导出，然后在目标 Azure 区域使用导出的模板以重新创建作业资源。
 
 >*注意:*  
->*导出 Azure 导入/导出模板不会复制数据（例如，在存储帐户中创建的 Blob）。导出模板仅重新创建 Azure 导入/导出元数据。*
-请考虑更改适用于新区域的交付包、送货信息、存储帐户 ID 和其他作业属性。 
+>*导出 Azure 导入/导出模板不会复制数据（例如，在存储帐户中创建的 Blob）。导出模板仅导出用于重新创建 Azure 导入/导出服务的元数据。*
+
+在 Azure 目标区域导入模板前，请更新交付包、发布信息、存储帐户 ID 和其他属性信息以匹配目标区域。 
 
 #### Azure 导入/导出元数据
-导出 Azure 导入/导出模板时，将重新创建以下元数据元素：
+导出 Azure 导入/导出服务模板时，将重新创建以下元数据元素：
 * 作业资源
 
 有关更多信息：
@@ -355,7 +355,7 @@ azcopy -v /source:"https://md-kp4qvrzhj4j5.blob.core.windows.net/r0pmw4z3vk1g/ab
 
 ### StorSimple
 
-目前不支持将 StorSimple 服务从一个 Azure 区域迁移到另一个 Azure 区域。我们建议您按照[此处](https://docs.microsoft.com/zh-cn/azure/storsimple/storsimple-8000-migrate-classic-azure-portal#datacenter-changes)描述的手动过程操作或联系客户支持。
+目前不支持将 StorSimple 服务从一个 Azure 区域迁移到另一个 Azure 区域。我们建议您按照[此文档](https://docs.microsoft.com/zh-cn/azure/storsimple/storsimple-8000-migrate-classic-azure-portal#datacenter-changes)描述的手动过程操作或联系客户支持。
 
 ## 迁移 Web 资源
 
@@ -363,10 +363,10 @@ azcopy -v /source:"https://md-kp4qvrzhj4j5.blob.core.windows.net/r0pmw4z3vk1g/ab
 
 ### Web 应用
 
-目前不支持跨 Azure 区域迁移使用 Azure App Service 的 Web 应用功能创建的应用。我们建议您将 Web 应用导出为资源管理器模板，备份 Web 应用的文件内容（或确保应用的源代码在源代码控制存储库外部提供），并确保您已脱机存储任何与 Web 应用一同使用的自定义 SSL 证书。然后在将资源管理器模板中的位置属性更改为新区域后重新创建 Web 应用。在新区域中重新创建 Web 应用后，重新发布 Web 应用的文件内容，上传并重新绑定 Web 应用使用的任何自定义 SSL 证书。
+目前不支持跨 Azure 区域迁移使用 Azure App Service 的 Web 应用功能创建的应用。我们建议您将 Web 应用导出为资源管理器模板，备份 Web 应用的文件内容（或确保应用的源代码在源代码控制存储库外部提供），并确保您已脱机存储任何与 Web 应用一同使用的自定义 SSL 证书。然后在将资源管理器模板中的位置属性更改为新区域后重新创建 Web 应用。在新区域中重新创建 Web 应用后，重新发布 Web 应用的文件内容，上传并重新绑定 Web 应用使用的所有自定义 SSL 证书。
 
 >*重要事项:*  
->*更改位置、Azure 密钥保管库密码、证书和其他 GUID 应与新区域保持一致。*
+>*更新位置、Azure 密钥保管库密码、证书和其他 GUID 以适配新区域。*
 
 有关更多信息：
 * 通过完成[应用服务教程](https://docs.azure.cn/zh-cn/app-service/#step-by-step-tutorials)来刷新您的知识。
@@ -382,16 +382,17 @@ azcopy -v /source:"https://md-kp4qvrzhj4j5.blob.core.windows.net/r0pmw4z3vk1g/ab
 >*注意:*  
 >*在不同云类型之间迁移时，备份和还原将不起作用。为此，您需要将资源导出为[模板](https://docs.azure.cn/zh-cn/azure-resource-manager/manage-resource-groups-portal#export-resource-groups-to-templates)。然后，针对目标 Azure 区域调整导出的模板并重新创建资源。*
 
-#### 选项 1：如果您可以接受其他 API 管理实例的名称，请遵循这些说明：
-1. 使用与新名称目标区域中的源 API 管理实例相同的 SKU 创建新的 API 管理实例。
+#### 选项 1：如果您可以接受使用不同 API 管理实例名称，请遵循这些说明：
+1. 使用与源 API 管理实例相同的 SKU 在目标区域使用新名称创建新的 API 管理实例。
 2. 将现有 API 管理实例备份到存储帐户。
-3. 在目标区域中，将步骤 2 中创建的备份还原为步骤 1 中创建的 API 管理实例。
+3. 在目标区域中，将步骤 2 中创建的备份还原到步骤 1 中创建的 API 管理实例。
 4. 如果您有一个指向源区域 API 管理实例的自定义域，请更新自定义域 CNAME 以指向新的 API 管理实例。
 
 #### 选项 2：如果要保留 API 管理实例名称，请按照以下说明操作
 
 >*注意:*  
->*这是一个风险更高的选择，将导致服务停机。*
+>*这是一个有风险的选择，将导致服务中断。*
+
 1. 将源区域中的 API 管理实例备份到一个存储帐户。
 2. 删除源区域中的 API 管理实例。
 3. 使用与源区域中相同的名称，在目标区域中创建一个新的 API 管理实例。
@@ -413,11 +414,10 @@ azcopy -v /source:"https://md-kp4qvrzhj4j5.blob.core.windows.net/r0pmw4z3vk1g/ab
 * 了解如何[将 BACPAC 文件导入数据库](https://docs.azure.cn/zh-cn/sql-database/sql-database-import)。
 * 查阅 [Azure SQL 数据库文档](https://docs.azure.cn/zh-cn/sql-database/)。
 
-### 适用于 MySQL 和 PostgreSQL 的 Azure 数据库
+### Azure Database for MySQL and PostgreSQL
 
-如果已为服务器配置地域冗余备份，则可以将服务器还原到服务可用的另一个 Azure 区域。当您的服务器因服务器托管区域中的事件而不可用时，地域还原是默认的恢复选项。如果某个区域中的大规模事件导致数据库应用程序不可用，则可以将服务器从地域冗余备份还原到任何其他区域中的服务器。在进行备份和将其复制到不同区域之间存在延迟。此延迟可能长达一个小时，因此，如果发生灾难，最多可能会丢失一小时的数据。
-
-在地域还原期间，可以更改的服务器配置包括计算代系、vCore、备份保留期和备份冗余选项。不支持更改定价层级（基础版、通用版或内存优化版）或存储大小。
+如果您的服务器已配置地域冗余备份，则可以还原到任意其他支持该功能的 Azure 区域。当您的服务器因托管服务器的故障而不可用时，地域还原是默认的恢复选项。如果某个区域中的大规模事件导致数据库应用程序不可用，则可以将服务器从地域冗余备份还原到任何其他区域中的服务器。在进行备份和跨区域还原期间，存在一定的延迟，此延迟可能长达一个小时。因此，如果发生灾难，可能会丢失最多一小时的数据。  
+在跨地域还原过程中，支持更改的服务器配置包括计算资源代系、vCore数量、备份保留期和备份冗余选项。不支持更改价格阶梯（基础版、通用版或内存优化版）或存储大小。
 
 有关更多信息：
 * 了解如何[备份和还原 Azure Database for MySQL](https://docs.azure.cn/zh-cn/mysql/concepts-backup)
@@ -461,14 +461,15 @@ Azure Cache for Redis 团队的一名成员编写了一个开源工具，可以�
 
 #### 选项 3：从源实例导出并导入到目标实例
 
-此方法利用仅在 Premium 层中提供的功能。要从源实例导出并导入到目标实例：
-1. 在目标区域中创建新的 Premium 层 Azure Cache for Redis。使用与源 Azure Cache for Redis 实例相同的大小。
-2. [从源缓存中导出数据](https://docs.azure.cn/zh-cn/azure-cache-for-redis/cache-how-to-import-export-data)或使用 [Export-AzureRmRedisCache PowerShell cmdlet](https://docs.microsoft.com/zh-cn/powershell/module/azurerm.rediscache/export-azurermrediscache?view=azurermps-6.13.0&viewFallbackFrom=azurermps-6.4.0)。
+此方法利用仅在 Premium 价格段中提供的功能。要从源实例导出并导入到目标实例：
+1. 在目标区域中创建新的 Premium 价格段的 Azure Cache for Redis 实例。实例的大小需要与源 Azure Cache for Redis 实例相同。
+2. [从源缓存中导出数据](https://docs.azure.cn/zh-cn/azure-cache-for-redis/cache-how-to-import-export-data)或使用PowerShell cmdlet [Export-AzureRmRedisCache](https://docs.microsoft.com/zh-cn/powershell/module/azurerm.rediscache/export-azurermrediscache?view=azurermps-6.13.0&viewFallbackFrom=azurermps-6.4.0)完成导出。
+
 >*注意:*  
 >*导出 Azure 存储帐户必须与缓存实例位于同一区域。*
 
 3. 使用 AzCopy 之类的工具将导出的 blob 复制到目标区域中的存储帐户。
-4. [将数据导入目标缓存](https://docs.azure.cn/zh-cn/azure-cache-for-redis/cache-how-to-import-export-data)或使用 [Import-AzureRmRedisCache PowerShell cmdlet](https://docs.microsoft.com/zh-cn/powershell/module/azurerm.rediscache/import-azurermrediscache?view=azurermps-6.13.0&viewFallbackFrom=azurermps-6.4.0)。
+4. [将数据导入目标缓存](https://docs.azure.cn/zh-cn/azure-cache-for-redis/cache-how-to-import-export-data)或使用PowerShell cmdlet [Import-AzureRmRedisCache](https://docs.microsoft.com/zh-cn/powershell/module/azurerm.rediscache/import-azurermrediscache?view=azurermps-6.13.0&viewFallbackFrom=azurermps-6.4.0)完成导入。
 5. 重新配置应用程序以使用目标 Azure Cache for Redis 实例。
 
 #### 选项 4：将数据写入两个 Azure Cache for Redis 实例，并从一个实例中读取
@@ -487,11 +488,11 @@ Azure Cache for Redis 团队的一名成员编写了一个开源工具，可以�
 
 ### Azure 容器注册表
 
-要跨 Azure 区域迁移 Azure 容器注册表，请使用[异地复制](https://docs.azure.cn/zh-cn/container-registry/container-registry-geo-replication)。但是，当您必须跨云类型迁移 Azure 容器注册表时，异地复制不起作用。如果要跨云类型移动 Azure 容器注册表实例，请在目标区域中创建新的容器注册表，并使用[导入 API](https://docs.azure.cn/zh-cn/container-registry/container-registry-import-images) 将容器映像导入到创建的新注册表中。
+要跨 Azure 区域迁移 Azure 容器注册表，请使用其[异地复制](https://docs.azure.cn/zh-cn/container-registry/container-registry-geo-replication)功能完成迁移。
 
-## 迁移分析资源
+## 迁移分析服务
 
-本节提供的信息可帮助您跨 Azure 区域迁移 Azure 分析资源。
+本节提供的信息可帮助您跨 Azure 区域迁移 Azure 分析服务。
 
 ### HDInsight
 
@@ -539,9 +540,8 @@ Azure Cache for Redis 团队的一名成员编写了一个开源工具，可以�
  
 ### 流分析
 
-要跨 Azure 区域迁移 Azure 流分析服务，最简单的方法是使用适用于 Azure 流分析的 Visual Studio 工具将作业复制到其他区域。查阅此[博客文章](https://azure.microsoft.com/zh-cn/blog/5-tips-to-get-more-out-of-azure-stream-analytics-visual-studio-tools/)以了解更多信息。
-
-您还可以使用 Azure 门户或使用 PowerShell 在目标 Azure 区域中手动重新创建整个设置。流分析作业的入口和出口源可以位于任何区域。
+要跨 Azure 区域迁移 Azure 流分析服务，最简单的方法是使用适用于 Azure 流分析的 Visual Studio 工具将作业复制到其他区域。查阅此[博客文章](https://azure.microsoft.com/zh-cn/blog/5-tips-to-get-more-out-of-azure-stream-analytics-visual-studio-tools/)以了解更多信息。  
+您还可以使用 Azure 门户或使用 PowerShell 在目标 Azure 区域中手动重新搭建服务。流分析作业的入口和出口源可以位于任何区域。
 
 有关更多信息：
 * 通过完成[流分析教程](https://docs.azure.cn/zh-cn/stream-analytics/#step-by-step-tutorials)来刷新您的知识。
@@ -583,7 +583,7 @@ Azure Cache for Redis 团队的一名成员编写了一个开源工具，可以�
 ### 通知中心
 
 要将设置从一个 Azure 通知中心实例迁移到另一个实例，请导出然后导入所有注册令牌和标记：
-1. [导出现有通知中心注册](https://docs.azure.cn/zh-cn/notification-hubs/export-modify-registrations-bulk#export)到 Azure Blob 存储容器。
+1. [导出现有通知中心注册令牌](https://docs.azure.cn/zh-cn/notification-hubs/export-modify-registrations-bulk#export)到 Azure Blob 存储容器。
 2. 在目标环境中创建新的通知中心。
 3. 将[注册令牌](https://docs.azure.cn/zh-cn/notification-hubs/export-modify-registrations-bulk#import)从 Blob 存储导入新的通知中心。
 
@@ -604,11 +604,8 @@ IoT 中心不支持本机克隆。但是，您可以使用 Azure 资源管理器
 #### 步骤 2：迁移设备标识
 要迁移设备标识：
 1. 在源租户中，使用 [ExportDevices](https://docs.azure.cn/zh-cn/iot-hub/iot-hub-bulk-identity-mgmt)资源管理器将所有设备标识、设备孪生和模块孪生（包括密钥）导出到存储容器。您可以在源 Azure 区域或目标 Azure 区域中使用存储容器。确保生成的共享访问签名 URI 具有足够的权限。
-2. 运行 [ImportDevices](https://docs.azure.cn/en-us/iot-hub/iot-hub-bulk-identity-mgmt) 资源管理器 API，将所有设备标识从存储容器导入到目标 Azure 区域中的克隆 IoT 中心。
+2. 运行 [ImportDevices](https://docs.azure.cn/en-us/iot-hub/iot-hub-bulk-identity-mgmt) 资源管理器 API，将所有设备标识从存储容器导入到目标 Azure 区域中的新 IoT 中心。
 3. 重新配置设备和后端服务，以开始使用步骤 1 中创建的新 IoT 中心的新连接字符串。
-
->*注意*  
->*如果要跨云类型迁移资源，则源和目标区域中的根证书颁发机构可能会有所不同。重新配置与 IoT 中心实例交互的设备和后端应用程序时，请考虑此问题。*
 
 有关更多信息：
 * 了解如何[导出 IoT 中心批处理标识](https://docs.azure.cn/zh-cn/iot-hub/iot-hub-bulk-identity-mgmt#export-devices)。
@@ -639,7 +636,7 @@ Azure 服务总线服务没有数据导出或导入功能。要跨 Azure 区域�
 * 规则
 * 授权规则
 
-### 密钥
+#### 密钥
 
 上述导出和重新创建的步骤不会复制与授权规则相关联的共享访问签名密钥。如果需要保留共享访问签名密钥，请使用带有可选参数 -Keyvalue 的 New-AzureRmServiceBuskey cmdlet将密钥作为字符串接受。更新的 cmdlet 可在 [PowerShell Gallery release 6.4.0（2018 年 7 月）](https://www.powershellgallery.com/packages/AzureRM/6.4.0)或 [GitHub](https://github.com/Azure/azure-powershell/releases/tag/v6.4.0-July2018) 上找到。 
 
@@ -675,12 +672,7 @@ Azure 计划程序[将于2019年9月30日停用](https://azure.microsoft.com/zh-
 
 ### 多重身份验证
 
-您需要在新环境中重新创建用户并重新定义 Azure 多重身份验证实例。
- 
-要获取启用或强制执行多重身份验证的用户帐户列表：
-1. 登录 Azure 门户。
-2. 选择**用户 > 所有用户 > 多重身份验证**。
-3. 当您被重定向到多重身份验证服务页面时，请设置适当的筛选器以获取用户列表。
+多重身份验证功能没有区域属性，不需要进行迁移。
 
 有关更多信息：
 * 了解有关 [Azure 多重身份验证](https://docs.azure.cn/zh-cn/active-directory/authentication/howto-mfa-getstarted)的更多信息。
@@ -717,7 +709,7 @@ Get-AzureKeyVaultSecret -vaultname mysecrets -name Deploydefaultpw
 ### 备份
 
 Azure 备份是基于 Azure 的服务，用于备份（或保护）和还原 Azure 中的数据。该服务可以保护本机 Azure 资源（如 VM）以及来自混合环境的非 Azure 资源（包括在本地服务器上运行的工作负载）。所有备份都存储在 Azure 的恢复服务保管库中。
-如果客户需要在 Azure 区域之间迁移，则应首先在目标区域中创建可以保护新区域中资源的新恢复服务保管库。要迁移受 Azure 备份保护的 Azure 资源，客户首先需要停止对资源的保护并保留现有数据（[说明](https://docs.azure.cn/zh-cn/backup/backup-azure-manage-vms#stop-protecting-a-vm)）。然后，可以将资源迁移到目标区域，并且可以在新创建的恢复保管库中启用保护。对于非 Azure 资源，客户将遵循相同的过程，但不需要迁移资源。仍可访问源区域中的现有备份数据以支持恢复场景。
+如果客户需要在 Azure 区域之间迁移，则应首先在目标区域中创建可以保护新区域中资源的新恢复服务保管库。要迁移受 Azure 备份保护的 Azure 资源，客户首先需要停止对资源的保护并保留现有数据（[说明](https://docs.azure.cn/zh-cn/backup/backup-azure-manage-vms#stop-protecting-a-vm)）。然后，可以将资源迁移到目标区域，并且可以在新创建的恢复保管库中启用保护。
 对于希望统一备份的客户，Azure 备份正在尝试提供一种工具，以便将现有数据移动到目标区域，同时确保客户仍可访问现有恢复点。该工具预计将在 CY20H1 中提供。
 
 有关更多信息：
@@ -726,7 +718,7 @@ Azure 备份是基于 Azure 的服务，用于备份（或保护）和还原 Azu
 
 ### 计划程序
 
-Azure 计划程序[将于2019年9月30日停用](https://azure.microsoft.com/updates/azure-scheduler-will-retire-on-september-30-2019/)。使用 Azure 逻辑应用创建计划作业。有关从计划程序迁移到逻辑应用的详细步骤，请参阅[将 Azure 计划程序作业迁移到 Azure 逻辑应用](https://docs.azure.cn/zh-cn/scheduler/migrate-from-scheduler-to-logic-apps)。
+Azure 计划程序[将于2019年9月30日停用](https://azure.microsoft.com/updates/azure-scheduler-will-retire-on-september-30-2019/)。作为替代方案，可以使用 Azure 逻辑应用创建计划作业。有关从计划程序迁移到逻辑应用的详细步骤，请参阅[将 Azure 计划程序作业迁移到 Azure 逻辑应用](https://docs.azure.cn/zh-cn/scheduler/migrate-from-scheduler-to-logic-apps)。
 
 有关更多信息：
 * 通过完成[逻辑应用教程](https://docs.azure.cn/zh-cn/logic-apps/#step-by-step-tutorials)，熟悉 Azure 逻辑应用中的功能。
