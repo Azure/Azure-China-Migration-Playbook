@@ -20,11 +20,11 @@ ms.author: frankch
 ## 系统优化合作伙伴
 
 ### 构建支持跨区域的数据平台
-[Reduxio](./partner-profile-reduxio.pptx)
+[Reduxio](./media/china-migration-partners/partner-profile-reduxio.pptx)
 
 ## 系统迁移合作伙伴
 
-[HCL](./partner-profile-hcl.pdf)  
-[MindTree](./partner-profile-mindtree.pdf)  
+[HCL](./media/china-migration-partners/partner-profile-hcl.pdf)  
+[MindTree](./media/china-migration-partners/partner-profile-mindtree.pdf)  
 [UnifyCloud](https://www.unifycloud.com/)
 

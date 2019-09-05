@@ -17,7 +17,7 @@ ms.author: frankch
 本文档提供的指南可帮助您将工作负载从一个 Azure 区域迁移到另一个 Azure 区域。在计划工作负载的迁移时，重点应放在作为迁移实体的应用程序上。迁移计划完成后，可以每次迁移一个所需的 Azure 资源。
 迁移过程中的步骤如下：
 
-![迁移过程](./process.jpg)
+![迁移过程](./media/china-migration-process/process.jpg)
 
 ## 评估
 
