@@ -52,3 +52,13 @@ ms.author: frankch
 2. 删除源区域中的 API 管理实例。
 3. 使用与源区域中相同的名称，在目标区域中创建一个新的 API 管理实例。
 4. 在目标区域中，将步骤 1 中创建的备份还原为新的 API 管理实例。
+
+
+## 应用服务
+(place holder)
+
+## CDN 内容分发网络
+(place holder)
+
+## 用户连接服务
+(place holder)
