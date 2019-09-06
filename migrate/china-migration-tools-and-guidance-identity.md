@@ -1,5 +1,5 @@
 ---
-title: 迁移身份资源
+title: 迁移标识资源
 description: This article provides the guidance and tools on migrating identity resources.
 author: msfrankchen
 
@@ -12,7 +12,7 @@ ms.author: frankch
 ---
 
 
-# 迁移身份资源
+# 迁移标识资源
 
 本节包含的信息可帮助您跨 Azure 区域迁移 Azure 身份资源。
 
