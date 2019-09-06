@@ -36,3 +36,18 @@ Get-AzureKeyVaultSecret -vaultname mysecrets -name Deploydefaultpw
 * 通过完成[密钥保管库教程](https://docs.azure.cn/zh-cn/key-vault/#step-by-step-tutorials)来刷新您的知识。
 * 查阅[密钥保管库概述](https://docs.azure.cn/zh-cn/key-vault/key-vault-overview)。
 * 查阅[密钥保管库 PowerShell cmdlet](https://docs.microsoft.com/zh-cn/powershell/module/azurerm.keyvault/?view=azurermps-6.13.0&viewFallbackFrom=azurermps-6.5.0)。
+
+## Azure Active Directory
+(place holder)
+
+## 应用程序网关
+(place holder)
+
+## VPN网关
+(place holder)
+
+## 安全中心
+(place holder)
+
+## Azure 信息保护
+(place holder)
