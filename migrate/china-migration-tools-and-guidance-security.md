@@ -41,10 +41,10 @@ Get-AzureKeyVaultSecret -vaultname mysecrets -name Deploydefaultpw
 (place holder)
 
 ## 应用程序网关
-(place holder)
+请参阅[迁移网络资源](./china-migration-tools-and-guidance-networking.md)的**应用程序网关**章节。
 
 ## VPN网关
-(place holder)
+请参阅[迁移网络资源](./china-migration-tools-and-guidance-networking.md)的**VPN网关**章节。
 
 ## 安全中心
 (place holder)
