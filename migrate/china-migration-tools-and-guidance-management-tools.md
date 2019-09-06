@@ -59,10 +59,10 @@ Azure 计划程序[将于2019年9月30日停用](https://azure.microsoft.com/upd
 (place holder)
 
 ## 流量管理器
-(place holder)
+请参阅[迁移网络资源](china-migration-tools-and-guidance-networking.md)中的**流量管理器**章节。
 
 ## 网络观察程序
-(place holder)
+请参阅[迁移网络资源](china-migration-tools-and-guidance-networking.md)中的**网络观察程序**章节。
 
 ## Azure 策略
 (place holder)
