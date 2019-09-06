@@ -1,5 +1,5 @@
 ---
-title: 计算资源迁移
+title: 迁移计算资源
 description: This article provides the guidance and tools on migrating compute resourse.
 author: msfrankchen
 
@@ -11,7 +11,7 @@ ms.author: frankch
 
 ---
 
-# 计算资源迁移
+# 迁移计算资源
 本节提供的信息可帮助您将已部署Azure计算资源从一个Azure区域迁移到其他Azure区域。
   
 ## 虚拟机  
