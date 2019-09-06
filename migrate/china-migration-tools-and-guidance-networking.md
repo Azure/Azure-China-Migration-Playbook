@@ -154,3 +154,9 @@ Azure 流量管理器可帮助您更顺畅地完成迁移。在 Azure 区域中�
 * 查阅[负载均衡器概述](https://docs.azure.cn/zh-cn/load-balancer/load-balancer-overview)。
 * 了解如何[创建新的负载均衡器](https://docs.azure.cn/zh-cn/load-balancer/quickstart-load-balancer-standard-public-portal)。
 
+## CDN 内容分发网络
+(place holder)
+
+## 云连接服务
+(place holder)
+
