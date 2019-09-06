@@ -1,6 +1,6 @@
 ---
-title: 计算资源跨迁移
-description: This article provides the guidance and tools on migrating compute resourse(tbd
+title: 计算资源迁移
+description: This article provides the guidance and tools on migrating compute resourse.
 author: msfrankchen
 
 ms.service: china 
