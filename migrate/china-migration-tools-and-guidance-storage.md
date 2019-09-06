@@ -113,7 +113,19 @@ azcopy -v /source:"https://md-kp4qvrzhj4j5.blob.core.windows.net/r0pmw4z3vk1g/ab
 * Azure 导入/导出[常见问题](https://docs.azure.cn/zh-cn/storage/common/storage-import-export-service-faq)。
 * 熟悉如何[导出 Azure 资源管理器模板](https://docs.azure.cn/zh-cn/azure-resource-manager/manage-resource-groups-portal#export-resource-groups-to-templates)，或阅读 [Azure 资源管理器概述](https://docs.azure.cn/zh-cn/azure-resource-manager/resource-group-overview)。
 
+
 ## StorSimple
 
 目前不支持将 StorSimple 服务从一个 Azure 区域迁移到另一个 Azure 区域。我们建议您按照[此文档](https://docs.microsoft.com/zh-cn/azure/storsimple/storsimple-8000-migrate-classic-azure-portal#datacenter-changes)描述的手动过程操作或联系客户支持。
+
+## Azure Data Lake Storge
+(place holder)
+
+## 队列存储
+(place holder)
+
+## 文件存储
+(place holder)
+
+
 
