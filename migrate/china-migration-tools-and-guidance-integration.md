@@ -67,4 +67,8 @@ Azure 计划程序[将于2019年9月30日停用](https://azure.microsoft.com/zh-
 * 通过完成[逻辑应用教程](https://docs.azure.cn/zh-cn/logic-apps/#step-by-step-tutorials)，熟悉 Azure 逻辑应用中的功能。
 * 查阅 [Azure 逻辑应用概述](https://docs.azure.cn/zh-cn/logic-apps/logic-apps-overview)。
 
+## API管理
+(place holder)
 
+## 事件网络
+(place holder)
