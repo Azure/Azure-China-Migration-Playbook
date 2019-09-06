@@ -6,7 +6,7 @@ author: msfrankchen
 ms.service: china 
 ms.topic: migrate
 layout: ContentPage 
-ms.date: 09/05/2019
+ms.date: 09/06/2019
 ms.author: frankch
 
 ---
@@ -95,5 +95,22 @@ Azure Cache for Redis 团队的一名成员编写了一个开源工具，可以�
  
 有关更多信息：
 * 查阅 [Azure Cache for Redis 概述](https://docs.azure.cn/zh-cn/azure-cache-for-redis/cache-overview)。
+
+## Azure Cosmos DB
+(Place holder)
+
+## Azure Database for MySQL
+(Place holder)
+
+## Azure Database for MariaDB
+(Place holder)
+
+## 数据工厂
+(Place holder)
+
+## Azure 数据库迁移服务
+(Place holder)
+
+
 
 
