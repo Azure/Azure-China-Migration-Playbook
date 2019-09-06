@@ -21,16 +21,16 @@ ms.author: frankch
 要跨 Azure 区域迁移 Azure 容器注册表，请使用其[异地复制](https://docs.azure.cn/zh-cn/container-registry/container-registry-geo-replication)功能完成迁移。
 
 ## Service Fabric
-(place holder)
-(compute章节也空缺中)
+
+请参考[迁移计算资源](./china-migration-tools-and-guidance-compute.md)
+
+## 批处理
+
+请参考[迁移计算资源](./china-migration-tools-and-guidance-compute.md)
 
 ## 应用服务
 (place holder)
 (Web章节也空缺中)
-
-## 批处理
-(place holder)
-(compute章节也空缺中)
 
 ## Azure Kubernetes服务
 (place holder)
