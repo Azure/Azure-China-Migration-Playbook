@@ -113,7 +113,7 @@ https://management.core.windows.net/<subscription-id>/services/hostedservices/<o
 (place holder)
 
 ## Azure Functions
-(place holder)
+请参阅[将IoT资源迁移到目标Azure区域](china-migration-tools-and-guidance-iot.md)中的**Functions**章节。
 
 ## Azure Kubernets
 (place holder)
