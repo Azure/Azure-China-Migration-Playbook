@@ -1,6 +1,6 @@
 ---
 title: 迁移网络资源
-description: This article provides the guidance and tools on migrating resources between different Azure China regions.()
+description: This article provides the guidance and tools on migrating Nerwork resources.
 author: msfrankchen
 
 ms.service: china 
