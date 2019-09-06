@@ -60,4 +60,29 @@ IoT 中心不支持本机克隆。但是，您可以使用 Azure 资源管理器
 * 了解如何[导出 IoT 中心批处理标识](https://docs.azure.cn/zh-cn/iot-hub/iot-hub-bulk-identity-mgmt#export-devices)。
 * 了解如何[导入 IoT 中心批处理标识](https://docs.azure.cn/zh-cn/iot-hub/iot-hub-bulk-identity-mgmt#import-devices)。
 * 查阅 [Azure IoT 中心概述](https://docs.azure.cn/zh-cn/iot-hub/about-iot-hub)。
+
+## Azure IoT 中心
+(place holder)
+
+## 事件中心
+请查阅[迁移分析服务](./china-migration-tools-and-guidance-analytics.md)中的**事件中心**章节。
+
+## 事件网络
+(place holder)
+
+## 流分析
+请查阅[迁移分析服务](./china-migration-tools-and-guidance-analytics.md)中的**流分析**章节。
+
+## 逻辑应用
+请查阅[将集成资源迁移到目标 Azure 区域](./china-migration-tools-and-guidance-integration.md)中的**逻辑应用**章节。
+
+## Azure Cosmos DB
+(place holder)
+
+## API 管理
+请查阅[迁移Web资源](./china-migration-tools-and-guidance-web.md)中的**API管理**章节。
+
+## Azure 时序见解
+(place holder)
+
  
