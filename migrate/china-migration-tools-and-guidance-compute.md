@@ -108,3 +108,12 @@ https://management.core.windows.net/<subscription-id>/services/hostedservices/<o
 * 获取[虚拟机规模集概述](https://docs.azure.cn/zh-cn/virtual-machine-scale-sets/overview)。
 * 阅读[Azure区域概述](https://www.azure.cn/zh-cn/home/features/products-by-region)。
 * 了解如何[重新部署模板](https://docs.azure.cn/zh-cn/azure-resource-manager/resource-group-template-deploy)。
+
+## 应用服务
+(place holder)
+
+## Azure Functions
+(place holder)
+
+## Azure Kubernets
+(place holder)
