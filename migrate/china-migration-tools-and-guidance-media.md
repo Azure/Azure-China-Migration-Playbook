@@ -31,5 +31,3 @@ ms.author: frankch
 
 有关更多信息，请参阅 [Azure 媒体播放器](https://ampdemo.azureedge.net/azuremediaplayer.html)。
 
-
-
