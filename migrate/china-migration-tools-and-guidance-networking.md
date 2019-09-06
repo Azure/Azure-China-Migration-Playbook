@@ -1,6 +1,6 @@
 ---
 title: 迁移网络资源
-description: This article provides the guidance and tools on migrating Nerwork resources.
+description: This article provides the guidance and tools on migrating nerwork resources.
 author: msfrankchen
 
 ms.service: china 
