@@ -85,3 +85,13 @@ ms.author: frankch
 目前不支持跨 Azure 区域迁移 PowerBI，但您可以使用 Power BI Premium 将选定的工作区迁移到另一个 Azure 区域。
 有关更多信息，请参阅[为 Power BI Premium 配置多地理位置支持](https://docs.microsoft.com/zh-cn/power-bi/service-admin-premium-multi-geo)。
 
+## SQL数据仓库
+(place holder)
+
+## 数据工厂
+(place holder)
+
+## Azure数据资源管理器
+(place holder)
+
+
