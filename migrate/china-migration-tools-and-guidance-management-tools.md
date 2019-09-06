@@ -42,3 +42,33 @@ Azure 计划程序[将于2019年9月30日停用](https://azure.microsoft.com/upd
 * [从 Azure 到 Azure 的灾难恢复](https://docs.azure.cn/zh-cn/site-recovery/#azure-to-azure)
 * [从 Vmware 到 Azure 的灾难恢复](https://docs.azure.cn/zh-cn/site-recovery/#vmware)
 * [从 Hyper-V 到 Azure 的灾难恢复](https://docs.azure.cn/zh-cn/site-recovery/#hyper-v)
+
+## Azure门户
+(place holder)
+
+## Azure顾问
+(place holder)
+
+## 自动化
+(place holder)
+
+## Azure监控器
+(place holder)
+
+## Azure服务运行状况
+(place holder)
+
+## 流量管理器
+(place holder)
+
+## 网络观察程序
+(place holder)
+
+## Azure 策略
+(place holder)
+
+## Azure 资源管理器
+(place holder)
+
+## Azure Resource Graph
+(place holder)
