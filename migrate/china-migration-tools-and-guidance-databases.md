@@ -99,9 +99,6 @@ Azure Cache for Redis 团队的一名成员编写了一个开源工具，可以�
 ## Azure Cosmos DB
 (Place holder)
 
-## Azure Database for MySQL
-(Place holder)
-
 ## Azure Database for MariaDB
 (Place holder)
 
