@@ -54,7 +54,6 @@ https://management.core.windows.net/<subscription-id>/services/hostedservices/<c
 ```
 3. 当流量指向新的云服务时，[删除源 Azure 区域中的旧云服务](https://docs.microsoft.com/zh-cn/rest/api/compute/cloudservices/rest-delete-cloud-service)。  
 ```http
-https://management.core.windows.net/<subscription-id>/services/hostedservices/<old-cloudservice-name>
 ```
   
 更多相关信息：
@@ -109,11 +108,12 @@ https://management.core.windows.net/<subscription-id>/services/hostedservices/<o
 * 阅读[Azure区域概述](https://www.azure.cn/zh-cn/home/features/products-by-region)。
 * 了解如何[重新部署模板](https://docs.azure.cn/zh-cn/azure-resource-manager/resource-group-template-deploy)。
 
-## 应用服务
-(place holder)
 
 ## Azure Functions
 请参阅[将IoT资源迁移到目标Azure区域](china-migration-tools-and-guidance-iot.md)中的**Functions**章节。
+
+## 应用服务
+(place holder)
 
 ## Azure Kubernets
 (place holder)
