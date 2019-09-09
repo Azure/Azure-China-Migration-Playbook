@@ -1,18 +1,18 @@
 ---
-title: 将 IoT 资源迁移到目标 Azure 区域
+title: 迁移 IoT 资源
 description: This article provides the guidance and tools on migrating IoT to target Azure region.
 author: msfrankchen
 
 ms.service: china 
 ms.topic: migrate
 layout: ContentPage 
-ms.date: 09/06/2019
+ms.date: 09/09/2019
 ms.author: frankch
 
 ---
 
 
-# 将 IoT 资源迁移到目标 Azure 区域
+# 迁移 IoT 资源
 
 本节包含的信息可帮助您跨 Azure 区域迁移 Azure IoT 资源。
  
