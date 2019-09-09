@@ -6,7 +6,7 @@ author: msfrankchen
 ms.service: china 
 ms.topic: migrate
 layout: ContentPage 
-ms.date: 09/06/2019
+ms.date: 09/09/2019
 ms.author: frankch
 
 ---
@@ -27,7 +27,7 @@ ms.author: frankch
 
 * [迁移管理工具资源](./china-migration-tools-and-guidance-management-tools.md)
 
-* [将集成资源迁移到目标 Azure 区域](./china-migration-tools-and-guidance-integration.md)
+* [迁移集成资源](./china-migration-tools-and-guidance-integration.md)
 
 * [迁移计算资源](./china-migration-tools-and-guidance-compute.md)
   
@@ -41,7 +41,7 @@ ms.author: frankch
 
 * [迁移 Web 资源](./china-migration-tools-and-guidance-web.md)
 
-* [将IoT资源迁移到目标 Azure 区域](./china-migration-tools-and-guidance-iot.md)
+* [迁移IoT资源](./china-migration-tools-and-guidance-iot.md)
 
 * [迁移移动资源(place holder)](./china-migration-tools-and-guidance-mobile.md)
 
