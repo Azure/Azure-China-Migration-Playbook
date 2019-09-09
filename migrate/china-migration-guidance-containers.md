@@ -22,11 +22,11 @@ ms.author: frankch
 
 ## Service Fabric
 
-请参阅[迁移计算资源](./china-migration-tools-and-guidance-compute.md)中的**Service Fabric**章节。
+请参阅[迁移计算资源](./china-migration-guidance-compute.md)中的**Service Fabric**章节。
 
 ## 批处理
 
-请参阅[迁移计算资源](./china-migration-tools-and-guidance-compute.md)中的**批处理**章节。
+请参阅[迁移计算资源](./china-migration-guidance-compute.md)中的**批处理**章节。
 
 ## 应用服务
 (place holder)
