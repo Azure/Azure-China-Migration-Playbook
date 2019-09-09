@@ -1,19 +1,19 @@
 ---
-title: 将集成资源迁移到目标 Azure 区域
+title: 迁移集成资源
 description: This article provides the guidance and tools on migrating integration resources to targey Azure region.
 author: msfrankchen
 
 ms.service: china 
 ms.topic: migrate
 layout: ContentPage 
-ms.date: 09/06/2019
+ms.date: 09/09/2019
 ms.author: frankch
 
 ---
 
 
 
-# 将集成资源迁移到目标 Azure 区域
+# 迁移集成资源
 
 本节包含的信息可帮助您跨 Azure 区域迁移 Azure 集成资源。
 
