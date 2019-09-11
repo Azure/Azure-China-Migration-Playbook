@@ -37,7 +37,38 @@
     - name: Migration process
       href: migrate/china-migration-process.md
     - name: Migration tools and guidance
-      href: migrate/china-migration-tools-and-guidance.md
+      href: migrate/china-migration-guidance-overview.md
+        items:
+        -name: AI
+         href: migrate/china-migration-guidance-ai.md
+        -name: Analytics
+         href: migrate/china-migration-guidance-analytics.md
+        -name: Azure Stack
+         href: migrate/china-migration-guidance-azure-stack.md
+        -name: Containers
+         href: migrate/china-migration-guidance-containers.md
+        -name: Compute
+         href: migrate/china-migration-guidance-compute.md
+        -name: Databases
+         href: migrate/china-migration-guidance-databases.md
+        -name: Identity
+         href: migrate/china-migration-guidance-identity.md
+        -name: Internet of Things
+         href: migrate/china-migration-guidance-iot.md
+        -name: Management Tools
+         href: migrate/china-migration-guidance-management-tools.md
+        -name: Media
+         href: migrate/china-migration-guidance-media.md
+        -name: Mobile
+         href: migrate/china-migration-guidance-mobile.md
+        -name: Networking
+         href: migrate/china-migration-guidance-networking.md
+        -name: Security
+         href: migrate/china-migration-guidance-security.md
+        -name: Storage
+         href: migrate/china-migration-guidance-storage.md
+        -name: Web
+         href: migrate/china-migration-guidance-web.md     
     - name: Migration partners
       href: migrate/china-migration-partners.md
 - name: Resources
