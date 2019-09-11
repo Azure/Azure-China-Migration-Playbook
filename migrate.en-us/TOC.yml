@@ -1,0 +1,48 @@
+- name: Azure China Playbook
+  href: index.md
+- name: Overview
+  items: 
+  - name: Azure China checklist
+    href: overview-checklist.md
+  - name: Azure in China
+    href: overview-operations.md
+  - name: Azure China datacenters
+    href: overview-datacenter.md
+  - name: Data sovereignty & China regulations
+    href: overview-sovereignty-and-regulations.md
+  - name: Cross-border connectivity
+    href: overview-connectivity-and-interoperability.md
+- name: Concepts
+  items:
+  - name: Purchase
+    href: concepts-purchase.md
+  - name: Support
+    href: concepts-support.md
+  - name: Service availability and roadmaps
+    href: concepts-service-availability.md
+  - name: Remote management
+    href: concepts-management.md
+  - name: Performance and connectivity
+    href: concepts-performance-and-connectivity.md
+  - name: Migration and expansion
+    href: concepts-migration-and-expansion.md
+- name: How to
+  items:
+  - name: Migrate
+    items:
+    - name: Overview
+      href: migrate/index.md
+    - name: Region strategy
+      href: migrate/china-migration-region-strategy.md
+    - name: Migration process
+      href: migrate/china-migration-process.md
+    - name: Migration tools and guidance
+      href: migrate/china-migration-tools-and-guidance.md
+    - name: Migration partners
+      href: migrate/china-migration-partners.md
+- name: Resources
+  items:
+    - name: Azure China developer guide
+      href: resources-developer-guide.md
+    - name: Azure China FAQ
+      href: resources-faq.md
