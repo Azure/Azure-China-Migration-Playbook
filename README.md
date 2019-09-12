@@ -1,17 +1,14 @@
+本Repo包《Azure中国运用户迁移指南》的中文和英文两个版本。
 
-# Azure中国云用户迁移指南
+# Azure中国云用户迁移指南-中文版
+* 中文版文件夹名称为 [migrate](./migrate/)
+* [中文目录](./migrate/index.md)
+* [Azure资源迁移手册及工具概述](./migrate/china-migration-guidance-overview)
 
-本指南用于指导Azure中国云用户安全、高效的在中国的多个区域间迁移其部署的Azure资源。包含以下内容：
-* [选择正确区域](./RegionStrategy/regionstrategy-cn.md)
-* [了解迁移流程](./Process/process-cn.md)
-* [迁移手册及工具介绍](./Playbook/playbook-cn.md)
-* [合作伙伴选择](./Partner/partner-cn.md)
 
-其他资源
-[Azure海外云用户迁移指南](https://github.com/Azure/Azure-Migration-Guidance)
+# Azure China Migration Guidance and Playbook-English
 
-# Azure China Migration Guidance and Playbook
-
-[Public Azure Migration Guidance](https://github.com/Azure/Azure-Migration-Guidance)
-
+* Folder of English version is [migrate](./migrate.en-us/)
+* [English Index](./migrate.en-use/index.md)
+* [Azure China Migration Guidance Overview](./migrate.en-us/china-migration-guidance-overview)
 
