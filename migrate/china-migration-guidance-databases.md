@@ -104,10 +104,3 @@ Azure Cache for Redis 团队的一名成员编写了一个开源工具，可以�
 
 ## 数据工厂
 (Place holder)
-
-## Azure 数据库迁移服务
-(Place holder)
-
-
-
-

@@ -155,8 +155,10 @@ Azure 流量管理器可帮助您更顺畅地完成迁移。在 Azure 区域中�
 * 了解如何[创建新的负载均衡器](https://docs.azure.cn/zh-cn/load-balancer/quickstart-load-balancer-standard-public-portal)。
 
 ## CDN 内容分发网络
-(place holder)
+
+CDN 内容分发网络功能没有区域属性，不需要进行迁移。
 
 ## 云连接服务
-(place holder)
+
+云连接服务网络功能没有区域属性，不需要进行迁移。
 

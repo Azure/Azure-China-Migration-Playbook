@@ -86,12 +86,14 @@ ms.author: frankch
 有关更多信息，请参阅[为 Power BI Premium 配置多地理位置支持](https://docs.microsoft.com/zh-cn/power-bi/service-admin-premium-multi-geo)。
 
 ## SQL数据仓库
+
 请参阅[迁移数据库资源](./china-migration-guidance-databases.md)的**SQL数据仓库**章节。
 
 ## 数据工厂
-(place holder)
 
-## Azure数据资源管理器
+请参阅[迁移数据库资源](./china-migration-guidance-databases.md)的**数据工厂**章节。
+
+## Azure 数据资源管理器
 (place holder)
 
 

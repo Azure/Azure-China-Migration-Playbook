@@ -49,19 +49,16 @@ Azure 计划程序[将于2019年9月30日停用](https://azure.microsoft.com/upd
 ## 网络观察程序
 请参阅[迁移网络资源](china-migration-guidance-networking.md)中的**网络观察程序**章节。
 
-## Azure门户
-(place holder)
-
-## Azure顾问
+## Azure 顾问
 (place holder)
 
 ## 自动化
 (place holder)
 
-## Azure监控器
+## Azure 监控器
 (place holder)
 
-## Azure服务运行状况
+## Azure 服务运行状况
 (place holder)
 
 ## Azure 策略

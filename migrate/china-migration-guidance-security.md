@@ -39,16 +39,21 @@ Get-AzureKeyVaultSecret -vaultname mysecrets -name Deploydefaultpw
 
 
 ## 应用程序网关
+
 请参阅[迁移网络资源](./china-migration-guidance-networking.md)的**应用程序网关**章节。
 
 ## VPN网关
-请参阅[迁移网络资源](./china-migration-guidance-networking.md)的**VPN网关**章节。
+
+请参阅[迁移网络资源](./china-migration-guidance-networking.md)的 **VPN 网关**章节。
 
 ## Azure Active Directory
-(place holder)
+
+请参阅[迁移标识资源](./china-migration-guidance-identity.md)的 **Azure Active Directory** 章节。
 
 ## 安全中心
 (place holder)
 
 ## Azure 信息保护
-(place holder)
+
+请参阅[迁移标识资源](./china-migration-guidance-identity.md)的 **Azure 信息保护**章节。
+

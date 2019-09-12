@@ -68,7 +68,8 @@ Azure 计划程序[将于2019年9月30日停用](https://azure.microsoft.com/zh-
 * 查阅 [Azure 逻辑应用概述](https://docs.azure.cn/zh-cn/logic-apps/logic-apps-overview)。
 
 ## API管理
-请参阅[迁移Web资源](china-migration-guidance-web.md)中的**API管理**章节。
 
-## 事件网络
+请参阅[迁移Web资源](china-migration-guidance-web.md)中的 **API管理**章节。
+
+## 事件网格
 (place holder)

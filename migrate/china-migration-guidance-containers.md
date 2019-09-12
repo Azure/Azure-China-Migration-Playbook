@@ -22,16 +22,16 @@ ms.author: frankch
 
 ## Service Fabric
 
-请参阅[迁移计算资源](./china-migration-guidance-compute.md)中的**Service Fabric**章节。
+请参阅[迁移计算资源](./china-migration-guidance-compute.md)中的 **Service Fabric** 章节。
 
 ## 批处理
 
 请参阅[迁移计算资源](./china-migration-guidance-compute.md)中的**批处理**章节。
 
 ## 应用服务
-(place holder)
-(Web章节也空缺中)
 
-## Azure Kubernetes服务
-(place holder)
-(compute章节也空缺中)
+请查阅[迁移计算资源](./china-migration-guidance-compute.md)中的**应用服务**章节。
+
+## Azure Kubernetes 服务
+
+请查阅[迁移计算资源](./china-migration-guidance-compute.md)中的 **Azure Kubernetes 服务**章节。
