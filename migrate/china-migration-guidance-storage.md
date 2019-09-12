@@ -36,7 +36,7 @@ URI part | example value
 
 此命令可以实现跨 Azure 区域的虚拟硬盘复制：
 ```cmd
-azcopy cp https://migratetest.blob.core.windows.net/vhds/vm-121314.vhd?<sastokenhere> https://migratetarget.blob.core.windows.net/targetcontainer?<sastokenhere>
+azcopy cp https://migratetest.blob.core.chinacloudapi.cn/vhds/vm-121314.vhd?<sastokenhere> https://migratetarget.blob.core.chinacloudapi.cn /targetcontainer?<sastokenhere>
 ```
 要获得与源 VHD 一致的副本，请为复制操作规划适当的停机时间，并在复制 VHD 之前关闭 VM。复制完成后，[在目标环境中重建 VM](https://docs.azure.cn/zh-cn/backup/backup-azure-vms-automation#create-a-vm-from-restored-disks)。
 
@@ -60,18 +60,18 @@ Azure 托管磁盘通过管理与 VM 磁盘关联的存储帐户，简化了 Azu
 有关如何使用 AzCopy 的示例，请参阅**Blobs**。使用 AzCopy 或类似工具将磁盘直接从源环境复制到目标环境。  
 在 AzCopy 中，您必须将 URI 拆分为基础 URI 和共享访问签名部分。URI 的共享访问签名部分以字符 "**?**" 开头。共享访问签名 URI 格式类似此 URI：
 ```http
-https://md-kp4qvrzhj4j5.blob.core.windows.net/r0pmw4z3vk1g/abcd?sv=2017-04-17&sr=b&si=22970153-4c56-47c0-8cbb-156a24b6e4b5&sig=5Hfu0qMw9rkZf6mCjuCE4VMV6W3IR8FXQSY1viji9bg%3D>
+https://md-kp4qvrzhj4j5.blob.core.chinacloudapi.cn /r0pmw4z3vk1g/abcd?sv=2017-04-17&sr=b&si=22970153-4c56-47c0-8cbb-156a24b6e4b5&sig=5Hfu0qMw9rkZf6mCjuCE4VMV6W3IR8FXQSY1viji9bg%3D>
 ```
 以下命令显示了 AzCopy 的源参数：
 ```cmd
-/source:"https://md-kp4qvrzhj4j5.blob.core.windows.net/r0pmw4z3vk1g/abcd" 
+/source:"https://md-kp4qvrzhj4j5.blob.core.chinacloudapi.cn/r0pmw4z3vk1g/abcd" 
 ```
 ```cmd
 /sourceSAS:"?sv=2017-04-17&sr=b&si=22970153-4c56-47c0-8cbb-156a24b6e4b5&sig=5Hfu0qMw9rkZf6mCjuCE4VMV6W3IR8FXQSY1viji9bg%3D"
 ```
 以下是完整的命令：
 ```cmd
-azcopy -v /source:"https://md-kp4qvrzhj4j5.blob.core.windows.net/r0pmw4z3vk1g/abcd" /sourceSAS:"?sv=2017-04-17&sr=b&si=22970153-4c56-47c0-8cbb-156a24b6e4b5&sig=5Hfu0qMw9rkZf6mCjuCE4VMV6W3IR8FXQSY1viji9bg%3D" /dest:"https://migratetarget.blob.core.windows.net/targetcontainer/newdisk.vhd" /DestKey:"o//ucD\... Kdpw=="
+azcopy -v /source:"https://md-kp4qvrzhj4j5.blob.core.chinacloudapi.cn /r0pmw4z3vk1g/abcd" /sourceSAS:"?sv=2017-04-17&sr=b&si=22970153-4c56-47c0-8cbb-156a24b6e4b5&sig=5Hfu0qMw9rkZf6mCjuCE4VMV6W3IR8FXQSY1viji9bg%3D" /dest:"https://migratetarget.blob.core.chinacloudapi.cn /targetcontainer/newdisk.vhd" /DestKey:"o//ucD\... Kdpw=="
 ```
 **步骤 3：在目标环境中创建新的托管磁盘**
 
