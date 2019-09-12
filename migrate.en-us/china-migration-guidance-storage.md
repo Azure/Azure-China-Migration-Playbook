@@ -38,7 +38,7 @@ Target container | `targetcontainer`
 
 This command copies a virtual hard disk across Azure regions:
 ```cmd
-azcopy cp https://migratetest.blob.core.windows.net/vhds/vm-121314.vhd?<sastokenhere> https://migratetarget.blob.core.windows.net/targetcontainer?<sastokenhere>
+azcopy cp https://migratetest.blob.core.chinacloudapi.cn/vhds/vm-121314.vhd?<sastokenhere> https://migratetarget.blob.core.chinacloudapi.cn/targetcontainer?<sastokenhere>
 ```
 To get a consistent copy of the VHD, shut down the VM before you copy the VHD. Plan some downtime for the copy activity. When the VHD is copied, [rebuild your VM in the target environment.](https://docs.azure.cn/backup/backup-azure-vms-automation#create-a-vm-from-restored-disks)。
 
@@ -63,18 +63,18 @@ Because you don’t have direct access to the .vhd file, you can’t directly us
 For examples of how to use AzCopy, see blobs. Use AzCopy or a similar tool to copy the disk directly from your source environment to the target environment. In AzCopy, you must split the URI into the base URI and the shared access signature part. The shared access signature part of the URI begins with the character “**?**”. The portal provides this URI for the shared access signature URI:
 
 ```http
-https://md-kp4qvrzhj4j5.blob.core.windows.net/r0pmw4z3vk1g/abcd?sv=2017-04-17&sr=b&si=22970153-4c56-47c0-8cbb-156a24b6e4b5&sig=5Hfu0qMw9rkZf6mCjuCE4VMV6W3IR8FXQSY1viji9bg%3D>
+https://md-kp4qvrzhj4j5.blob.core.chinacloudapi.cn/r0pmw4z3vk1g/abcd?sv=2017-04-17&sr=b&si=22970153-4c56-47c0-8cbb-156a24b6e4b5&sig=5Hfu0qMw9rkZf6mCjuCE4VMV6W3IR8FXQSY1viji9bg%3D>
 ```
 The following commands show the source parameters for AzCopy:
 ```cmd
-/source:"https://md-kp4qvrzhj4j5.blob.core.windows.net/r0pmw4z3vk1g/abcd" 
+/source:"https://md-kp4qvrzhj4j5.blob.core.chinacloudapi.cn/r0pmw4z3vk1g/abcd" 
 ```
 ```cmd
 /sourceSAS:"?sv=2017-04-17&sr=b&si=22970153-4c56-47c0-8cbb-156a24b6e4b5&sig=5Hfu0qMw9rkZf6mCjuCE4VMV6W3IR8FXQSY1viji9bg%3D"
 ```
 Here’s the complete command:
 ```cmd
-azcopy -v /source:"https://md-kp4qvrzhj4j5.blob.core.windows.net/r0pmw4z3vk1g/abcd" /sourceSAS:"?sv=2017-04-17&sr=b&si=22970153-4c56-47c0-8cbb-156a24b6e4b5&sig=5Hfu0qMw9rkZf6mCjuCE4VMV6W3IR8FXQSY1viji9bg%3D" /dest:"https://migratetarget.blob.core.windows.net/targetcontainer/newdisk.vhd" /DestKey:"o//ucD\... Kdpw=="
+azcopy -v /source:"https://md-kp4qvrzhj4j5.blob.core.windows.net/r0pmw4z3vk1g/abcd" /sourceSAS:"?sv=2017-04-17&sr=b&si=22970153-4c56-47c0-8cbb-156a24b6e4b5&sig=5Hfu0qMw9rkZf6mCjuCE4VMV6W3IR8FXQSY1viji9bg%3D" /dest:"https://migratetarget.blob.core.chinacloudapi.cn/targetcontainer/newdisk.vhd" /DestKey:"o//ucD\... Kdpw=="
 ```
 **Step 3: Create a new managed disk in the target environment**
 
