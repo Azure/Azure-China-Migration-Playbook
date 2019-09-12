@@ -6,9 +6,9 @@
 * [Azure资源迁移手册及工具概述](./migrate/china-migration-guidance-overview)
 
 
-# Azure China Migration Guidance and Playbook-English
+# Azure China Migration Playbook-English
 
-* Folder of English version is [migrate](./migrate.en-us/)
+* Folder of English version is [migrate.en-us](./migrate.en-us/)
 * [English Index](./migrate.en-use/index.md)
 * [Azure China Migration Guidance Overview](./migrate.en-us/china-migration-guidance-overview)
 
