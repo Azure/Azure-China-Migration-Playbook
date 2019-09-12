@@ -28,17 +28,51 @@
     href: concepts-migration-and-expansion.md
 - name: How to
   items:
-  - name: Migrate
+  - name: 迁移
     items:
-    - name: Overview
+    - name: 概述
       href: migrate/index.md
-    - name: Region strategy
+    - name: 选择正确区域
       href: migrate/china-migration-region-strategy.md
-    - name: Migration process
-      href: migrate/china-migration-process.md
-    - name: Migration tools and guidance
+    - name: 了解迁移流程
+      href: migrate/china-migration-process.md     
+    - name: 迁移手册及工具介绍
       href: migrate/china-migration-tools-and-guidance.md
-    - name: Migration partners
+        items:
+        -name: AI
+         href: migrate/china-migration-guidance-ai.md
+        -name: Azure Stack
+         href: migrate/china-migration-guidance-azure-stack.md
+        -name: 安全性
+         href: migrate/china-migration-guidance-security.md
+        -name: 标识
+         href: migrate/china-migration-guidance-identity.md      
+        -name: 存储
+         href: migrate/china-migration-guidance-storage.md  
+        -name: 分析
+         href: migrate/china-migration-guidance-analytics.md
+        -name: 管理工具
+         href: migrate/china-migration-guidance-management-tools.md 
+        -name: 集成
+         href: migrate/china-migration-guidance-integration.md 
+        -name: 计算
+         href: migrate/china-migration-guidance-compute.md    
+        -name: 联网
+         href: migrate/china-migration-guidance-networking.md 
+        -name: 媒体
+         href: migrate/china-migration-guidance-media.md      
+        -name: 容器
+         href: migrate/china-migration-guidance-containers.md        
+        -name: 数据库
+         href: migrate/china-migration-guidance-databases.md
+        -name: 网站
+         href: migrate/china-migration-guidance-web.md     
+        -name: 物联网
+         href: migrate/china-migration-guidance-iot.md
+        -name: 移动
+         href: migrate/china-migration-guidance-mobile.md
+
+    - name: 合作伙伴选择
       href: migrate/china-migration-partners.md
 - name: Resources
   items:
