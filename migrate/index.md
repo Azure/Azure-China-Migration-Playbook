@@ -12,4 +12,4 @@
 
 # Azure China Migration Guidance and Playbook
 
-[Public Azure Migration Guidance](https://github.com/Azure/Azure-Migration-Guidance)
+[English Version](../migrate.en-us/index.md)
