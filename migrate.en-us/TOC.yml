@@ -53,6 +53,8 @@
          href: migrate/china-migration-guidance-databases.md
         -name: Identity
          href: migrate/china-migration-guidance-identity.md
+        -name: Integration
+         href: migrate/china-migration-guidance-integration.md
         -name: Internet of Things
          href: migrate/china-migration-guidance-iot.md
         -name: Management Tools
