@@ -12,5 +12,6 @@
 * [English Index](./migrate.en-us/index.md)
 * [Azure China Migration Guidance Overview](./migrate.en-us/china-migration-guidance-overview.md)
 
-Contact us: ChinaMigrationPB@microsoft.com
+
+>Contact us: ChinaMigrationPB@microsoft.com
 
