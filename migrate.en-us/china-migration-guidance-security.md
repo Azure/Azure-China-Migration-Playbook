@@ -6,7 +6,7 @@ author: msfrankchen
 ms.service: china 
 ms.topic: migrate
 layout: ContentPage 
-ms.date: 09/09/2019
+ms.date: 09/16/2019
 ms.author: frankch
 
 ---
@@ -40,9 +40,11 @@ For more information:
 
 
 ## Application Gateway
+
 See **Application Gateway** chapter of [Migrate Network Resources](./china-migration-guidance-networking.md).
 
 ## VPN Gateway
+
 See **VPN Gateway** chapter of [Migrate Network Resources](./china-migration-guidance-networking.md).
 
 ## Azure Active Directory
@@ -52,4 +54,6 @@ See **VPN Gateway** chapter of [Migrate Network Resources](./china-migration-gui
 (place holder)
 
 ## Azure Information Protection
-(place holder)
+
+See **Azure Information Protection** chapter of [Migrate Identity Resources](./china-migration-guidance-identity.md).
+
