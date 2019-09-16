@@ -6,7 +6,7 @@ author: msfrankchen
 ms.service: china 
 ms.topic: migrate
 layout: ContentPage 
-ms.date: 09/06/2019
+ms.date: 09/16/2019
 ms.author: frankch
 
 ---
@@ -59,5 +59,5 @@ ms.author: frankch
 
 ## CDN 内容分发网络
 
-请查阅[迁移网络资源](./china-migration-guidance-network.md)中的**CDN 内容分发网络**章节。
+请查阅[迁移网络资源](./china-migration-guidance-networking.md)中的**CDN 内容分发网络**章节。
 
