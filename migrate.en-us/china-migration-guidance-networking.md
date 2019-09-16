@@ -109,7 +109,7 @@ az network dns record-set list -g <resource group> -z <zone name>
 ```
 When validation is finished, contact your domain registrar and redelegate the NS records. To get NS record information, run the following command:
 ```azurecli
-az network dns record-set ns list -g <resource group> -z<zone name> --output json
+az network dns record-set ns list -g <resource group> -z <zone name> --output json
 ```
 For more information: 
 * Refresh your knowledge by completing the [Azure DNS tutorials.](https://docs.azure.cn/dns/#step-by-step-tutorials)
