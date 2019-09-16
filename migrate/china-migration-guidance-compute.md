@@ -6,18 +6,21 @@ author: msfrankchen
 ms.service: china 
 ms.topic: migrate
 layout: ContentPage 
-ms.date: 09/06/2019
+ms.date: 09/16/2019
 ms.author: frankch
 
 ---
 
 # 迁移计算资源
+
 本节提供的信息可帮助您将已部署Azure计算资源从一个Azure区域迁移到其他Azure区域。
   
-## 虚拟机  
+## 虚拟机 
+
 由于目前中国所有Azure区域都处于[Azure 站点恢复（ASR）](https://docs.azure.cn/zh-cn/site-recovery/site-recovery-overview)所支持的相同地理集群（关于地理群集，[请参阅](https://docs.azure.cn/zh-cn/site-recovery/azure-to-azure-support-matrix#region-support))。可以参照[迁移Azure虚拟机到另一个区域](https://docs.azure.cn/zh-cn/site-recovery/azure-to-azure-tutorial-migrate)所描述的步骤完成虚拟机的迁移。
   
 ## 云服务  
+
 目前还不支持将云服务从一个 Azure 区迁移到另一个区域。您可以利用 .cspkg 和 .cscfg 定义来重新部署 Azure 云服务资源到另一个区域。
   
 ### 利用Azure 门户  
@@ -60,6 +63,7 @@ https://management.core.windows.net/<subscription-id>/services/hostedservices/<c
 * 请参考[Azure云服务概述](https://docs.azure.cn/zh-cn/cloud-services/cloud-services-choose-me)。
   
 ## Service Fabric  
+
 要将 Azure Service Fabric 资源从一个 Azure 区域迁移到另一个 Azure 区域，您需要在新区域中创建和重新部署 Service Fabric 群集和应用程序资源。必须备份旧群集中的数据，并将其还原到新群集以保证业务的运行状态。
 1. 阅读[生产准备清单](https://docs.azure.cn/zh-cn/service-fabric/service-fabric-production-readiness-checklist)中推荐的指南，使用[Azure 门户](https://docs.azure.cn/zh-cn/service-fabric/service-fabric-cluster-creation-via-portal)或资源管理器资源在目标 Azure 区域的资源组中创建新群集。
 2. 不应该出现新的调用，也不应该有任何服务相互通信或执行工作。
@@ -111,7 +115,7 @@ https://management.core.windows.net/<subscription-id>/services/hostedservices/<c
 
 ## Azure Functions
 
-请参阅[将IoT资源迁移到目标Azure区域](china-migration-guidance-iot.md)中的 **Functions** 章节。
+请参阅[将IoT资源迁移到目标Azure区域](./china-migration-guidance-iot.md)中的 **Functions** 章节。
 
 ## 应用服务
 (place holder)
