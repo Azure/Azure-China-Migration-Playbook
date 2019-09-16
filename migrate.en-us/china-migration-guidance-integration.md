@@ -1,5 +1,5 @@
 ---
-title: Migrate integration resources to the target Azure region
+title: Migrate integration resources 
 description: This article provides the guidance and tools on migrating integration resources to targey Azure region.
 author: msfrankchen
 
@@ -13,7 +13,7 @@ ms.author: frankch
 
 
 
-# Migrate integration resources to the target Azure region
+# Migrate integration resources
 
 This section contains information that you may find helpful as you migrate your Azure integration resources across Azure regions.
 
