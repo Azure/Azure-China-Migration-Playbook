@@ -6,12 +6,13 @@ author: msfrankchen
 ms.service: china 
 ms.topic: migrate
 layout: ContentPage 
-ms.date: 09/09/2019
+ms.date: 09/16/2019
 ms.author: frankch
 
 ---
 
 # Migrate Compute Resources
+
 This section provides information that you may find helpful as you migrate your Azure compute resources from one Azure region to another.
   
 ## Virtual Machine
@@ -21,6 +22,7 @@ Now all China Azure regions are same geographic cluster supported by [Azure Site
 See [Move Azure VMs to another region](https://docs.azure.cn/en-us/site-recovery/azure-to-azure-tutorial-migrate)to migrate VMs.
   
 ## Cloud Services  
+
 Cloud Services can’t be migrated from one Azure region to another. You can redeploy Azure Cloud Services resources by providing the .cspkg and .cscfg definitions again.
   
 ### Azure portal
@@ -62,6 +64,7 @@ For more information:
 *	Review the Cloud Services overview(https://docs.azure.cn/en-us/cloud-services/cloud-services-choose-me).
   
 ## Service Fabric  
+
 To migrate Azure Service Fabric resources from one Azure region to another, you need to create and redeploy the Service Fabric cluster and application resources in the new region. Data must be backed up and restored from old to new cluster for stateful services. 
 
 1.	Create a new cluster in a resource group in the target Azure region using the [Azure portal](https://docs.azure.cn/en-us/service-fabric/service-fabric-cluster-creation-via-portal) or Resource Manager resources using guidelines recommended in the [Production readiness checklist](https://docs.azure.cn/en-us/service-fabric/service-fabric-production-readiness-checklist).
@@ -123,11 +126,12 @@ For more information:
 * Learn how to [redeploy a template](https://docs.azure.cn/en-us/azure-resource-manager/resource-group-template-deploy)。
 
 
-## Azure Functions
+## Azure Functions  
+  
 See **Functions** chapter of [Migrate IoT resources](./china-migration-guidance-iot.md).
 
 ## App Service
 (place holder)
 
-## Azure Kubernets
+## Azure Kubernets Service
 (place holder)
