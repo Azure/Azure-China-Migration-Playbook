@@ -6,7 +6,7 @@ author: msfrankchen
 ms.service: china 
 ms.topic: migrate
 layout: ContentPage 
-ms.date: 09/09/2019
+ms.date: 09/16/2019
 ms.author: frankch
 
 ---
@@ -164,8 +164,10 @@ For more information:
 * Learn how to [create a new load balancer.](https://docs.azure.cn/load-balancer/quickstart-load-balancer-standard-public-portal)
 
 ## CDN 
-(place holder)
+
+CDN functiona has no regional properties and no migration is required.
 
 ## Cloud Connection Service
-(place holder)
+
+Cloud Connection Service function has no regional properties and no migration is required.
 
