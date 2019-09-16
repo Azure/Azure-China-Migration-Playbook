@@ -6,7 +6,7 @@ author: msfrankchen
 ms.service: china 
 ms.topic: migrate
 layout: ContentPage 
-ms.date: 09/09/2019
+ms.date: 09/16/2019
 ms.author: frankch
 
 ---
@@ -57,10 +57,9 @@ these instructions: **
 
 
 ## App Service
-(place holder)
+
+See **App Service** Chapter of [Migrate Compute Resources.](./china-migration-guidance-compute.md)
 
 ## CDN 
-(place holder)
 
-## Customer Engagement Fabric
-(place holder)
+See **CDN** Chapter of [Migrate Network Resources.](./china-migration-guidance-networking.md)

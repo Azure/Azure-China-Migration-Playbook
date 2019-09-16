@@ -6,7 +6,7 @@ author: msfrankchen
 ms.service: china 
 ms.topic: migrate
 layout: ContentPage 
-ms.date: 09/09/2019
+ms.date: 09/16/2019
 ms.author: frankch
 
 ---
@@ -66,27 +66,31 @@ For more information:
 
 
 ## Event Hubs
+
 See **Event Hubs** chapter of [Migrate analtyics Services](./china-migration-guidance-analytics.md).
 
 ## Stream Analtyics
+
 See **Stream Analtyics** chapter of [Migrate analtyics Services](./china-migration-guidance-analytics.md).
 
 ## Logic Apps
+
 See **Logic Apps** chapter of [Migrate integration resources to the target Azure region](./china-migration-guidance-integration.md).
 
 ## API Management
+
 See **API Management** chapter of [Migrate web resources](./china-migration-guidance-web.md).
 
 ## Azure Cosmos DB
-(place holder)
+
+See **Azure Cosmos DB** chapter of [Migrate database resources](./china-migration-guidance-database.md).
 
 ## Azure  Time Series Insights
 (place holder)
 
-## Azure IoT Hub
-(place holder)
-
 ## Event Grid
-(place holder)
+
+See **Event Grid** chapter of [Migrate integration resources](./china-migration-guidance-integration.md).
+
 
  

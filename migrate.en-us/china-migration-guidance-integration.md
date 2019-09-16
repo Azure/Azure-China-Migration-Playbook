@@ -1,19 +1,19 @@
 ---
-title: Migrate integration resources to the target Azure region
+title: Migrate integration resources 
 description: This article provides the guidance and tools on migrating integration resources to targey Azure region.
 author: msfrankchen
 
 ms.service: china 
 ms.topic: migrate
 layout: ContentPage 
-ms.date: 09/09/2019
+ms.date: 09/16/2019
 ms.author: frankch
 
 ---
 
 
 
-# Migrate integration resources to the target Azure region
+# Migrate integration resources
 
 This section contains information that you may find helpful as you migrate your Azure integration resources across Azure regions.
 
@@ -72,7 +72,8 @@ For more information:
 * Review the [Azure Logic Apps overview](https://docs.azure.cn/logic-apps/logic-apps-overview).
 
 ## API Management
-See **API Management** chapter of[Migration Web Resources](../china-migration-guidance-web.md).
+
+See **API Management** chapter of [Migration Web Resources](./china-migration-guidance-web.md).
 
 ## Event Grid
 (place holder)

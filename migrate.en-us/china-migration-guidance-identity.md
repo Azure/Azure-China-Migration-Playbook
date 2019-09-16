@@ -6,7 +6,7 @@ author: msfrankchen
 ms.service: china 
 ms.topic: migrate
 layout: ContentPage 
-ms.date: 09/09/2019
+ms.date: 09/16/2019
 ms.author: frankch
 
 ---
@@ -24,11 +24,14 @@ For more information:
 * Learn more about [Azure Multi-Factor Authentication](https://docs.azure.cn/active-directory/authentication/howto-mfa-getstarted).
 
 ## Azure Active Directory
-(place holder)
+
+Azure AD function has no regional properties and no migration is required.
 
 ## Azure Active Directory B2C
-(place holder)
+
+Azure AD B2C function has no regional properties and no migration is required.
 
 ## Azure Information Protection
-(place holder)
+
+Azure Information Protection function has no regional properties and no migration is required.
 
