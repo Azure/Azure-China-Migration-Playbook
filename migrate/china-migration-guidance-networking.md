@@ -103,7 +103,7 @@ az network dns record-set list -g <resource group> -z <zone name>
 ```
 验证完成后，请与您的域名注册商联系并重新授权 NS 记录。要获取 NS 记录信息，请运行以下命令：
 ```azurecli
-az network dns record-set ns list -g <resource group> -z --output json
+az network dns record-set ns list -g <resource group> -z <zone name> --output json
 ```
 有关更多信息：
 * 通过完成 [Azure DNS 教程](https://docs.azure.cn/zh-cn/dns/#step-by-step-tutorials)来刷新您的知识。
