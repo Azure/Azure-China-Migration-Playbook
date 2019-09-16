@@ -6,7 +6,7 @@ author: msfrankchen
 ms.service: china 
 ms.topic: migrate
 layout: ContentPage 
-ms.date: 09/09/2019
+ms.date: 09/16/2019
 ms.author: frankch
 
 ---
@@ -104,9 +104,6 @@ For more information:
 (Place holder)
 
 ## Data Factory
-(Place holder)
-
-## Azure Database Migration Service
 (Place holder)
 
 
