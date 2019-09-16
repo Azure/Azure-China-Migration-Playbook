@@ -8,6 +8,11 @@ It contains the following content:
 * [Migration Tools and Guidance](china-migration-tools-and-guidance.md)
 * [Partner Selection](china-migration-partners.md)
 
-For more information:  
+## Contact us
+
+Please contact us (chinamigrationpb@microsoft.com) for any questions regarding this playbook or requirements for Azure regional migration.
+
+## More information
+
 [Azure Overseas cloud migration guide](https://github.com/Azure/Azure-Migration-Guidance)  
 [Azure China Migration Playbook-Chinese Version](../migrate/index.md)
