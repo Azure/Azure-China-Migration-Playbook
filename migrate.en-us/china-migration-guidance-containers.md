@@ -6,13 +6,14 @@ author: msfrankchen
 ms.service: china 
 ms.topic: migrate
 layout: ContentPage 
-ms.date: 09/09/2019
+ms.date: 09/16/2019
 ms.author: frankch
 
 ---
 
 
 # Migrate Container Resources
+
 This section contains information that you may find helpful as you migrate Azure container resources across Azure regions.
 
 ## Azure Container Registry
@@ -22,16 +23,18 @@ To migrate Azure Container Registry across Azure regions, use [Geo-Replication](
 
 ## Service Fabric
 
-See **Service Fabric** chapter of [Migrate Cpmpute Resources](./china-migration-guidance-compute.md).
+See **Service Fabric** chapter of [Migrate Compute Resources](./china-migration-guidance-compute.md).
 
 ## Batch
 
-See **Batch** chapter of [Migrate Cpmpute Resources](./china-migration-guidance-compute.md).
+See **Batch** chapter of [Migrate Compute Resources](./china-migration-guidance-compute.md).
 
 ## App Service
-(place holder)
-(Web章节也空缺中)
+
+See **App Service** chapter of [Migrate Compute Resources](./china-migration-guidance-compute.md).
 
 ## Azure Kubernetes Service(AKS)
-(place holder)
-(compute章节也空缺中)
+
+See **Azure Kubernetes Service** chapter of [Migrate Compute Resources](./china-migration-guidance-compute.md).
+
+
