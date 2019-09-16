@@ -6,7 +6,7 @@ author: msfrankchen
 ms.service: china 
 ms.topic: migrate
 layout: ContentPage 
-ms.date: 09/09/2019
+ms.date: 09/16/2019
 ms.author: frankch
 
 ---
@@ -72,7 +72,8 @@ For more information:
 * Review the [Azure Logic Apps overview](https://docs.azure.cn/logic-apps/logic-apps-overview).
 
 ## API Management
-See **API Management** chapter of[Migration Web Resources](../china-migration-guidance-web.md).
+
+See **API Management** chapter of [Migration Web Resources](./china-migration-guidance-web.md).
 
 ## Event Grid
 (place holder)
