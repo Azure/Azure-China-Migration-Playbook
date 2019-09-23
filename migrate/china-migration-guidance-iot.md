@@ -72,7 +72,7 @@ IoT 中心不支持本机克隆。但是，您可以使用 Azure 资源管理器
 
 ## 逻辑应用
 
-请查阅[将集成资源迁移到目标 Azure 区域](./china-migration-guidance-integration.md)中的**逻辑应用**章节。
+请查阅[迁移集成资源](./china-migration-guidance-integration.md)中的**逻辑应用**章节。
 
 ## API 管理
 
