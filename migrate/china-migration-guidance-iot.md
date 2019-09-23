@@ -27,7 +27,7 @@ ms.author: frankch
 * 通过完成 [Functions 教程](https://docs.azure.cn/zh-cn/azure-functions/#step-by-step-tutorials)来刷新您的知识。
 * 了解如何[导出资源管理器模板](https://docs.azure.cn/zh-cn/azure-resource-manager/manage-resource-groups-portal#export-resource-groups-to-templates)或阅读 [Azure 资源管理器概述](https://docs.azure.cn/zh-cn/azure-resource-manager/resource-group-overview)。
 * 查阅 [Azure 功能概述](https://docs.azure.cn/zh-cn/azure-functions/functions-overview)。
-* 了解如何重[新部署模板](https://docs.azure.cn/zh-cn/azure-resource-manager/resource-group-template-deploy)。
+* 了解如何[重新部署模板](https://docs.azure.cn/zh-cn/azure-resource-manager/resource-group-template-deploy)。
 
 ## 通知中心
 
@@ -72,7 +72,7 @@ IoT 中心不支持本机克隆。但是，您可以使用 Azure 资源管理器
 
 ## 逻辑应用
 
-请查阅[将集成资源迁移到目标 Azure 区域](./china-migration-guidance-integration.md)中的**逻辑应用**章节。
+请查阅[迁移集成资源](./china-migration-guidance-integration.md)中的**逻辑应用**章节。
 
 ## API 管理
 
@@ -80,13 +80,13 @@ IoT 中心不支持本机克隆。但是，您可以使用 Azure 资源管理器
 
 ## Azure Cosmos DB
 
-请查阅[迁移数据库资源](./china-migration-guidance-database.md)中的 **Azure Cosmos DB** 章节。
+请查阅[迁移数据库资源](./china-migration-guidance-databases.md)中的 **Azure Cosmos DB** 章节。（blank）
 
 ## Azure 时序见解
 (place holder)
 
 ## 事件网格
 
-请参阅[迁移集成资源](china-migration-guidance-integration.md)中的**事件网格**章节。
+请参阅[迁移集成资源](china-migration-guidance-integration.md)中的**事件网格**章节。(blank)
 
  

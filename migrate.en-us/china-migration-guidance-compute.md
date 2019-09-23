@@ -6,7 +6,7 @@ author: msfrankchen
 ms.service: china 
 ms.topic: migrate
 layout: ContentPage 
-ms.date: 09/16/2019
+ms.date: 09/23/2019
 ms.author: frankch
 
 ---
@@ -27,7 +27,7 @@ Cloud Services can’t be migrated from one Azure region to another. You can red
   
 ### Azure portal
 To redeploy cloud services in the Azure portal: 
-1. [Create a new cloud service](https://docs.azure.cn/en-us/cloud-services/cloud-services-how-to-create-deploy-portal)by using your .cspkg and .cscfg definitions.
+1. [Create a new cloud service](https://docs.azure.cn/en-us/cloud-services/cloud-services-how-to-create-deploy-portal) by using your .cspkg and .cscfg definitions.
 2. Update the [CNAME or A record](https://docs.azure.cn/en-us/cloud-services/cloud-services-custom-domain-name-portal) to point traffic to the new cloud service.
 3. When traffic points to the new cloud service, delete the old cloud service in the source region.
   
@@ -53,7 +53,7 @@ To redeploy cloud services by using the REST API:
 ```http
 https://management.core.windows.net/<subscription-id>/services/hostedservices  
 ```
-2. Create a new deployment by using the [Create Deployment API](https://msdn.microsoft.com/library/azure/ee460813.aspx). To find your .cspkg and .cscfg definitions, you can call the [Get Package API].(https://docs.microsoft.com/en-us/previous-versions/azure/reference/jj154121(v=azure.100))
+2. Create a new deployment by using the [Create Deployment API](https://msdn.microsoft.com/library/azure/ee460813.aspx). To find your .cspkg and .cscfg definitions, you can call the [Get Package API](https://docs.microsoft.com/en-us/previous-versions/azure/reference/jj154121(v=azure.100)).
 ```http
 https://management.core.windows.net/<subscription-id>/services/hostedservices/<cloudservice-name>/deploymentslots/production  
 ```
@@ -61,7 +61,7 @@ https://management.core.windows.net/<subscription-id>/services/hostedservices/<c
 ```http
 ```
 For more information: 
-*	Review the Cloud Services overview(https://docs.azure.cn/en-us/cloud-services/cloud-services-choose-me).
+*	Review the [Cloud Services overview](https://docs.azure.cn/en-us/cloud-services/cloud-services-choose-me).
   
 ## Service Fabric  
 
@@ -108,7 +108,7 @@ You can’t automatically migrate your Azure Batch account and data from one reg
 
 For more information: 
 * Refresh your knowledge by completing the [Batch tutorials](https://docs.azure.cn/en-us/batch/#step-by-step-tutorials).
-* •	Review the [Azure Batch overview](https://docs.azure.cn/en-us/batch/batch-technical-overview).
+* Review the [Azure Batch overview](https://docs.azure.cn/en-us/batch/batch-technical-overview).
 
 ## Virtual machine scale sets
 
@@ -123,7 +123,7 @@ For more information:
 * Review the [Azure Resource Manager overview](https://docs.azure.cn/en-us/azure-resource-manager/resource-group-overview).
 * Get an overview of [virtual machine scale sets](https://docs.azure.cn/en-us/virtual-machine-scale-sets/overview).
 * Read an [overview of Azure locations](https://www.azure.cn/en-us/home/features/products-by-region).
-* Learn how to [redeploy a template](https://docs.azure.cn/en-us/azure-resource-manager/resource-group-template-deploy)。
+* Learn how to [redeploy a template](https://docs.azure.cn/en-us/azure-resource-manager/resource-group-template-deploy).
 
 
 ## Azure Functions  

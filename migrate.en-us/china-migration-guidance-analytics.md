@@ -93,14 +93,15 @@ If you want to migrate only the model metadata and not the data, an alternative 
 
 ## PowerBI
 
-Migrating PowerBI across Azure regions is not supported at this time, but you can migrate selected workspaces to another Azure region by using Power BI Premium. For more information, see [Configure Multi-Geo support for Power BI Premium](https://docs.microsoft.com/en-us/power-bi/service-admin-premium-multi-geo)。
+Migrating PowerBI across Azure regions is not supported at this time, but you can migrate selected workspaces to another Azure region by using Power BI Premium. For more information, see [Configure Multi-Geo support for Power BI Premium](https://docs.microsoft.com/en-us/power-bi/service-admin-premium-multi-geo).
 
 ## SQL Data Warehouse
 
-Review the **SQL Data Warehouse** chapter of [Migrate Database Resources](./china-migration-guidance-databases.md).
+Migrating SQL Data Warehouse across Azure regions isn’t supported at this time.
 
 ## Data Factory
-Review the **Data Factory** chapter of [Migrate Database Resources](./china-migration-guidance-databases.md).
+Review the **Data Factory** chapter of [Migrate Database Resources](./china-migration-guidance-databases.md). 
+(blank)
 
 
 ## Azure Data Explorer

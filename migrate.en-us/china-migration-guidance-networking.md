@@ -47,8 +47,8 @@ Get-AzureRmNetworkSecurityRuleConfig -NetworkSecurityGroup $nsg
 ```
 For more information: 
 * Refresh your [knowledge about network security groups.](https://docs.azure.cn/virtual-network/)
-* Review the [network security overview.](https://docs.azure.cn/virtual-network/)
-* Learn how to [manage network security groups.](https://docs.azure.cn/virtual-network/manage-network-security-group)。
+* Review the [network security overview.](https://docs.azure.cn/zh-cn/virtual-network/virtual-networks-overview)
+* Learn how to [manage network security groups.](https://docs.azure.cn/virtual-network/manage-network-security-group)
 
 ## ExpressRoute
 
@@ -56,10 +56,11 @@ Migrating an Azure ExpressRoute instance across Azure regions isn’t supported 
 
 For more information: 
 * Refresh your knowledge by completing the [ExpressRoute tutorials.](https://docs.azure.cn/expressroute/#step-by-step-tutorials)
-* Learn how to [create a new ExpressRoute gateway.](https://docs.azure.cn/expressroute/expressroute-howto-add-gateway-portal-resource-manager)。
-* Learn about [ExpressRoute locations and service providers.](https://docs.azure.cn/expressroute/expressroute-locations)。
-* Read about [virtual network gateways for ExpressRoute.](https://docs.azure.cn/zh-cn/expressroute/expressroute-about-virtual-network-gateways)的内容。
- 
+* Learn how to [create a new ExpressRoute gateway.](https://docs.azure.cn/expressroute/expressroute-howto-add-gateway-portal-resource-manager)
+* Learn about [ExpressRoute locations and service providers.](https://docs.azure.cn/expressroute/expressroute-locations)
+* Read about [virtual network gateways for ExpressRoute.](https://docs.azure.cn/zh-cn/expressroute/expressroute-about-virtual-network-gateways)
+
+
 ## VPN Gateway 
 
 Migrating an Azure VPN Gateway instance across Azure regions isn’t supported at this time. We recommend that you create and configure a new instance of VPN Gateway in the new region.
@@ -71,7 +72,7 @@ For more information:
 * Refresh your knowledge by completing the [VPN Gateway tutorials.](https://docs.azure.cn/vpn-gateway/#step-by-step-tutorials)
 * Learn how to [create a site-to-site connection.](https://docs.azure.cn/vpn-gateway/vpn-gateway-howto-site-to-site-resource-manager-portal)
 * Review the [Get-AzureRmVirtualNetworkGateway PowerShell cmdlet.](https://docs.microsoft.com/zh-cn/powershell/module/azurerm.network/get-azurermvirtualnetworkgateway?view=azurermps-6.13.0&viewFallbackFrom=azurermps-6.5.0)
-* Read the blog post: [Create a site-to-site connection.](https://blogs.technet.microsoft.com/ralfwi/2017/02/02/connecting-clouds/)。
+* Read the blog post: [Create a site-to-site connection.](https://blogs.technet.microsoft.com/ralfwi/2017/02/02/connecting-clouds/)
 
 ## Application Gateway
 
@@ -80,7 +81,7 @@ You can collect information about your current gateway configuration by using th
 
 For more information: 
 * Refresh your knowledge by completing the [Application Gateway tutorials.](https://docs.azure.cn/application-gateway/#step-by-step-tutorials)
-* Learn how to [create an application gateway.](https://docs.azure.cn/application-gateway/quick-create-portal)。
+* Learn how to [create an application gateway.](https://docs.azure.cn/application-gateway/quick-create-portal)
 * Review the [Application Gateway PowerShell cmdlets.](https://docs.microsoft.com/en-us/powershell/module/azurerm.network/?view=azurermps-6.13.0#application_gateway)
 
 ## DNS
@@ -113,8 +114,8 @@ az network dns record-set ns list -g <resource group> -z <zone name> --output js
 ```
 For more information: 
 * Refresh your knowledge by completing the [Azure DNS tutorials.](https://docs.azure.cn/dns/#step-by-step-tutorials)
-* Review the [Azure DNS overview.](https://docs.azure.cn/dns/dns-overview)。
-* Learn more about [Azure DNS import and export.](https://docs.azure.cn/dns/dns-import-export)。
+* Review the [Azure DNS overview.](https://docs.azure.cn/dns/dns-overview)
+* Learn more about [Azure DNS import and export.](https://docs.azure.cn/dns/dns-import-export)
 
 ## Network Watcher
 
@@ -122,7 +123,7 @@ Migrating a Network Watcher instance across Azure regions isn’t supported at t
  
 For more information: 
 * Refresh your knowledge by completing the [Network Watcher tutorials.](https://docs.azure.cn/network-watcher/#step-by-step-tutorials)
-* Review the [Network Watcher overview.](https://docs.azure.cn/network-watcher/network-watcher-monitoring-overview)。
+* Review the [Network Watcher overview.](https://docs.azure.cn/network-watcher/network-watcher-monitoring-overview)
 * Learn more about [network security group flow logs.](https://docs.azure.cn/network-watcher/network-watcher-nsg-flow-logging-portal)
 * Read about [Connection Monitor.](https://docs.azure.cn/network-watcher/connection-monitor)
 
@@ -144,8 +145,8 @@ The scenario involves the following steps:
 
 For more information: 
 * Refresh your knowledge by completing the [Traffic Manager tutorials.](https://docs.azure.cn/traffic-manager/#step-by-step-tutorials)
-* Review the [Traffic Manager overview.](https://docs.azure.cn/traffic-manager/traffic-manager-overview)。
-* Learn how to [create a Traffic Manager profile.](https://docs.azure.cn/traffic-manager/quickstart-create-traffic-manager-profile)。
+* Review the [Traffic Manager overview.](https://docs.azure.cn/traffic-manager/traffic-manager-overview)
+* Learn how to [create a Traffic Manager profile.](https://docs.azure.cn/traffic-manager/quickstart-create-traffic-manager-profile)
 
 ## Load Balancer
 

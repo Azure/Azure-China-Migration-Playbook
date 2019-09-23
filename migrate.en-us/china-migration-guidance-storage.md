@@ -6,7 +6,7 @@ author: msfrankchen
 ms.service: china 
 ms.topic: migrate
 layout: ContentPage 
-ms.date: 09/09/2019
+ms.date: 09/23/2019
 ms.author: frankch
 
 ---
@@ -25,7 +25,7 @@ AzCopy uses the terms Source and Dest expressed as URIs.
  
 You get the three parts of the URI (storageaccountname, containername, blobname) from the portal, by using PowerShell, or by using the Azure CLI. The name of the blob can be part of the URI or it can be given as a pattern, like vm121314.vhd.
 
-You also need to authenticate with the Azure Active Directory or SAS tokens to access the Azure Storage account. For instructions on how to authenticate, see [Authentication options.](https://docs.azure.cn/storage/common/storage-use-azcopy-v10#authentication-options)。
+You also need to authenticate with the Azure Active Directory or SAS tokens to access the Azure Storage account. For instructions on how to authenticate, see [Authentication options.](https://docs.azure.cn/storage/common/storage-use-azcopy-v10#authentication-options)
 
 Example:  
 URI part | example value
@@ -43,8 +43,8 @@ azcopy cp https://migratetest.blob.core.chinacloudapi.cn/vhds/vm-121314.vhd?<sas
 To get a consistent copy of the VHD, shut down the VM before you copy the VHD. Plan some downtime for the copy activity. When the VHD is copied, [rebuild your VM in the target environment.](https://docs.azure.cn/backup/backup-azure-vms-automation#create-a-vm-from-restored-disks)。
 
 For more information: 
-* 	Review the [AzCopy documentation.](https://docs.microsoft.com/azure/storage/common/storage-use-azcopy-v10)。
-* 	Learn how to [create a VM from restored disks.](https://docs.azure.cn/zh-cn/backup/backup-azure-vms-automation#create-a-vm-from-restored-disks)。
+* 	Review the [AzCopy documentation.](https://docs.microsoft.com/azure/storage/common/storage-use-azcopy-v10)
+* 	Learn how to [create a VM from restored disks.](https://docs.azure.cn/en-us/backup/backup-azure-vms-automation#create-a-vm-from-restored-disks)
 
 ## Managed Disks
 Azure Managed Disks simplifies disk management for Azure infrastructure as a service (IaaS) VMs by managing the storage accounts that are associated with the VM disk.
@@ -90,7 +90,7 @@ There are several options for creating a new managed disk. Here’s how to do it
 
 As noted earlier, there are multiple ways to create a VM by using this new managed disk. Here are two options: 
 * In the portal, select the disk, and then select **Create VM**. Define the other parameters of your VM as usual.
-* For PowerShell, see [Create a VM from restored disks.](https://docs.azure.cn/backup/backup-azure-vms-automation#create-a-vm-from-restored-disks)。
+* For PowerShell, see [Create a VM from restored disks.](https://docs.azure.cn/backup/backup-azure-vms-automation#create-a-vm-from-restored-disks)
 
 For more information: 
 * Learn how to export to disk [via API](https://docs.microsoft.com/rest/api/compute/disks/grantaccess) by getting a shared access signature URI. 
@@ -113,8 +113,8 @@ The following metadata elements are re-created when you export an Azure Import/E
 * Job Resource
 
 For more information: 
-* Review the [Azure Import/Export Service overview.](https://docs.azure.cn/storage/common/storage-import-export-service)。
-* Azure Import/Export [Frequently Asked Questions.](https://docs.azure.cn/storage/common/storage-import-export-service-faq)。
+* Review the [Azure Import/Export Service overview.](https://docs.azure.cn/storage/common/storage-import-export-service)
+* Azure Import/Export [Frequently Asked Questions.](https://docs.azure.cn/storage/common/storage-import-export-service-faq)
 * Become familiar with how to [export Azure Resource Manager templates](https://docs.azure.cn/azure-resource-manager/manage-resource-groups-portal#export-resource-groups-to-templates) or read the overview of [Azure Resource Manager](https://docs.azure.cn/azure-resource-manager/resource-group-overview).
 
 

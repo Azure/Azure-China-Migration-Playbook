@@ -6,7 +6,7 @@ author: msfrankchen
 ms.service: china 
 ms.topic: migrate
 layout: ContentPage 
-ms.date: 09/16/2019
+ms.date: 09/23/2019
 ms.author: frankch
 
 ---
@@ -26,9 +26,9 @@ across Azure regions isn’t supported at this time. We recommend that you expor
 For more information: 
 * Refresh your knowledge by completing the [App Service tutorials.](https://docs.azure.cn/app-service/#step-by-step-tutorials)
 * Get information about how to [export Azure Resource Manager templates.](https://docs.azure.cn/azure-resource-manager/manage-resource-groups-portal#export-resource-groups-to-templates)
-* Review the [Azure Resource Manager overview.](https://docs.azure.cn/azure-resource-manager/resource-group-overview)。
+* Review the [Azure Resource Manager overview.](https://docs.azure.cn/azure-resource-manager/resource-group-overview)
 * Get an [overview of Azure locations.](https://docs.azure.cn/app-service/overview)
-* Learn how to [redeploy a template.](https://docs.azure.cn/azure-resource-manager/resource-group-template-deploy)。
+* Learn how to [redeploy a template.](https://docs.azure.cn/azure-resource-manager/resource-group-template-deploy)
 
 ## API Management
 
@@ -38,7 +38,7 @@ To migrate API Management endpoints from one Azure region to another, you can us
 >*Backup and restore won’t work while migrating between different cloud types. For that, you’ll need to export the resource [as a template](https://docs.azure.cn/zh-cn/azure-resource-manager/manage-resource-groups-portal#export-resource-groups-to-templates). Then, adapt the exported template for the target Azure region and re- create the resources.*
 
 **Option 1: If you’re okay with a different API Management instance name, then follow
-these instructions: **
+these instructions**
 
 1.	Create a new API Management instance with the same SKU as the source API Management instance in the target region with a new name.
 2.	Backup existing API Management instance to a storage account.
@@ -56,10 +56,12 @@ these instructions: **
 4.	Restore the backup created in Step 1 to the new API Management instance in the target region.
 
 
+## CDN 
+
+CDN functiona has no regional properties and no migration is required.
+
+
 ## App Service
 
 See **App Service** Chapter of [Migrate Compute Resources.](./china-migration-guidance-compute.md)
-
-## CDN 
-
-See **CDN** Chapter of [Migrate Network Resources.](./china-migration-guidance-networking.md)
+(blank)

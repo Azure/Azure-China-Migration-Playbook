@@ -48,12 +48,11 @@ Get-AzureKeyVaultSecret -vaultname mysecrets -name Deploydefaultpw
 
 ## Azure Active Directory
 
-请参阅[迁移标识资源](./china-migration-guidance-identity.md)的 **Azure Active Directory** 章节。
+Azure AD 功能没有区域属性，不需要进行迁移。
 
 ## 安全中心
 (place holder)
 
 ## Azure 信息保护
-
-请参阅[迁移标识资源](./china-migration-guidance-identity.md)的 **Azure 信息保护**章节。
+Azure 信息保护功能没有区域属性，不需要进行迁移。
 

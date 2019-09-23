@@ -30,8 +30,8 @@ ms.author: frankch
 
 ## 应用服务
 
-请查阅[迁移计算资源](./china-migration-guidance-compute.md)中的**应用服务**章节。
+请查阅[迁移计算资源](./china-migration-guidance-compute.md)中的**应用服务**章节。(blank)
 
 ## Azure Kubernetes 服务
 
-请查阅[迁移计算资源](./china-migration-guidance-compute.md)中的 **Azure Kubernetes 服务**章节。
+请查阅[迁移计算资源](./china-migration-guidance-compute.md)中的 **Azure Kubernetes 服务**章节。(blank)

@@ -47,13 +47,14 @@ See **Application Gateway** chapter of [Migrate Network Resources](./china-migra
 
 See **VPN Gateway** chapter of [Migrate Network Resources](./china-migration-guidance-networking.md).
 
-## Azure Active Directory
-(place holder)
+## Azure Active Directory  
+
+Azure AD function has no regional properties and no migration is required.
+
+
+## Azure Information Protection  
+
+Azure Information Protection function has no regional properties and no migration is required.
 
 ## Security Center
 (place holder)
-
-## Azure Information Protection
-
-See **Azure Information Protection** chapter of [Migrate Identity Resources](./china-migration-guidance-identity.md).
-

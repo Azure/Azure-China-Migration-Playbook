@@ -1,19 +1,18 @@
 ---
-title: Migrate IoT resources to the target Azure region
+title: Migrate IoT resources
 description: This article provides the guidance and tools on migrating IoT to target Azure region.
 author: msfrankchen
 
 ms.service: china 
 ms.topic: migrate
 layout: ContentPage 
-ms.date: 09/16/2019
+ms.date: 09/23/2019
 ms.author: frankch
 
 ---
 
 
-# Migrate IoT resources to the target Azure region
-
+# Migrate IoT resources
 This section contains information that you may find helpful as you migrate Azure IoT resources across Azure regions.
  
 ## Functions
@@ -32,7 +31,7 @@ For more information:
 ## Notification Hubs
 
 To migrate settings from one instance of Azure Notification Hubs to another instance, export and then import all registration tokens and tags:
-1. [Export the existing notification hub registrations] to an Azure Blob storage container(https://docs.azure.cn/notification-hubs/export-modify-registrations-bulk#export).
+1. [Export the existing notification hub registrations](https://docs.azure.cn/notification-hubs/export-modify-registrations-bulk#export) to an Azure Blob storage container.
 2.	Create a new notification hub in the target environment.
 3. [Import your registration tokens](https://docs.azure.cn/zh-cn/notification-hubs/export-modify-registrations-bulk#import) from Blob storage to your new notification hub.  
 
@@ -67,11 +66,11 @@ For more information:
 
 ## Event Hubs
 
-See **Event Hubs** chapter of [Migrate analtyics Services](./china-migration-guidance-analytics.md).
+See **Event Hubs** chapter of [Migrate analtyics services](./china-migration-guidance-analytics.md).
 
 ## Stream Analtyics
 
-See **Stream Analtyics** chapter of [Migrate analtyics Services](./china-migration-guidance-analytics.md).
+See **Stream Analtyics** chapter of [Migrate analtyics services](./china-migration-guidance-analytics.md).
 
 ## Logic Apps
 
@@ -83,7 +82,7 @@ See **API Management** chapter of [Migrate web resources](./china-migration-guid
 
 ## Azure Cosmos DB
 
-See **Azure Cosmos DB** chapter of [Migrate database resources](./china-migration-guidance-database.md).
+See **Azure Cosmos DB** chapter of [Migrate database resources](./china-migration-guidance-databases.md).
 
 ## Azure  Time Series Insights
 (place holder)
@@ -91,6 +90,6 @@ See **Azure Cosmos DB** chapter of [Migrate database resources](./china-migratio
 ## Event Grid
 
 See **Event Grid** chapter of [Migrate integration resources](./china-migration-guidance-integration.md).
-
+(blank)
 
  

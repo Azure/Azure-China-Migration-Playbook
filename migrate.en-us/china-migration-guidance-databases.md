@@ -18,7 +18,7 @@ This section contains information that you may find helpful as you migrate Azure
 
 ## SQL Database
 
-To migrate Azure SQL Database workloads, use Geo-Replication. For detailed instructions, see the blog post [Migrating Azure services to new regions](https://azure.microsoft.com/en-cnuslog/migrating-azure-services-to-new-regions/).
+To migrate Azure SQL Database workloads, use Geo-Replication. For detailed instructions, see the blog post [Migrating Azure services to new regions](https://azure.microsoft.com/en-us/blog/migrating-azure-services-to-new-regions/).
 
 >*NOTE*  
 >*The connection string changes after the export operation because the DNS name of the server changes during export.。*
