@@ -54,6 +54,5 @@ Azure AD 功能没有区域属性，不需要进行迁移。
 (place holder)
 
 ## Azure 信息保护
-
-请参阅[迁移标识资源](./china-migration-guidance-identity.md)的 **Azure 信息保护**章节。
+Azure 信息保护功能没有区域属性，不需要进行迁移。
 
