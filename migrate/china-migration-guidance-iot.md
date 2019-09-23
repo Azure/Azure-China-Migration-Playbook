@@ -27,7 +27,7 @@ ms.author: frankch
 * 通过完成 [Functions 教程](https://docs.azure.cn/zh-cn/azure-functions/#step-by-step-tutorials)来刷新您的知识。
 * 了解如何[导出资源管理器模板](https://docs.azure.cn/zh-cn/azure-resource-manager/manage-resource-groups-portal#export-resource-groups-to-templates)或阅读 [Azure 资源管理器概述](https://docs.azure.cn/zh-cn/azure-resource-manager/resource-group-overview)。
 * 查阅 [Azure 功能概述](https://docs.azure.cn/zh-cn/azure-functions/functions-overview)。
-* 了解如何重[新部署模板](https://docs.azure.cn/zh-cn/azure-resource-manager/resource-group-template-deploy)。
+* 了解如何[重新部署模板](https://docs.azure.cn/zh-cn/azure-resource-manager/resource-group-template-deploy)。
 
 ## 通知中心
 
