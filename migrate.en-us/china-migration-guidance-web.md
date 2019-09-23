@@ -38,7 +38,7 @@ To migrate API Management endpoints from one Azure region to another, you can us
 >*Backup and restore won’t work while migrating between different cloud types. For that, you’ll need to export the resource [as a template](https://docs.azure.cn/zh-cn/azure-resource-manager/manage-resource-groups-portal#export-resource-groups-to-templates). Then, adapt the exported template for the target Azure region and re- create the resources.*
 
 **Option 1: If you’re okay with a different API Management instance name, then follow
-these instructions:**
+these instructions**
 
 1.	Create a new API Management instance with the same SKU as the source API Management instance in the target region with a new name.
 2.	Backup existing API Management instance to a storage account.
