@@ -83,7 +83,7 @@ See **API Management** chapter of [Migrate web resources](./china-migration-guid
 
 ## Azure Cosmos DB
 
-See **Azure Cosmos DB** chapter of [Migrate database resources](./china-migration-guidance-database.md).
+See **Azure Cosmos DB** chapter of [Migrate database resources](./china-migration-guidance-databases.md).
 
 ## Azure  Time Series Insights
 (place holder)
