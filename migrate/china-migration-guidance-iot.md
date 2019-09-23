@@ -80,7 +80,7 @@ IoT 中心不支持本机克隆。但是，您可以使用 Azure 资源管理器
 
 ## Azure Cosmos DB
 
-请查阅[迁移数据库资源](./china-migration-guidance-database.md)中的 **Azure Cosmos DB** 章节。
+请查阅[迁移数据库资源](./china-migration-guidance-databases.md)中的 **Azure Cosmos DB** 章节。
 
 ## Azure 时序见解
 (place holder)
