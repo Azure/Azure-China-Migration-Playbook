@@ -44,7 +44,7 @@ To get a consistent copy of the VHD, shut down the VM before you copy the VHD. P
 
 For more information: 
 * 	Review the [AzCopy documentation.](https://docs.microsoft.com/azure/storage/common/storage-use-azcopy-v10)
-* 	Learn how to [create a VM from restored disks.](https://docs.azure.cn/en-us/backup/backup-azure-vms-automation#create-a-vm-from-restored-disks)。
+* 	Learn how to [create a VM from restored disks.](https://docs.azure.cn/en-us/backup/backup-azure-vms-automation#create-a-vm-from-restored-disks)
 
 ## Managed Disks
 Azure Managed Disks simplifies disk management for Azure infrastructure as a service (IaaS) VMs by managing the storage accounts that are associated with the VM disk.
