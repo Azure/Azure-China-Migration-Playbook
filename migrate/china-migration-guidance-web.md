@@ -53,11 +53,13 @@ ms.author: frankch
 3. 使用与源区域中相同的名称，在目标区域中创建一个新的 API 管理实例。
 4. 在目标区域中，将步骤 1 中创建的备份还原为新的 API 管理实例。
 
-## 应用服务
-
-请查阅[迁移计算资源](./china-migration-guidance-compute.md)中的**应用服务**章节。
 
 ## CDN 内容分发网络
 
-请查阅[迁移网络资源](./china-migration-guidance-networking.md)中的**CDN 内容分发网络**章节。
+CDN 内容分发网络功能没有区域属性，不需要进行迁移。
+
+
+## 应用服务
+
+请查阅[迁移计算资源](./china-migration-guidance-compute.md)中的**应用服务**章节。(blank)
 
