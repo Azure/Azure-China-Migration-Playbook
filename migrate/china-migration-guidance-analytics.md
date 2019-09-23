@@ -91,7 +91,7 @@ ms.author: frankch
 
 ## 数据工厂
 
-请参阅[迁移数据库资源](./china-migration-guidance-databases.md)的**数据工厂**章节。
+请参阅[迁移数据库资源](./china-migration-guidance-databases.md)的**数据工厂**章节。(blank)
 
 ## Azure 数据资源管理器
 (place holder)
