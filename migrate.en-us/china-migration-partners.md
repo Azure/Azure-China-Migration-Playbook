@@ -19,7 +19,7 @@ Section provides information on how to leverage partner solutions and resources 
 ## System optimization partners
 
 ### Build data platforms that support cross-regions
-* [Reduxio](../migrate/media/china-migration-partners/partner-profile-reduxio.pptx)
+* [Reduxio](../migrate/media/china-migration-partners/partner-profile-reduxio.pdf)
 
 ## System migration partners
 
