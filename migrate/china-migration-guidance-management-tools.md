@@ -53,22 +53,11 @@ Azure 计划程序[将于2019年9月30日停用](https://azure.microsoft.com/upd
 
 Azure 顾问功能没有区域属性，不需要进行迁移。
 
-## 自动化
-(place holder)
-
 ## Azure 监控器
 
 Azure 监控器功能没有区域属性，不需要进行迁移。
-
-## Azure 服务运行状况
-(place holder)
 
 ## Azure 策略
 
 Azure 策略功能没有区域属性，不需要进行迁移。
 
-## Azure 资源管理器
-(place holder)
-
-## Azure Resource Graph
-(place holder)
