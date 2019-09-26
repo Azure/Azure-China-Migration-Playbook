@@ -51,7 +51,8 @@ Get-AzureKeyVaultSecret -vaultname mysecrets -name Deploydefaultpw
 Azure AD 功能没有区域属性，不需要进行迁移。
 
 ## 安全中心
-(place holder)
+
+安全中心功能没有区域属性，不需要进行迁移。
 
 ## Azure 信息保护
 Azure 信息保护功能没有区域属性，不需要进行迁移。
