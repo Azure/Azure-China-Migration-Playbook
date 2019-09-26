@@ -1,0 +1,50 @@
+- name: 如何使用此指南 
+  href: index.md
+- name: 概述
+  items:
+  - name: 区域选择指南
+    href: china-migration-region-strategy.md
+  - name: 迁移过程详解
+    href: china-migration-process.md
+  - name: 迁移手册及工具介绍
+    href: china-migration-tools-and-guidance.md
+  - name: 合作伙伴介绍
+    href: china-migration-partners.md
+- name: 如何
+  items:
+  - name: 迁移 AI 资源
+    href: china-migration-guidance-ai.md
+  - name: 迁移 Azure Stack 资源
+    href: china-migration-guidance-azure-stack.md
+  - name: 迁移安全资源
+    href: china-migration-guidance-security.md
+  - name: 迁移标识资源
+    href: china-migration-guidance-identity.md
+  - name: 迁移存储资源
+    href: china-migration-guidance-storage.md
+  - name: 迁移分析服务
+    href: china-migration-guidance-analytics.md
+  - name: 迁移管理工具资源
+    href: china-migration-guidance-management-tools.md
+  - name: 迁移集成资源
+    href: china-migration-guidance-integration.md
+  - name: 迁移计算资源
+    href: china-migration-guidance-compute.md
+  - name: 迁移网络资源
+    href: china-migration-guidance-networking.md
+  - name: 迁移媒体资源
+    href: china-migration-guidance-media.md
+  - name: 迁移容器资源
+    href: china-migration-guidance-containers.md
+  - name: 迁移数据库资源
+    href: china-migration-guidance-databases.md
+  - name: 迁移 Web 资源
+    href: china-migration-guidance-web.md
+  - name: 迁移 IoT 资源
+    href: china-migration-guidance-iot.md
+  - name: 迁移移动资源
+    href: china-migration-guidance-mobile.md
+- name: 资源
+  items:
+  - name: Azure 中国指南
+    href: https://docs.microsoft.com/en-us/azure/china/
