@@ -45,9 +45,6 @@ Currently, Azure does not provide automation tools for generating migration plan
 
 The resources and services must be migrated sequentially according to the migration plan finally confirmed by the customer.
 
-* [Migrate AI Resource(place holder)](./china-migration-guidance-ai.md)
-
-* [Migrate Azure Stack(place holder)](./china-migration-guidance-azure-stack.md)
 
 * [Migrate Security Resources](./china-migration-guidance-security.md)
 
@@ -75,7 +72,6 @@ The resources and services must be migrated sequentially according to the migrat
 
 * [Migrate IOT Resources](./china-migration-guidance-iot.md)
 
-* [Migrate Mobile Resources](./china-migration-guidance-mobile.md)
 
 
 ## Partner solutions and services

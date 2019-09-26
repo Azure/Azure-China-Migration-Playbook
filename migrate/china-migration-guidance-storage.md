@@ -118,14 +118,5 @@ azcopy -v /source:"https://md-kp4qvrzhj4j5.blob.core.chinacloudapi.cn /r0pmw4z3v
 
 目前不支持将 StorSimple 服务从一个 Azure 区域迁移到另一个 Azure 区域。我们建议您按照[此文档](https://docs.microsoft.com/zh-cn/azure/storsimple/storsimple-8000-migrate-classic-azure-portal#datacenter-changes)描述的手动过程操作或联系客户支持。
 
-## Azure Data Lake Storge
-(place holder)
-
-## 队列存储
-(place holder)
-
-## 文件存储
-(place holder)
-
 
 

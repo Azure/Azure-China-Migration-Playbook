@@ -60,8 +60,3 @@ these instructions**
 
 CDN functiona has no regional properties and no migration is required.
 
-
-## App Service
-
-See **App Service** Chapter of [Migrate Compute Resources.](./china-migration-guidance-compute.md)
-(blank)

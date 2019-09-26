@@ -99,12 +99,5 @@ Migrating PowerBI across Azure regions is not supported at this time, but you ca
 
 Migrating SQL Data Warehouse across Azure regions isn’t supported at this time.
 
-## Data Factory
-Review the **Data Factory** chapter of [Migrate Database Resources](./china-migration-guidance-databases.md). 
-(blank)
-
-
-## Azure Data Explorer
-(place holder)
 
 

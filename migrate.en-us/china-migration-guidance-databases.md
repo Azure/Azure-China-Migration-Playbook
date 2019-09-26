@@ -6,7 +6,7 @@ author: msfrankchen
 ms.service: china 
 ms.topic: migrate
 layout: ContentPage 
-ms.date: 09/16/2019
+ms.date: 09/26/2019
 ms.author: frankch
 
 ---
@@ -96,16 +96,5 @@ For this approach, you must modify your application. The application needs to wr
  
 For more information: 
 * Review the [overview of Azure Cache for Redis](https://docs.azure.cn/zh-cn/azure-cache-for-redis/cache-overview).
-
-## Azure Cosmos DB
-(Place holder)
-
-## Azure Database for MariaDB
-(Place holder)
-
-## Data Factory
-(Place holder)
-
-
 
 

@@ -29,14 +29,4 @@ See **Service Fabric** chapter of [Migrate Compute Resources](./china-migration-
 
 See **Batch** chapter of [Migrate Compute Resources](./china-migration-guidance-compute.md).
 
-## App Service
-
-See **App Service** chapter of [Migrate Compute Resources](./china-migration-guidance-compute.md).
-(blank)
-
-## Azure Kubernetes Service(AKS)
-
-See **Azure Kubernetes Service** chapter of [Migrate Compute Resources](./china-migration-guidance-compute.md).
-(blank)
-
 

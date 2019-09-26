@@ -6,7 +6,7 @@ author: msfrankchen
 ms.service: china 
 ms.topic: migrate
 layout: ContentPage 
-ms.date: 09/09/2019
+ms.date: 09/26/2019
 ms.author: frankch
 
 ---
@@ -44,10 +44,6 @@ Azure MSP 合作伙伴提供了更多相关工具供客户选择，相关产品�
 
 资源迁移必须依据用户最终确认的迁移计划，顺序依次迁移所部署的资源。
 
-* [迁移 AI 资源](./china-migration-guidance-ai.md) (placeholder)
-
-* [迁移 Azure Stack 资源](./china-migration-guidance-azure-stack.md) (place holder)
-
 * [迁移安全资源](./china-migration-guidance-security.md)
 
 * [迁移标识资源](./china-migration-guidance-identity.md)
@@ -74,7 +70,7 @@ Azure MSP 合作伙伴提供了更多相关工具供客户选择，相关产品�
 
 * [迁移 IoT 资源](./china-migration-guidance-iot.md)
 
-* [迁移移动资源](./china-migration-guidance-mobile.md)
+
 
 ## 合作伙伴选择
 

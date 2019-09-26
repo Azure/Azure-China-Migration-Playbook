@@ -89,11 +89,7 @@ ms.author: frankch
 
 目前不支持跨 Azure 区域迁移 SQL 数据仓库。
 
-## 数据工厂
 
-请参阅[迁移数据库资源](./china-migration-guidance-databases.md)的**数据工厂**章节。(blank)
 
-## Azure 数据资源管理器
-(place holder)
 
 

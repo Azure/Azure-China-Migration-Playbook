@@ -96,11 +96,3 @@ Azure Cache for Redis 团队的一名成员编写了一个开源工具，可以�
 有关更多信息：
 * 查阅 [Azure Cache for Redis 概述](https://docs.azure.cn/zh-cn/azure-cache-for-redis/cache-overview)。
 
-## Azure Cosmos DB
-(Place holder)
-
-## Azure Database for MariaDB
-(Place holder)
-
-## 数据工厂
-(Place holder)

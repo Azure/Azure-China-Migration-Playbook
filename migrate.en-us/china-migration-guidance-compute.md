@@ -130,8 +130,4 @@ For more information:
   
 See **Functions** chapter of [Migrate IoT resources](./china-migration-guidance-iot.md).
 
-## App Service
-(place holder)
 
-## Azure Kubernets Service
-(place holder)
