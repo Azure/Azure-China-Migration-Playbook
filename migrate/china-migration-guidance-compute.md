@@ -6,18 +6,18 @@ author: msfrankchen
 ms.service: china 
 ms.topic: migrate
 layout: ContentPage 
-ms.date: 09/16/2019
+ms.date: 09/26/2019
 ms.author: frankch
 
 ---
 
 # 迁移计算资源
 
-本节提供的信息可帮助您将已部署Azure计算资源从一个Azure区域迁移到其他Azure区域。
+本节提供的信息可帮助您将已部署 Azure 计算资源从一个 Azure 区域迁移到其他 Azure 区域。
   
 ## 虚拟机 
 
-由于目前中国所有Azure区域都处于[Azure 站点恢复（ASR）](https://docs.azure.cn/zh-cn/site-recovery/site-recovery-overview)所支持的相同地理集群（关于地理群集，[请参阅](https://docs.azure.cn/zh-cn/site-recovery/azure-to-azure-support-matrix#region-support))。可以参照[迁移Azure虚拟机到另一个区域](https://docs.azure.cn/zh-cn/site-recovery/azure-to-azure-tutorial-migrate)所描述的步骤完成虚拟机的迁移。
+由于目前中国所有 Azure 区域都处于[ Azure 站点恢复（ASR）](https://docs.azure.cn/zh-cn/site-recovery/site-recovery-overview)所支持的相同地理集群（关于地理群集，[请参阅](https://docs.azure.cn/zh-cn/site-recovery/azure-to-azure-support-matrix#region-support))。可以参照[迁移 Azure 虚拟机到另一个区域](https://docs.azure.cn/zh-cn/site-recovery/azure-to-azure-tutorial-migrate)所描述的步骤完成虚拟机的迁移。
   
 ## 云服务  
 
@@ -39,7 +39,7 @@ New-AzureService -ServiceName <yourServiceName> -Label <MyTestService> -Location
 ```PowerShell
 New-AzureDeployment -ServiceName <yourServiceName> -Slot <Production> -Package <YourCspkgFile.cspkg> -Configuration <YourConfigFile.cscfg>  
 ```
-3. 更新[CNAME 或 A 记录](https://docs.azure.cn/zh-cn/cloud-services/cloud-services-custom-domain-name-portal)以将访问导向新的云服务。
+3. 更新[ CNAME 或 A 记录](https://docs.azure.cn/zh-cn/cloud-services/cloud-services-custom-domain-name-portal)以将访问导向新的云服务。
 4. 当访问导向新的云服务后，[删除源 Azure 区域中的旧云服务](https://docs.microsoft.com/zh-cn/powershell/module/servicemanagement/azure/remove-azureservice)。  
 ```PowerShell
 Remove-AzureService -ServiceName <yourOldServiceName>
@@ -51,7 +51,7 @@ Remove-AzureService -ServiceName <yourOldServiceName>
 ```http
 https://management.core.windows.net/<subscription-id>/services/hostedservices  
 ```
-2. 使用[创建部署 API](https://msdn.microsoft.com/library/azure/ee460813.aspx)创建新的部署。要获取您的 .cspkg 和 .cscfg 定义，可以调用[Get Package API](https://docs.microsoft.com/en-us/previous-versions/azure/reference/jj154121(v=azure.100))。 
+2. 使用[创建部署 API](https://msdn.microsoft.com/library/azure/ee460813.aspx)创建新的部署。要获取您的 .cspkg 和 .cscfg 定义，可以调用[ Get Package API](https://docs.microsoft.com/en-us/previous-versions/azure/reference/jj154121(v=azure.100))。 
 ```http
 https://management.core.windows.net/<subscription-id>/services/hostedservices/<cloudservice-name>/deploymentslots/production  
 ```
@@ -60,12 +60,12 @@ https://management.core.windows.net/<subscription-id>/services/hostedservices/<c
 ```
   
 更多相关信息：
-* 请参考[Azure云服务概述](https://docs.azure.cn/zh-cn/cloud-services/cloud-services-choose-me)。
+* 请参考[ Azure 云服务概述](https://docs.azure.cn/zh-cn/cloud-services/cloud-services-choose-me)。
   
 ## Service Fabric  
 
 要将 Azure Service Fabric 资源从一个 Azure 区域迁移到另一个 Azure 区域，您需要在新区域中创建和重新部署 Service Fabric 群集和应用程序资源。必须备份旧群集中的数据，并将其还原到新群集以保证业务的运行状态。
-1. 阅读[生产准备清单](https://docs.azure.cn/zh-cn/service-fabric/service-fabric-production-readiness-checklist)中推荐的指南，使用[Azure 门户](https://docs.azure.cn/zh-cn/service-fabric/service-fabric-cluster-creation-via-portal)或资源管理器资源在目标 Azure 区域的资源组中创建新群集。
+1. 阅读[生产准备清单](https://docs.azure.cn/zh-cn/service-fabric/service-fabric-production-readiness-checklist)中推荐的指南，使用[ Azure 门户](https://docs.azure.cn/zh-cn/service-fabric/service-fabric-cluster-creation-via-portal)或资源管理器资源在目标 Azure 区域的资源组中创建新群集。
 2. 不应该出现新的调用，也不应该有任何服务相互通信或执行工作。
 3. 如果它是**有状态服务**，则需要将数据从旧群集移动到新群集。请参阅[从旧群集备份数据](https://docs.azure.cn/zh-cn/service-fabric/service-fabric-backuprestoreservice-quickstart-azurecluster)，以了解如何将数据从旧群集移动到新群集的信息。
 4. 如果它是**无状态服务**，则不需要移动数据，但您必须重新配置流量。
@@ -107,9 +107,9 @@ https://management.core.windows.net/<subscription-id>/services/hostedservices/<c
 有关更多信息：
 * 通过完成[虚拟机规模集教程](https://docs.azure.cn/zh-cn/virtual-machine-scale-sets/#step-by-step-tutorials)来刷新您的知识。
 * 了解如何[导出 Azure 资源管理器模板](https://docs.azure.cn/zh-cn/azure-resource-manager/manage-resource-groups-portal#export-resource-groups-to-templates)。
-* 查阅[Azure资源管理器概述](https://docs.azure.cn/zh-cn/azure-resource-manager/resource-group-overview)。
+* 查阅[ Azure 资源管理器概述](https://docs.azure.cn/zh-cn/azure-resource-manager/resource-group-overview)。
 * 获取[虚拟机规模集概述](https://docs.azure.cn/zh-cn/virtual-machine-scale-sets/overview)。
-* 阅读[Azure区域概述](https://www.azure.cn/zh-cn/home/features/products-by-region)。
+* 阅读[ Azure 区域概述](https://www.azure.cn/zh-cn/home/features/products-by-region)。
 * 了解如何[重新部署模板](https://docs.azure.cn/zh-cn/azure-resource-manager/resource-group-template-deploy)。
 
 
