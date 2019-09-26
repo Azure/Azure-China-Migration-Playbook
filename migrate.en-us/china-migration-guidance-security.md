@@ -6,7 +6,7 @@ author: msfrankchen
 ms.service: china 
 ms.topic: migrate
 layout: ContentPage 
-ms.date: 09/16/2019
+ms.date: 09/26/2019
 ms.author: frankch
 
 ---
@@ -57,4 +57,5 @@ Azure AD function has no regional properties and no migration is required.
 Azure Information Protection function has no regional properties and no migration is required.
 
 ## Security Center
-(place holder)
+
+Security Center function has no regional properties and no migration is required.

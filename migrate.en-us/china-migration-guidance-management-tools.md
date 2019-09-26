@@ -55,19 +55,23 @@ See **Network Watcher** Chapter of [Migrate Network Resources](china-migration-g
 
 
 ## Azure Advisor
-(place holder)
+
+Azure Advisor feature is non-regional and no migration is required.
+
 
 ## Automation
 (place holder)
 
 ## Azure Monitor
-(place holder)
+
+Azure Monitor feature is non-regional and no migration is required.
 
 ## Azure Service Health
 (place holder)
 
 ## Azure Policy
-(place holder)
+
+Azure policy feature is non-regional and no migration is required.
 
 ## Azure Resource Manager
 (place holder)

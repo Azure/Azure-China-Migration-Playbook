@@ -6,7 +6,7 @@ author: msfrankchen
 ms.service: china 
 ms.topic: migrate
 layout: ContentPage 
-ms.date: 09/09/2019
+ms.date: 09/29/2019
 ms.author: frankch
 
 ---
@@ -19,7 +19,7 @@ ms.author: frankch
 
 ## 服务总线
 
-Azure 服务总线没有数据导出或导入功能。要跨 Azure 区域迁移服务总线资源，可以将资源导出为[Azure 资源管理器模板](https://docs.azure.cn/zh-cn/azure-resource-manager/manage-resource-groups-portal#export-resource-groups-to-templates)。然后，针对目标 Azure 区域调整导出的模板并重新创建资源。
+Azure 服务总线没有数据导出或导入功能。要跨 Azure 区域迁移服务总线资源，可以将资源导出为[ Azure 资源管理器模板](https://docs.azure.cn/zh-cn/azure-resource-manager/manage-resource-groups-portal#export-resource-groups-to-templates)。然后，针对目标 Azure 区域调整导出的模板并重新创建资源。
 
 >*注意:*  
 >*导出资源管理器模板不会复制数据（例如，消息）。导出模板仅重新创建元数据。*
@@ -69,7 +69,7 @@ Azure 计划程序[将于2019年9月30日停用](https://azure.microsoft.com/zh-
 
 ## API管理
 
-请参阅[迁移Web资源](china-migration-guidance-web.md)中的 **API管理**章节。
+请参阅[迁移 Web 资源](china-migration-guidance-web.md)中的 **API管理**章节。
 
 ## 事件网格
 (place holder)

@@ -44,9 +44,9 @@ Azure MSP 合作伙伴提供了更多相关工具供客户选择，相关产品�
 
 资源迁移必须依据用户最终确认的迁移计划，顺序依次迁移所部署的资源。
 
-* [迁移 AI 资源](./china-migration-guidance-ai.md)
+* [迁移 AI 资源](./china-migration-guidance-ai.md) (placeholder)
 
-* [迁移 Azure Stack 资源](./china-migration-guidance-azure-stack.md)
+* [迁移 Azure Stack 资源](./china-migration-guidance-azure-stack.md) (place holder)
 
 * [迁移安全资源](./china-migration-guidance-security.md)
 
