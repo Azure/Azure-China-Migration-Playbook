@@ -87,7 +87,7 @@ ms.author: frankch
 
 ## SQL数据仓库
 
-请参阅[迁移数据库资源](./china-migration-guidance-databases.md)的 **SQL 数据仓库**章节。
+目前不支持跨 Azure 区域迁移 SQL 数据仓库。
 
 ## 数据工厂
 
