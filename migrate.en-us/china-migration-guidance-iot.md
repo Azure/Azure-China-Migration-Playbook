@@ -80,17 +80,4 @@ See **Logic Apps** chapter of [Migrate integration resources to the target Azure
 
 See **API Management** chapter of [Migrate web resources](./china-migration-guidance-web.md).
 
-## Azure Cosmos DB
 
-See **Azure Cosmos DB** chapter of [Migrate database resources](./china-migration-guidance-databases.md).
-(blank)
-
-## Azure  Time Series Insights
-(place holder)
-
-## Event Grid
-
-See **Event Grid** chapter of [Migrate integration resources](./china-migration-guidance-integration.md).
-(blank)
-
- 
