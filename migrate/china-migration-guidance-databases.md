@@ -83,7 +83,7 @@ Azure Cache for Redis 团队的一名成员编写了一个开源工具，可以�
 >*导出 Azure 存储帐户必须与缓存实例位于同一区域。*
 
 3. 使用 AzCopy 之类的工具将导出的 blob 复制到目标区域中的存储帐户。
-4. [将数据导入目标缓存](https://docs.azure.cn/zh-cn/azure-cache-for-redis/cache-how-to-import-export-data)或使用PowerShell cmdlet [Import-AzureRmRedisCache](https://docs.microsoft.com/zh-cn/powershell/module/azurerm.rediscache/import-azurermrediscache?view=azurermps-6.13.0&viewFallbackFrom=azurermps-6.4.0)完成导入。
+4. [将数据导入目标缓存](https://docs.azure.cn/zh-cn/azure-cache-for-redis/cache-how-to-import-export-data)或使用 PowerShell cmdlet [Import-AzureRmRedisCache](https://docs.microsoft.com/zh-cn/powershell/module/azurerm.rediscache/import-azurermrediscache?view=azurermps-6.13.0&viewFallbackFrom=azurermps-6.4.0) 完成导入。
 5. 重新配置应用程序以使用目标 Azure Cache for Redis 实例。
 
 **选项 4：将数据写入两个 Azure Cache for Redis 实例，并从一个实例中读取**

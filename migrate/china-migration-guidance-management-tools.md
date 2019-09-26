@@ -24,7 +24,7 @@ Azure 备份是基于 Azure 的服务，用于备份（或保护）和还原 Azu
 
 有关更多信息：
 * 通过完成[备份教程](https://docs.azure.cn/zh-cn/backup/#step-by-step-tutorials)来刷新您的知识。
-* 查阅[Azure 备份概述](https://docs.azure.cn/zh-cn/backup/backup-overview)。
+* 查阅[ Azure 备份概述](https://docs.azure.cn/zh-cn/backup/backup-overview)。
 
 ## 计划程序
 
@@ -50,19 +50,22 @@ Azure 计划程序[将于2019年9月30日停用](https://azure.microsoft.com/upd
 请参阅[迁移网络资源](china-migration-guidance-networking.md)中的**网络观察程序**章节。
 
 ## Azure 顾问
-(place holder)
+
+Azure 顾问功能没有区域属性，不需要进行迁移。
 
 ## 自动化
 (place holder)
 
 ## Azure 监控器
-(place holder)
+
+Azure 监控器功能没有区域属性，不需要进行迁移。
 
 ## Azure 服务运行状况
 (place holder)
 
 ## Azure 策略
-(place holder)
+
+Azure 策略功能没有区域属性，不需要进行迁移。
 
 ## Azure 资源管理器
 (place holder)

@@ -79,3 +79,9 @@ These terms are used in the following sections:
 
 >*NOTE*   
 >*Verify that the Azure service you’re migrating is offered in the target region.*
+
+## Azure Resources Migration
+
+For details on how to migrate Azure resources across regions, please refer to the section on [Azure Cross-Region Migration Playbook](china-migration-guidance-overview.md).
+
+

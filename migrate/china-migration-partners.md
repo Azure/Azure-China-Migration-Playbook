@@ -23,7 +23,7 @@ ms.author: frankch
 
 ### 跨 Azure 区域数据无缝迁移平台
 
-* [**Reduxio Magellan**](./media/china-migration-partners/partner-profile-reduxio.pptx)：Reduxio 公司成立于2013年，其总部位于以色列。Magellan 是其开发的基于容器的跨基础设施的数据平台产品，可以支持客户应用数据的无缝跨云和跨 Azure 区域的迁移。  
+* [**Reduxio Magellan**](./media/china-migration-partners/partner-profile-reduxio.pdf)：Reduxio 公司成立于2013年，其总部位于以色列。Magellan 是其开发的基于容器的跨基础设施的数据平台产品，可以支持客户应用数据的无缝跨云和跨 Azure 区域的迁移。  
 
 ## 系统迁移
 
@@ -33,4 +33,8 @@ ms.author: frankch
 
 * [**MindTree**](./media/china-migration-partners/partner-profile-mindtree.pdf)：Mindtree 是一家全球性的技术咨询和服务公司，帮助企业在业务扩张的同时提高敏捷性，以获得竞争优势。Midntree 成立于1999年，是 Larsen & Toubro 集团的子公司，Mindtree 将其深厚的行业经验应用于350多个企业客户合作项目，以打破业务“孤岛”，理解数字的复杂性，将业务创新快速推向市场。我们使IT能够匹配业务的发展速度，利用新兴技术和高效的持续交付能力来刺激业务创新。我们在全球超过15个国家开展业务，一直被认为是最佳工作场所之一，由21000名具有创业精神、协作精神和敬业精神的 “Mindtree Minds” 组成。
 
-* [**UnifyCloud**](https://www.unifycloud.com/)：Unifycloud 是一家总部位于华盛顿雷德蒙德的信息技术和云解决方案提供商，专注于网络安全、合规和成本管理。核心团队由前微软架构师、开发人员和网络安全专业人士组成。专注于让您的云计算之旅更加顺畅高效。
+* [**昆仑联通**](./media/china-migration-partners/partner-profile-comlan-cn.pdf)：北京昆仑联通科技发展股份有限公司是国内领先的整合式、一站式IT服务供应商，面向企业用户提供包括IT需求及资产管理、方案寻源与供货、方案交付、系统集成、IT基础架构运营与优 化等企业级专业服务。自1998年成立以来，本着“技术为本，服务社会”的经营理念，为超过20000家企业用户提供了一流的IT解决方案和相关服务。典 型客户包括IBM、西门子、三星、LG、百度、京东、链家等国内外知名企业和行业用户。
+
+## 联系我们
+
+>如果您希望得到更多关于合作伙伴选择方面的建议，请联系我们（chinamigrationpb@microsoft.com）进行详细咨询。

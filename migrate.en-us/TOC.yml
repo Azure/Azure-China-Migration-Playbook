@@ -1,81 +1,51 @@
-- name: Azure China Playbook
+- name: Azure China Migration Playbook 
   href: index.md
 - name: Overview
-  items: 
-  - name: Azure China checklist
-    href: overview-checklist.md
-  - name: Azure in China
-    href: overview-operations.md
-  - name: Azure China datacenters
-    href: overview-datacenter.md
-  - name: Data sovereignty & China regulations
-    href: overview-sovereignty-and-regulations.md
-  - name: Cross-border connectivity
-    href: overview-connectivity-and-interoperability.md
-- name: Concepts
   items:
-  - name: Purchase
-    href: concepts-purchase.md
-  - name: Support
-    href: concepts-support.md
-  - name: Service availability and roadmaps
-    href: concepts-service-availability.md
-  - name: Remote management
-    href: concepts-management.md
-  - name: Performance and connectivity
-    href: concepts-performance-and-connectivity.md
-  - name: Migration and expansion
-    href: concepts-migration-and-expansion.md
-- name: How to
-  items:
-  - name: Migrate
+  - name: Region Strategy
+    href: china-migration-region-strategy.md
+  - name: Migration Process
+    href: china-migration-process.md
+  - name: Migration Tools and Guidance
+    href: china-migration-tools-and-guidance.md
+  - name: Migration Partners
+    href: china-migration-partners.md
+  - name: How to
     items:
-    - name: Overview
-      href: migrate/index.md
-    - name: Region strategy
-      href: migrate/china-migration-region-strategy.md
-    - name: Migration process
-      href: migrate/china-migration-process.md
-    - name: Migration tools and guidance
-      href: migrate/china-migration-guidance-overview.md
-        items:
-        -name: AI
-         href: migrate/china-migration-guidance-ai.md
-        -name: Analytics
-         href: migrate/china-migration-guidance-analytics.md
-        -name: Azure Stack
-         href: migrate/china-migration-guidance-azure-stack.md
-        -name: Containers
-         href: migrate/china-migration-guidance-containers.md
-        -name: Compute
-         href: migrate/china-migration-guidance-compute.md
-        -name: Databases
-         href: migrate/china-migration-guidance-databases.md
-        -name: Identity
-         href: migrate/china-migration-guidance-identity.md
-        -name: Integration
-         href: migrate/china-migration-guidance-integration.md
-        -name: Internet of Things
-         href: migrate/china-migration-guidance-iot.md
-        -name: Management Tools
-         href: migrate/china-migration-guidance-management-tools.md
-        -name: Media
-         href: migrate/china-migration-guidance-media.md
-        -name: Mobile
-         href: migrate/china-migration-guidance-mobile.md
-        -name: Networking
-         href: migrate/china-migration-guidance-networking.md
-        -name: Security
-         href: migrate/china-migration-guidance-security.md
-        -name: Storage
-         href: migrate/china-migration-guidance-storage.md
-        -name: Web
+        -name: Migtare AI Resources
+         href: china-migration-guidance-ai.md
+        -name: Migrate Analytics Resources
+         href: china-migration-guidance-analytics.md
+        -name: Migrat Azure Stack Resources
+         href: china-migration-guidance-azure-stack.md
+        -name: Migrate Containers Resources
+         href: china-migration-guidance-containers.md
+        -name: Migrate Compute Resources
+         href: china-migration-guidance-compute.md
+        -name: Migrate Databases Resources
+         href: china-migration-guidance-databases.md
+        -name: Migrate Identity Resources
+         href: china-migration-guidance-identity.md
+        -name: Migrate Integration Resources
+         href: china-migration-guidance-integration.md
+        -name: Migrate IoT Resources
+         href: china-migration-guidance-iot.md
+        -name: Migrate Management Tools
+         href: china-migration-guidance-management-tools.md
+        -name: Migrate Media Resources
+         href: china-migration-guidance-media.md
+        -name: Migrate Mobile Resources
+         href: china-migration-guidance-mobile.md
+        -name: Migrate Networking Resources
+         href: china-migration-guidance-networking.md
+        -name: Migrate Security Resources
+         href: china-migration-guidance-security.md
+        -name: Migrate Storage Resources
+         href: china-migration-guidance-storage.md
+        -name: Migrate Web Resources
          href: migrate/china-migration-guidance-web.md     
-    - name: Migration partners
-      href: migrate/china-migration-partners.md
+    
 - name: Resources
   items:
-    - name: Azure China developer guide
-      href: resources-developer-guide.md
-    - name: Azure China FAQ
-      href: resources-faq.md
+  - name: Azure China Playbook
+    href: https://docs.microsoft.com/en-us/azure/china/

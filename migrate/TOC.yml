@@ -1,82 +1,50 @@
-- name: Azure China Playbook
+- name: 如何使用此指南 
   href: index.md
-- name: Overview
-  items: 
-  - name: Azure China checklist
-    href: overview-checklist.md
-  - name: Azure in China
-    href: overview-operations.md
-  - name: Azure China datacenters
-    href: overview-datacenter.md
-  - name: Data sovereignty & China regulations
-    href: overview-sovereignty-and-regulations.md
-  - name: Cross-border connectivity
-    href: overview-connectivity-and-interoperability.md
-- name: Concepts
+- name: 概述
   items:
-  - name: Purchase
-    href: concepts-purchase.md
-  - name: Support
-    href: concepts-support.md
-  - name: Service availability and roadmaps
-    href: concepts-service-availability.md
-  - name: Remote management
-    href: concepts-management.md
-  - name: Performance and connectivity
-    href: concepts-performance-and-connectivity.md
-  - name: Migration and expansion
-    href: concepts-migration-and-expansion.md
-- name: How to
+  - name: 区域选择指南
+    href: china-migration-region-strategy.md
+  - name: 迁移过程详解
+    href: china-migration-process.md
+  - name: 迁移手册及工具介绍
+    href: china-migration-tools-and-guidance.md
+  - name: 合作伙伴介绍
+    href: china-migration-partners.md
+- name: 如何
   items:
-  - name: 迁移
-    items:
-    - name: 概述
-      href: migrate/index.md
-    - name: 选择正确区域
-      href: migrate/china-migration-region-strategy.md
-    - name: 了解迁移流程
-      href: migrate/china-migration-process.md     
-    - name: 迁移手册及工具介绍
-      href: migrate/china-migration-tools-and-guidance.md
-        items:
-        -name: AI
-         href: migrate/china-migration-guidance-ai.md
-        -name: Azure Stack
-         href: migrate/china-migration-guidance-azure-stack.md
-        -name: 安全性
-         href: migrate/china-migration-guidance-security.md
-        -name: 标识
-         href: migrate/china-migration-guidance-identity.md      
-        -name: 存储
-         href: migrate/china-migration-guidance-storage.md  
-        -name: 分析
-         href: migrate/china-migration-guidance-analytics.md
-        -name: 管理工具
-         href: migrate/china-migration-guidance-management-tools.md 
-        -name: 集成
-         href: migrate/china-migration-guidance-integration.md 
-        -name: 计算
-         href: migrate/china-migration-guidance-compute.md    
-        -name: 联网
-         href: migrate/china-migration-guidance-networking.md 
-        -name: 媒体
-         href: migrate/china-migration-guidance-media.md      
-        -name: 容器
-         href: migrate/china-migration-guidance-containers.md        
-        -name: 数据库
-         href: migrate/china-migration-guidance-databases.md
-        -name: 网站
-         href: migrate/china-migration-guidance-web.md     
-        -name: 物联网
-         href: migrate/china-migration-guidance-iot.md
-        -name: 移动
-         href: migrate/china-migration-guidance-mobile.md
-
-    - name: 合作伙伴选择
-      href: migrate/china-migration-partners.md
-- name: Resources
+  - name: 迁移 AI 资源
+    href: china-migration-guidance-ai.md
+  - name: 迁移 Azure Stack 资源
+    href: china-migration-guidance-azure-stack.md
+  - name: 迁移安全资源
+    href: china-migration-guidance-security.md
+  - name: 迁移标识资源
+    href: china-migration-guidance-identity.md
+  - name: 迁移存储资源
+    href: china-migration-guidance-storage.md
+  - name: 迁移分析服务
+    href: china-migration-guidance-analytics.md
+  - name: 迁移管理工具资源
+    href: china-migration-guidance-management-tools.md
+  - name: 迁移集成资源
+    href: china-migration-guidance-integration.md
+  - name: 迁移计算资源
+    href: china-migration-guidance-compute.md
+  - name: 迁移网络资源
+    href: china-migration-guidance-networking.md
+  - name: 迁移媒体资源
+    href: china-migration-guidance-media.md
+  - name: 迁移容器资源
+    href: china-migration-guidance-containers.md
+  - name: 迁移数据库资源
+    href: china-migration-guidance-databases.md
+  - name: 迁移 Web 资源
+    href: china-migration-guidance-web.md
+  - name: 迁移 IoT 资源
+    href: china-migration-guidance-iot.md
+  - name: 迁移移动资源
+    href: china-migration-guidance-mobile.md
+- name: 资源
   items:
-    - name: Azure China developer guide
-      href: resources-developer-guide.md
-    - name: Azure China FAQ
-      href: resources-faq.md
+  - name: Azure 中国指南
+    href: https://docs.microsoft.com/en-us/azure/china/
