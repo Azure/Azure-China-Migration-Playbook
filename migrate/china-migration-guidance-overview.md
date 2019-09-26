@@ -70,7 +70,7 @@ Azure MSP 合作伙伴提供了更多相关工具供客户选择，相关产品�
 
 * [迁移 IoT 资源](./china-migration-guidance-iot.md)
 
-* [迁移移动资源](./china-migration-guidance-mobile.md)
+
 
 ## 合作伙伴选择
 
