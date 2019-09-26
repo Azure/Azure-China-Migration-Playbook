@@ -6,7 +6,7 @@ author: msfrankchen
 ms.service: china 
 ms.topic: migrate
 layout: ContentPage 
-ms.date: 09/09/2019
+ms.date: 09/26/2019
 ms.author: frankch
 
 ---
@@ -75,8 +75,12 @@ The resources and services must be migrated sequentially according to the migrat
 
 * [Migrate IOT Resources](./china-migration-guidance-iot.md)
 
-* [Migrate Mobile Resources(place holder)](./china-migration-guidance-mobile.md)
+* [Migrate Mobile Resources](./china-migration-guidance-mobile.md)
 
+
+## Partner solutions and services
+
+Microsoft certified Azure MSP partners can provide Azure customers with a complete one-stop cross-region migration service.Please refer to the section [Partner solutions and services](./china-migration-partners.md) for detailed introduction.
 
 
 
