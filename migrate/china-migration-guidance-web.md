@@ -59,7 +59,4 @@ ms.author: frankch
 CDN 内容分发网络功能没有区域属性，不需要进行迁移。
 
 
-## 应用服务
-
-请查阅[迁移计算资源](./china-migration-guidance-compute.md)中的**应用服务**章节。(blank)
 
