@@ -30,6 +30,3 @@ See **Notification Hubs** Chapter of [Migrate IOT Service](./china-migration-gui
 
 See **API Apps** Chapter of [Migrate Compute Service](./china-migration-guidance-compute.md).
 
-## Customer Engagement Fabric
-### Short Message Service(SMS)
-### SOcial Login Service
