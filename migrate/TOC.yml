@@ -12,10 +12,6 @@
     href: china-migration-partners.md
 - name: 如何
   items:
-  - name: 迁移 AI 资源
-    href: china-migration-guidance-ai.md
-  - name: 迁移 Azure Stack 资源
-    href: china-migration-guidance-azure-stack.md
   - name: 迁移安全资源
     href: china-migration-guidance-security.md
   - name: 迁移标识资源
