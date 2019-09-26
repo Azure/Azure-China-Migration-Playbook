@@ -19,7 +19,7 @@ ms.author: frankch
 
 AzCopy 是一个免费工具，可用于复制 blob、文件和表。使用 AzCopy 进行迁移，可以实现跨 Azure 区域的 blob 复制。  
 如果不对源 VM 使用托管磁盘，请使用 AzCopy 将 .vhd 文件复制到目标环境。如果使用托管磁盘，请参阅**托管磁盘**。  
-以下示例显示了 AzCopy 的使用方法。有关完整参考文献，请参阅[AzCopy文档](https://docs.azure.cn/zh-cn/storage/common/storage-use-azcopy-v10)。  
+以下示例显示了 AzCopy 的使用方法。有关完整参考文献，请参阅 [AzCopy 文档](https://docs.azure.cn/zh-cn/storage/common/storage-use-azcopy-v10)。  
 AzCopy 使用 Source 和 Dest 来表示 URI。
  
 通过使用 PowerShell 或使用 Azure CLI，您可从门户获得 URI 的三个部分（storageaccountname、containername、blobname）。Blob 的名称可以是 URI 的一部分，或以固定模板提供，如vm121314.vhd。
@@ -57,7 +57,7 @@ Azure 托管磁盘通过管理与 VM 磁盘关联的存储帐户，简化了 Azu
 
 **步骤 2：AzCopy**
 
-有关如何使用 AzCopy 的示例，请参阅**Blobs**。使用 AzCopy 或类似工具将磁盘直接从源环境复制到目标环境。  
+有关如何使用 AzCopy 的示例，请参阅 **Blobs**。使用 AzCopy 或类似工具将磁盘直接从源环境复制到目标环境。  
 在 AzCopy 中，您必须将 URI 拆分为基础 URI 和共享访问签名部分。URI 的共享访问签名部分以字符 "**?**" 开头。共享访问签名 URI 格式类似此 URI：
 ```http
 https://md-kp4qvrzhj4j5.blob.core.chinacloudapi.cn /r0pmw4z3vk1g/abcd?sv=2017-04-17&sr=b&si=22970153-4c56-47c0-8cbb-156a24b6e4b5&sig=5Hfu0qMw9rkZf6mCjuCE4VMV6W3IR8FXQSY1viji9bg%3D>
