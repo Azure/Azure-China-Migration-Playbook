@@ -123,14 +123,5 @@ For more information:
 Migrating StorSimple service from one Azure region to another isn’t supported at this time. We recommend you follow the manual process described [here](https://docs.microsoft.com/azure/storsimple/storsimple-8000-migrate-classic-azure-portal#datacenter-changes) or contact customer support.
 
 
-## Azure Data Lake Storge
-(place holder)
-
-## Queues Storage
-(place holder)
-
-## File Storage
-(place holder)
-
 
 
