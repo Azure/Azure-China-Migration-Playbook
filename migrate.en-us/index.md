@@ -15,4 +15,4 @@ Please contact us (chinamigrationpb@microsoft.com) for any questions regarding t
 ## More information
 
 [Azure Overseas cloud migration guide](https://github.com/Azure/Azure-Migration-Guidance)  
-[Azure China Migration Playbook-Chinese Version](../migrate/index.md)
+
