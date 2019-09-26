@@ -75,5 +75,4 @@ For more information:
 
 See **API Management** chapter of [Migration Web Resources](./china-migration-guidance-web.md).
 
-## Event Grid
-(place holder)
+
