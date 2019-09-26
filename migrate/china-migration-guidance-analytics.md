@@ -6,7 +6,7 @@ author: msfrankchen
 ms.service: china 
 ms.topic: migrate
 layout: ContentPage 
-ms.date: 09/06/2019
+ms.date: 09/26/2019
 ms.author: frankch
 
 ---
@@ -74,7 +74,7 @@ ms.author: frankch
 
 要跨 Azure 区域迁移 Azure Analysis Services 模型，请使用[备份和还原操作](https://docs.azure.cn/zh-cn/analysis-services/analysis-services-backup)。
 
-如果只想迁移模型元数据而不是数据，则可以选择[从Visual Studio部署模型](https://docs.azure.cn/zh-cn/analysis-services/analysis-services-deploy)。
+如果只想迁移模型元数据而不是数据，则可以选择[从 Visual Studio 部署模型](https://docs.azure.cn/zh-cn/analysis-services/analysis-services-deploy)。
  
 有关更多信息：
 * 了解 [Analysis Services 备份和还原](https://docs.azure.cn/zh-cn/analysis-services/analysis-services-backup)。
@@ -82,12 +82,12 @@ ms.author: frankch
 
 ## PowerBI
 
-目前不支持跨 Azure 区域迁移 PowerBI，但您可以使用 Power BI Premium 将选定的工作区迁移到另一个 Azure 区域。
+目前不支持跨 Azure 区域迁移 PowerBI ，但您可以使用 Power BI Premium 将选定的工作区迁移到另一个 Azure 区域。
 有关更多信息，请参阅[为 Power BI Premium 配置多地理位置支持](https://docs.microsoft.com/zh-cn/power-bi/service-admin-premium-multi-geo)。
 
 ## SQL数据仓库
 
-请参阅[迁移数据库资源](./china-migration-guidance-databases.md)的**SQL数据仓库**章节。
+请参阅[迁移数据库资源](./china-migration-guidance-databases.md)的 **SQL 数据仓库**章节。
 
 ## 数据工厂
 
