@@ -12,12 +12,8 @@
     href: china-migration-partners.md
   - name: How to
     items:
-        -name: Migtare AI Resources
-         href: china-migration-guidance-ai.md
         -name: Migrate Analytics Resources
          href: china-migration-guidance-analytics.md
-        -name: Migrat Azure Stack Resources
-         href: china-migration-guidance-azure-stack.md
         -name: Migrate Containers Resources
          href: china-migration-guidance-containers.md
         -name: Migrate Compute Resources
