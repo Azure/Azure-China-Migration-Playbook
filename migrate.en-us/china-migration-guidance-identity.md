@@ -12,7 +12,7 @@ ms.author: frankch
 ---
 
 
-# Migrate identity resources
+# Migrate Identity Resources
 
 This section contains information that you may find helpful as you migrate Azure identity resources across Azure regions.
 
