@@ -13,7 +13,7 @@ ms.author: frankch
 
 
 
-# Migrate integration resources
+# Migrate Integration Resources
 
 This section contains information that you may find helpful as you migrate your Azure integration resources across Azure regions.
 
