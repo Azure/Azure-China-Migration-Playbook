@@ -17,31 +17,31 @@ ms.author: frankch
 # Region Strategy
 
   
-In China, [**Microsoft Azure** operated by 21Vianet](https://www.azure.cn/en-us/home/features/what-is-azure/) is an independently managed, publicly-owned cloud platform on Mainland China and is physically and logically independent of Microsoft Cloud-managed Azure services in other regions worldwide. It uses Microsoft global Azure technology to provide clients globally consistent services with guaranteed quality. Currently, there are two top data centers deployed in the east (Shanghai) and the north (Beijing).
+In China, [**Microsoft Azure** operated by 21Vianet](https://azure.microsoft.com/en-us/global-infrastructure/china/) is an independently managed, public cloud platform in China, and is physically and logically independent of Microsoft cloud-based Azure services in other regions worldwide. It uses Microsoft Azure technology to provide clients globally consistent services with guaranteed quality. Currently, there are two top data centers positioned in the east (Shanghai) and two in the north (Beijing).
 
-Theoretically, cloud computing resources can be regarded as nearly infinite under certain conditions. However, due to the rapid development of cloud computing technology and the rapid growth of China's Internet business, the construction speed and construction mode of cloud service infrastructure need to be dynamically adjusted according to the demand constantly to meet the growing and changing business needs. For the potential risks brought by this, it is necessary for users to fully understand the characteristics of cloud services and adapt and adjust the system built based on cloud services to improve the flexibility and stability of the system.
+Theoretically, cloud computing resources can be regarded as nearly infinite under certain conditions. However, due to the rapid development of cloud computing technology and the rapid growth of China's internet business, the construction speed and construction mode of cloud service infrastructure need to be dynamically adjusted according to the demand, constantly catering to the growing and forever-changing business needs. For the potential risks brought by this, it is necessary for users to fully understand the characteristics of cloud services, adapting and adjusting the system built based on cloud services to improve the flexibility and stability.
 
 
 ## Regional characteristic difference
 
-China's cloud customers are in regional distribution and different dimensions of industry/product/service/IT systems cycle , such as the demand has the very big difference. So China cloud regions in the adjustment of the iteration, according to customer's requirements also turn in and out of the unique characteristics of the corresponding regions so as to adapt to China's cloud the regional business development needs of clients.
+China's cloud customers in different geos and different dimensions of industry/product/service/IT systems cycle , have very different demand. Therefore, while China cloud regions upgrade in iterations according to customer's requirements, they also gradually develop unique characteristics in different regions, catering to business development demands of customers in different china cloud regions.
 
-Understanding these differences and making better use of them in the process of system landing, expansion, upgrade and reconstruction can help the system architecture to realize long-term adaptation to the deployed area in design, and reduce the potential impact on customers due to various external factors.
+Understanding these differences and better leveraging them in the process of system landing, expansion, upgrade and reconstruction can contribute to system architecture being long-term adapted to the deployed region from design phase, and reduce the potential risk to customers while various external factors change.
 
 
 ### Regional service differences
 
-According to the characteristics and needs of customers in Azure China, the deployment schedule of specific services in each region will also be different. For specific differences, please refer to [Azure Services Availability](https://www.azure.cn/zh-cn/home/features/products-by-region). The list is daily updated to ensure that users are kept up to date.In addition, access [Latest announcements from Azure](https://www.azure.cn/zh-cn/what-is-new/) where full announcements of Azure's new service launch are available
+According to the characteristics and needs of customers in Azure China, the deployment roadmap of specific services in each region is different too. For service parity, please refer to [Azure Services Availability](https://azure.microsoft.com/en-us/global-infrastructure/services/?products=all&regions=non-regional,china-non-regional,china-east,china-east-2,china-north,china-north-2). The list is up-to-date, ensuring customer to receive latest information. In addition, access [Azure Updates](https://azure.microsoft.com/en-us/updates/) to learn about important Azure product updates, roadmap, and announcements.
 
 ### Industry distribution difference
 
-Because the business or users of some industry customers will be concentrated in some hot region or time periods, the demand for resources in these regions or time periods will be concentrated and released, resulting in resource strain.
+Because the business traffic or visitors of some industries will be concentrated in some hot regiosn or time periods, the demand for resources in these regions or time periods will be concentrated, which leads to resource shortage.
 
-* Retail industry: Retail industry is one of the key industries Azure cloud business in China, especially in recent years the rapid growth of China's consumer market and the vigorous development of the new retail related business, so both in domestic enterprises and overseas enterprises regard China as a global important consumer market development, especially in eastern China in the south of Yangtze river delta and pearl river delta region, is the key business development area of retail enterprises. Therefore, among cloud resources deployed by public cloud service enterprises in southeast China, retail customers are all important resource consumers. Especially in the hot activity season of the retail industry, such as "double 11", it is the concentrated release time for the demand of various enterprises for cloud services, which leads to the shortage of resources in these periods.
+* Retail industry: Retail industry is one of the key industries cloud business focusing, especially in recent years with rapid growth of China's consumer market and vigorous development of new retail business, not only domestic enterprises but also overseas enterprises develop China market as an important consumer market in global, especially Yangtze river delta of China East and pearl river delta region of China North, are the key business development areas to retail business. Therefore, among public cloud services customers of southeast China, customers of retail business are all key resource consumers. Especially in the hot season of retail industry, such as "double 11", enterprise customers will release demands on public cloud services concentratedly, which leads to the shortage of resources in these periods.
 
 ### Premium resource distribution differences
 
-For premium resources such as SSD, GPU server, etc., due to the relatively high input in the early stage, the speed of resource input is based on the analysis of the potential business demand in each region, and then the investment is made in stages according to the prediction of the growth trend.Therefore, compared with ordinary resources, the price of advanced resources will be relatively high and the quantity of resources will be less than ordinary resources.Therefore, the correct use of advanced resources can effectively reduce operating costs and improve the robustness of the system.
+For premium resources such as SSD, GPU server, etc., due to the relatively high investment in the early stage, the roadmap of the resources is based on the analysis of the potential business demand of each region, and then the investment is placed in stages according to the prediction of growth. Therefore, compared with general resources, the price of advanced resources will be relatively high, and the quantity of resources will be limited. However, reasonable using of advanced resources can effectively reduce operating costs and improve the robustness of the system.
 
 * Premium SSD: Premium SSD is based on high-performance SSD storage resource hardware facilities. If they are used intensively in some areas, the resources will be relatively scarce for a period of time, which will affect the business development of customers in that area.
 * GPU: GPU resources are already online in China North2 and China East2. If the user has a need for GPU resources, you can deploy your system in these two regions to improve the overall system performance.  
@@ -52,15 +52,15 @@ More Information：
 
 ## Optimize resources of used region
 
-If your system deployed on Azure has the pitfalls described above, you can adjust the rules described below to reduce or eliminate the impact of the pitfalls.
+You can adjust your deployment according to the rules described below to mitigate or eliminate the portential risk.
 
 ### Make proper use of hot regions
 
-For business application scenarios where Azure Chinese cloud users are not concentrated in the China East region and the delay requirements are not high, the resources of 2 regions in the china north should be used as much as possible to reduce the potential impact of resource shortage caused by hot industry activities on your business.
+For business scenarios with wide-spreading customers not concentrated in the China East, low request on network latency, the Azure cloud resources of 2 regions in China North are recommended to avoid possible impact from resource constraint because of hot activites of hot industries.
 
 ### Make proper use of hot resources
 
-For premium resources, use them appropriately based on the specific business metrics of your business.Unless the general resources can not meet the business requirements, try to avoid the use of advanced resources in unnecessary scenarios, not only improve the robustness of the system, but also reduce the system operating costs.
+For premium resources, using them appropriately base on specific business metrics of your business. Unless the general resources cannot meet business requirements, avoid using premium resources in unnecessary scenarios, which can not only improve the robustness of system, but also reduce system operating costs.
     
 
 For Example：
@@ -70,12 +70,12 @@ For Example：
 More Imformation：
 * See [Managed disks pricing details](https://www.azure.cn/en-us/pricing/details/storage/managed-disks/) for more information about the metrics and price differences between standard HDDS and premium SSDS.
 
-## Azure China Migaration
+## Azure China Migration
 
 If you want to reduce or eliminate hazards over the long term by migrating systems across regions, see [Migration Process](china-migration-process.md).
 
 ## Contact us
 
->If you would like more advice on region selection and optimization, please contact us (chinamigrationpb@microsoft.com) for more details.
+If you would like to have more advices on region selection and optimization, please contact us (chinamigrationpb@microsoft.com).
 
 
