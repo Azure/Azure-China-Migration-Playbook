@@ -1,4 +1,5 @@
 ---
+
 title: Region Strategy
 description: This article describes the characteristics of different regions of Azure China and can help you choose the applicable region for your company.
 author: msfrankchen
@@ -10,6 +11,7 @@ ms.date: 09/26/2019
 ms.author: frankch
 
 ---
+
 
 
 # Region Strategy
@@ -75,4 +77,5 @@ If you want to reduce or eliminate hazards over the long term by migrating syste
 ## Contact us
 
 >If you would like more advice on region selection and optimization, please contact us (chinamigrationpb@microsoft.com) for more details.
+
 
