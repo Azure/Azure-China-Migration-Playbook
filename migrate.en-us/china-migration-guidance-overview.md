@@ -75,7 +75,7 @@ The resources and services must be migrated sequentially according to the migrat
 
 
 
-## Partner solutions and services
+## Partner Solutions and Services
 
 Microsoft certified Azure MSP partners can provide Azure customers with a complete one-stop cross-region migration service.Please refer to the section [Partner solutions and services](./china-migration-partners.md) for detailed introduction.
 
