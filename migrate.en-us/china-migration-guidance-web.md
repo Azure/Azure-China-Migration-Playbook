@@ -11,7 +11,7 @@ ms.author: frankch
 
 ---
 
-# Migrate web resources
+# Migrate Web Resources
 
 This section contains information that you may helpful as you migrate Azure web resources across Azure regions.
 
