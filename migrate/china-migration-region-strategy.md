@@ -37,7 +37,7 @@ Azure 中国云各区域根据其客户特性及需求，其在各区域的具�
 
 有关更多信息：
 
-* 查阅[中国版 Azure (世纪互联运营) vs. 全球版 Azure)](https://www.microsoft.com/china/azure/index.html)。
+* 查阅[中国版 Azure (世纪互联运营) vs. 全球版 Azure](https://www.microsoft.com/china/azure/index.html)。
 
 ## 优化所用区域资源
 
