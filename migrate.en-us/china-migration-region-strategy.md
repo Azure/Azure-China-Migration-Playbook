@@ -46,7 +46,7 @@ For premium resources such as SSD, GPU server, etc., due to the relatively high 
 
 More Information：
 
-* See [Microsoft Azure operated by 21Vianet vs. Global Azure ](https://www.microsoft.com/china/azure/index.html)。
+* See [Microsoft Azure operated by 21Vianet vs. Global Azure ](https://www.microsoft.com/china/azure/index.html).
 
 ## Optimize resources of used region
 
