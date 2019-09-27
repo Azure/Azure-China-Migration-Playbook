@@ -46,31 +46,32 @@ Currently, Azure does not provide automation tools for generating migration plan
 The resources and services must be migrated sequentially according to the migration plan finally confirmed by the customer.
 
 
-* [Migrate Security Resources](./china-migration-guidance-security.md)
-
-* [Migrate Identity Resources](./china-migration-guidance-identity.md)
-
-* [Migrate Storage Resources](./china-migration-guidance-storage.md)
-
 * [Migrate Analytics Services](./china-migration-guidance-analytics.md)
-
-* [Migrate Management Tools Resources](./china-migration-guidance-management-tools.md)
-
-* [Migrate Integration Resources](./china-migration-guidance-integration.md)
-
-* [Migrate Compute Resources](./china-migration-guidance-compute.md)
-  
-* [Migrate Network Resources](./china-migration-guidance-networking.md)
-
-* [Migrate Media Resources](./china-migration-guidance-media.md)
 
 * [Migrate Containers Resources](./china-migration-guidance-containers.md)
 
+* [Migrate Compute Resources](./china-migration-guidance-compute.md)
+
 * [Migrate Datebase Resources](./china-migration-guidance-databases.md)
+
+* [Migrate Identity Resources](./china-migration-guidance-identity.md)
+
+* [Migrate Integration Resources](./china-migration-guidance-integration.md)
+
+* [Migrate IOT Resources](./china-migration-guidance-iot.md)
+
+* [Migrate Management Tools Resources](./china-migration-guidance-management-tools.md)
+
+* [Migrate Media Resources](./china-migration-guidance-media.md)
+
+* [Migrate Network Resources](./china-migration-guidance-networking.md)
+
+* [Migrate Security Resources](./china-migration-guidance-security.md)
+
+* [Migrate Storage Resources](./china-migration-guidance-storage.md)
 
 * [Migrate Web Resources](./china-migration-guidance-web.md)
 
-* [Migrate IOT Resources](./china-migration-guidance-iot.md)
 
 
 
