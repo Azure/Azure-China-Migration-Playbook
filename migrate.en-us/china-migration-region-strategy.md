@@ -35,7 +35,7 @@ According to the characteristics and needs of customers in Azure China, the depl
 
 ### Industry distribution difference
 
-Because the business traffic or visitors of some industries will be concentrated in some hot regiosn or time periods, the demand for resources in these regions or time periods will be concentrated, which leads to resource shortage.
+Because the business traffic or visitors of some industries will be concentrated in some hot regions or time periods, the demand for resources in these regions or time periods will be concentrated, which leads to resource shortage.
 
 * Retail industry: Retail industry is one of the key industries cloud business focusing, especially in recent years with rapid growth of China's consumer market and vigorous development of new retail business, not only domestic enterprises but also overseas enterprises develop China market as an important consumer market in global, especially Yangtze river delta of China East and pearl river delta region of China North, are the key business development areas to retail business. Therefore, among public cloud services customers of southeast China, customers of retail business are all key resource consumers. Especially in the hot season of retail industry, such as "double 11", enterprise customers will release demands on public cloud services concentratedly, which leads to the shortage of resources in these periods.
 
