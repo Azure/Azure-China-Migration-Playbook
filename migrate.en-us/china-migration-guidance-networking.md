@@ -11,7 +11,7 @@ ms.author: frankch
 
 ---
 
-# Migrate network resources
+# Migrate Network Resources
 
 Most networking services don’t support migration across Azure regions. However, you can connect your networks in two cloud environments with [Global VNet Peering](https://docs.azure.cn/virtual-network/virtual-network-peering-overview). Global VNet peering enables you to connect across regions privately using the Microsoft Backbone. Once peered, the virtual networks appear as one for connectivity purposes. The steps you take to set up VNet peering across regions are listed below. Once your virtual networks created, all you need to do is peer them.
 
