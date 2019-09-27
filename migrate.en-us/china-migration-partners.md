@@ -10,18 +10,18 @@ ms.date: 09/26/2019
 ms.author: frankch
 
 ---
-# Partner solutions and services
+# Partner Solutions and Services
 
 Section provides information on how to leverage partner solutions and resources to help you:
 * **Optimize your system**: allow your system's technical architecture to support multiple regions (clouds) for flexible migration between regions to maximize the advantages of each region.
 * **Migrate your system**: leverage the tools and experience of your partners to help you develop the best migration plan and to help you complete the business migration with low risk.
 
-## System optimization partners
+## System Optimization Partners
 
 ### Build data platforms that support cross-regions
 * [Reduxio](../migrate/media/china-migration-partners/partner-profile-reduxio.pdf): Reduxio was founded in 2013 and is headquartered in Israel.Magellan is a container-based, cross-infrastructure data platform product that supports seamless migration of customer application data across cloud and Azure regions.
 
-## System migration partners
+## System Migration Partners
 
 * [HCL](../migrate/media/china-migration-partners/partner-profile-hcl.pdf): HCL Technologies is a next-generation global technology company that helps enterprises reimagine their businesses for the digital age. Our technology products, services, and engineering are built on four decades of innovation, with a world-renowned management philosophy, a strong culture of invention and risk-taking, and a relentless focus on customer relationships. We offer an integrated portfolio of products, solutions, services, and IP through our Mode 1-2-3 strategy, built around digital, IoT, cloud, automation, cybersecurity, analytics, infrastructure management, and engineering services, among others. With a worldwide network of R&D, innovation labs and delivery centers, and 143,000+ ‘Ideapreneurs’ working in 44 countries, HCL serves leading enterprises across key industries, including 250 of the Fortune 500 and 650 of the Global 2000.
 
