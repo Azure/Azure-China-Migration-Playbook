@@ -11,7 +11,7 @@ ms.author: frankch
 
 ---
 
-# Migrate storage resources
+# Migrate Storage Resources
 
 This section contains information that you may find helpful as you migrate Azure storage resources across Azure regions.
 
