@@ -12,7 +12,7 @@ ms.author: frankch
 ---
 
 
-# Migrate security resources
+# Migrate Security Resources
 
 This article has information that you may find helpful as you migrate Azure security resources across Azure regions.
 
