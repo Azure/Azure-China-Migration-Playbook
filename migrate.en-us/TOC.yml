@@ -39,7 +39,7 @@
         -name: Migrate Storage Resources
          href: china-migration-guidance-storage.md
         -name: Migrate Web Resources
-         href: migrate/china-migration-guidance-web.md     
+         href: china-migration-guidance-web.md     
     
 - name: Resources
   items:
