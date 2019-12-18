@@ -34,10 +34,10 @@ CONTOSO公司现有的IT架构已经使用了4年，技术框架和服务已经�
 CONTOSO在Azure China的使用情况:   
 
 *	CONTOSO在Azure China上使用中国东部1区域的数据中心搭载网络商城。  
-*	CONTOSO 在该数据中心上使用的资源为：计算/存储/网络。  
-  *	计算：共15台虚拟机，合计每月约使用 40k 小时。虚拟机的主要型号为：D2/D3/D4/D5/F4/F。  
-  *	存储：共11块硬盘，型号主要为 P30/P10/P15/P6/S30/S15 等。另有 GRS 数据存储/LRS Snapshots等存储实例共40个。  
-  *	网络：1个 Basic Gateway，1个 Standard Static Public IP，1个Dynamic Public IP。  
+*	CONTOSO 在该数据中心上使用的资源为：计算/存储/网络。   
+     - 计算：共15台虚拟机，合计每月约使用 40k 小时。虚拟机的主要型号为：D2/D3/D4/D5/F4/F。   
+     -	存储：共11块硬盘，型号主要为 P30/P10/P15/P6/S30/S15 等。另有 GRS 数据存储/LRS Snapshots等存储实例共40个。  
+     -	网络：1个 Basic Gateway，1个 Standard Static Public IP，1个Dynamic Public IP。  
 *	CONTOSO的网络商城从4年前搭建之后就没有进行过架构改造，IT系统已经进入生命周期后期。  
 
 ## 区域选择原则
