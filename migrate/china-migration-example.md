@@ -35,9 +35,9 @@ CONTOSO在Azure China的使用情况:
 
 *	CONTOSO在Azure China上使用中国东部1区域的数据中心搭载网络商城。  
 *	CONTOSO 在该数据中心上使用的资源为：计算/存储/网络。  
-  o	计算：共15台虚拟机，合计每月约使用 40k 小时。虚拟机的主要型号为：D2/D3/D4/D5/F4/F8。  
-  o	存储：共11块硬盘，型号主要为 P30/P10/P15/P6/S30/S15 等。另有 GRS 数据存储/LRS Snapshots等存储实例共40个。  
-  o	网络：1个 Basic Gateway，1个 Standard Static Public IP，1个Dynamic Public IP。  
+  *	计算：共15台虚拟机，合计每月约使用 40k 小时。虚拟机的主要型号为：D2/D3/D4/D5/F4/F。  
+  *	存储：共11块硬盘，型号主要为 P30/P10/P15/P6/S30/S15 等。另有 GRS 数据存储/LRS Snapshots等存储实例共40个。  
+  *	网络：1个 Basic Gateway，1个 Standard Static Public IP，1个Dynamic Public IP。  
 *	CONTOSO的网络商城从4年前搭建之后就没有进行过架构改造，IT系统已经进入生命周期后期。  
 
 ## 区域选择原则
@@ -127,23 +127,23 @@ CONTOSO在Azure China的使用情况:
 ## 验收阶段
 ### 关键任务
 在验证阶段，完成以下任务：
-•	完成用户验收测试。
-•	如果适用，将最新数据同步到目标环境。
-•	确保应用程序按预期工作。
-•	切换到目标区域中的新应用程序实例。
-•	验证生产环境是否按预期工作。
-•	取消配置源区域中的资源。
-•	Infra Testing
-•	Go Live decision
-•	Roll back
-•	Early life support
-•	Performing Quality checks， UAT and Cutover collaboration with End-Customer
+*	完成用户验收测试。 
+*	如果适用，将最新数据同步到目标环境。 
+*	确保应用程序按预期工作。 
+*	切换到目标区域中的新应用程序实例。 
+*	验证生产环境是否按预期工作。 
+*	取消配置源区域中的资源。
+*	Infra Testing  
+*	Go Live decision  
+*	Roll back  
+*	Early life support  
+* Performing Quality checks， UAT and Cutover collaboration with End-Customer
 
 ### 关键产出
-	迅速过度
-	决定上线
-	交接
-	月度/周度的运营报告
+*	迅速过度 
+*	决定上线
+*	交接  
+*	月度/周度的运营报告
 
 
 
