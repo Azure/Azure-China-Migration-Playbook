@@ -183,7 +183,7 @@ Contoso 商业有限公司是一家提倡简约自然的家居品牌，在全球
 1.	在 Azure 中国北部区域2 中创建新的资源组 CONTOSORG2。
 2.	[在目标区域中创建新的虚拟网络。](https://docs.azure.cn/zh-cn/articles/azure-china-migration-playbook/china-migration-guidance-networking)
 3.	在新区域中创建和配置 VPN 网关的新实例
-4.	[使用ASR迁移虚拟机到中国北部2 的资源组。](CONTOSORG2 https://docs.azure.cn/zh-cn/site-recovery/azure-to-azure-tutorial-migrate)
+4.	[使用ASR迁移虚拟机到中国北部2 的资源组。](https://docs.azure.cn/zh-cn/site-recovery/azure-to-azure-tutorial-migrate)
 5.	[迁移存储资源。](https://docs.azure.cn/zh-cn/articles/azure-china-migration-playbook/china-migration-guidance-storage)
 6.	配置 CONTOSORG2 新建的资源。
 7.	为迁移后的资源[配置灾难恢复和备份。](https://docs.azure.cn/zh-cn/site-recovery/azure-to-azure-quickstart)
@@ -200,11 +200,10 @@ Contoso 商业有限公司是一家提倡简约自然的家居品牌，在全球
 *	切换到目标区域中的新应用程序实例。 
 *	验证生产环境是否按预期工作。 
 *	取消配置源区域中的资源。
-*	Infra Testing  
-*	Go Live decision  
-*	Roll back  
-*	Early life support  
-* Performing Quality checks， UAT and Cutover collaboration with End-Customer
+*	基础设施测试。  
+*  上线的决定。
+*  早期生命支持。
+*	与终端客户进行质量检查、UAT和割接合作。
 
 #### 关键产出
 *	迅速过度 
