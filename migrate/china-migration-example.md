@@ -1,11 +1,11 @@
 ---
 title: CONTOSO公司在Azure China进行区域迁移实例
-description: This article describes detailed steps to migrate CONTOSO Corp. resourcesfrom Azure China East1 to China North2 region.
+description: This article describes detailed steps to migrate CONTOSO resources from Azure China East1 to China North2 region.
 author: siguo
 ms.service: china 
 ms.topic: migrate
 layout: ContentPage 
-ms.date: 12/19/2019
+ms.date: 01/03/2020
 ms.author: siguo
 
 ---
@@ -75,9 +75,9 @@ Contoso 商业有限公司是一家提倡简约自然的家居品牌，在全球
 * 计算：
   * 虚拟机(D2/D3/D4/D5/F4/F)： x15
   * 合计用量： 40K Hour/Month
-*	存储：
-  * 磁盘(P30/P10/P15/P6/S30/S15)： x11
-  * GRS存储/LRS Snapshots： x40
+* 存储： 
+   * 磁盘(P30/P10/P15/P6/S30/S15)： x11 
+   * GRS存储/LRS Snapshots： x40 
 * 网络：
   * Basic Gateway： x1
   * Standard Static Public IP： x1
