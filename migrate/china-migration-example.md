@@ -1,6 +1,6 @@
 ---
-title: CONTOSO公司在Azure China进行区域迁移实例
-description: This article describes detailed steps to migrate CONTOSO resources from Azure China East1 to China North2 region.
+title: Contoso公司在Azure China进行区域迁移实例
+description: This article describes detailed steps to migrate Contoso resources from Azure China East1 to China North2 region.
 author: siguo
 ms.service: china 
 ms.topic: migrate
@@ -154,7 +154,7 @@ Contoso 商业有限公司是一家提倡简约自然的家居品牌，在全球
 决策 V-Team 与公司决策层基于评估进行审批，执行 V-Team 基于审批结果开展迁移工作。
 
 ## 迁移过程
-在经过以上的评估之后，管理层决定 CONTOSO 中国分公司确定开启其 Azure China 迁移项目，你可以开始协调各个部门开始以下三个阶段的工作。
+在经过以上的评估之后，管理层决定 Contoso 中国分公司确定开启其 Azure China 迁移项目，你可以开始协调各个部门及 V-Team 开始以下三个阶段的工作。
 
 ### 计划阶段
 
@@ -164,7 +164,9 @@ Contoso 商业有限公司是一家提倡简约自然的家居品牌，在全球
 * （可选）利用迁移过程来应用 Gartner 5-R 标准和优化工作负载。  
 *	确定目标 Azure 区域中的目标环境和要求。
 *	识别目标 Azure 租户（如有必要，创建一个）并创建订阅。 
+*  确定新区域中的网络规划，例如：新的网段/ VNet/ ER 专线等。
 *  确定是否需要新的域名及备案。
+*  确定迁移后的资源是否需要采购新的 Liscence 。
 *	设计详细的迁移计划报告。 
 *	确定合适的迁移时间线和计划表。 
 *	在你评估环境时，将为你提供一个包含成本分析步骤的完美机会。 使用评估活动收集的数据，你应该能够分析和预测成本。 除了任何一次性成本之外，此成本预测还应考虑消耗量服务成本（例如增加的数据入口）。
@@ -173,7 +175,7 @@ Contoso 商业有限公司是一家提倡简约自然的家居品牌，在全球
 在此阶段结束时，您将拥有： 
 * 迁移计划报告：部署体系结构的具体设计文档。
 * 成本分析报告：包括迁移成本和目标环境的资源消耗等。  
-*	新的CPP合同：根据预测CONTOSO在中国北部2区域的资源用量，重新签订CPP合同。这需要对 Azure 做出前期货币承诺，同时可让 CONTOSO 获得众多权益，包括灵活的计费选项和最优惠价格。  
+*	新的CPP合同：根据预测 Contoso 在中国北部2区域的资源用量，重新签订CPP合同。这需要对 Azure 做出前期货币承诺，同时可让 Contoso 获得众多权益，包括灵活的计费选项和最优惠价格。  
 *	时间线和计划表：根据迁移计划表，为迁移项目建立大致时间线和里程碑。
 
 ### 迁移阶段
@@ -183,7 +185,7 @@ Contoso 商业有限公司是一家提倡简约自然的家居品牌，在全球
 #### 关键任务
 1.	在 Azure 中国北部区域2 中创建新的资源组 CONTOSORG2。
 2.	[在目标区域中创建新的虚拟网络。](https://docs.azure.cn/zh-cn/articles/azure-china-migration-playbook/china-migration-guidance-networking)
-3.	在新区域中创建和配置 VPN 网关的新实例。
+3.	在新区域中创建和配置 VPN 网关的新实例。需要注意的是有一些 PaaS 服务不支持 Vnet Peering，需要手动配对。
 4.	[使用ASR迁移虚拟机到中国北部2 的资源组。](https://docs.azure.cn/zh-cn/site-recovery/azure-to-azure-tutorial-migrate)
 5.	[迁移存储资源。](https://docs.azure.cn/zh-cn/articles/azure-china-migration-playbook/china-migration-guidance-storage)
 6.	配置 CONTOSORG2 新建的资源。
@@ -196,13 +198,12 @@ Contoso 商业有限公司是一家提倡简约自然的家居品牌，在全球
 #### 关键任务
 在验证阶段，完成以下任务：
 *	完成用户验收测试。 
-*	如果适用，将最新数据同步到目标环境。 
+*	检验迁移过程中是否产生新增数据。如果有，将最新数据同步到目标环境。 
 *	确保应用程序按预期工作。 
 *	切换到目标区域中的新应用程序实例。 
 *	验证生产环境是否按预期工作。 
 *	取消配置源区域中的资源。
 *	基础设施测试。  
-*  上线的决定。
 *  早期生命支持。
 *	与终端客户进行质量检查、UAT和割接合作。
 
