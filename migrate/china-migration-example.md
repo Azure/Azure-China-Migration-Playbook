@@ -1,6 +1,6 @@
 ---
-title: Contoso公司在Azure China进行区域迁移实例
-description: This article describes detailed steps to migrate Contoso resources from Azure China East1 to China North2 region.
+title: 区域迁移示例
+description: This article describes detailed steps to migrate resources of Contoso Company from Azure China East1 to China North2 region.
 author: siguo
 ms.service: china 
 ms.topic: migrate
