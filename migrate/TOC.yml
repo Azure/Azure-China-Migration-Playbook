@@ -12,11 +12,11 @@
   - name: 迁移示例
     items:
     - name: 背景介绍
-      href: china-migration-guidance-example-background.md
+      href: china-migration-example-background.md
     - name: 准备过程
-      href: china-migration-guidance-example-prepare.md
+      href: china-migration-example-prepare.md
     - name: 迁移过程
-      href: china-migration-guidance-example-migrate.md
+      href: china-migration-example-migrate.md
   - name: 资源迁移方法
     items:
     - name: 迁移安全资源
