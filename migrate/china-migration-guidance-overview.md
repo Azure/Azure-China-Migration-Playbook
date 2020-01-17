@@ -1,6 +1,6 @@
 ---
-title: Azure资源跨区域迁移手册
-description: This article provides the guidance and tools on migrating resources between different Azure China regions.
+title: 迁移工具介绍
+description: This article provides the tools on migrating resources between different Azure China regions.
 author: msfrankchen
 
 ms.service: china 
@@ -11,7 +11,7 @@ ms.author: frankch
 
 ---
 
-# Azure资源跨区域迁移手册
+# 迁移工具介绍
 
 本章节中描述了各迁移阶段可以利用的工具及相关的迁移步骤。
 
@@ -40,38 +40,4 @@ Azure MSP 合作伙伴提供了更多相关工具供客户选择，相关产品�
 
 目前 Azure 没有提供自动化工具用于生成迁移计划，Azure MSP 合作伙伴提供了相关工具供客户选择，相关产品描述请参阅[合作伙伴介绍](./china-migration-partners.md)的相关章节。
 
-## 资源迁移方法
 
-资源迁移必须依据用户最终确认的迁移计划，顺序依次迁移所部署的资源。
-
-* [迁移安全资源](./china-migration-guidance-security.md)
-
-* [迁移标识资源](./china-migration-guidance-identity.md)
-
-* [迁移存储资源](./china-migration-guidance-storage.md)
-
-* [迁移分析服务](./china-migration-guidance-analytics.md)
-
-* [迁移管理工具资源](./china-migration-guidance-management-tools.md)
-
-* [迁移集成资源](./china-migration-guidance-integration.md)
-
-* [迁移计算资源](./china-migration-guidance-compute.md)
-  
-* [迁移网络资源](./china-migration-guidance-networking.md)
-
-* [迁移媒体资源](./china-migration-guidance-media.md)
-
-* [迁移容器资源](./china-migration-guidance-containers.md)
-
-* [迁移数据库资源](./china-migration-guidance-databases.md)
-
-* [迁移 Web 资源](./china-migration-guidance-web.md)
-
-* [迁移 IoT 资源](./china-migration-guidance-iot.md)
-
-
-
-## 合作伙伴选择
-
-经过微软认证的 Azure MSP 合作伙伴可以为 Azure 客户提供完善的一站式跨 Azure 区域迁移服务。具体的介绍请查阅[合作伙伴选择](./china-migration-partners.md)章节的介绍。
