@@ -78,6 +78,3 @@ ms.author: frankch
 ### 注意
 验证您要迁移的 Azure 服务是否在目标区域中提供。
 
-## Azure 资源跨区域迁移
-
-有关如何跨区域迁移具体资源，请查阅 [Azure资源跨区域迁移手册](china-migration-guidance-overview.md)章节的介绍。
