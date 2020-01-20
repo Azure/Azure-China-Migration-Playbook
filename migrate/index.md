@@ -7,12 +7,14 @@
 * [区域选择指南](china-migration-region-strategy.md)
 * [迁移过程详解](china-migration-process.md)  
 
-## 资源迁移示例
+##  教程 
+
+### 资源迁移示例
 * [背景介绍](./china-migration-example-background.md)
 * [准备过程](./china-migration-example-prepare.md)
 * [迁移过程](./china-migration-example-migrate.md)
 
-## 资源迁移方法
+### 资源迁移方法
 
 * [迁移安全资源](./china-migration-guidance-security.md)
 * [迁移标识资源](./china-migration-guidance-identity.md)
