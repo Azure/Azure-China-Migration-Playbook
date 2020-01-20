@@ -1,5 +1,5 @@
 ---
-title: 准备过程
+title: 搬迁准备过程
 description: This article describes detailed steps to prepare Contoso Migration Program.
 author: siguo
 ms.service: china 
