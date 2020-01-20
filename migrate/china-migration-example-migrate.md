@@ -1,5 +1,5 @@
 ---
-title: 迁移过程
+title: 计划、搬迁、验收
 description: This article describes detailed steps to migrate resources of Contoso Company from Azure China East1 to China North2 region.
 author: siguo
 ms.service: china 
@@ -10,7 +10,7 @@ ms.author: siguo
 
 ---
 
-# 迁移过程
+# 计划、搬迁、验收
 在经过以上的评估之后，管理层决定 Contoso 中国分公司确定开启其 Azure China 迁移项目，你可以开始协调各个部门及 V-Team 开始以下三个阶段的工作。
 
 ## 计划阶段
