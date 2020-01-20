@@ -1,5 +1,5 @@
 ---
-title: 背景介绍
+title: 客户搬迁背景介绍
 description: This article describes the background of Contoso Migration Program.
 author: siguo
 ms.service: china 
@@ -10,7 +10,7 @@ ms.author: siguo
 
 ---
 
-# 背景介绍
+# 客户搬迁背景介绍
 
 Contoso 商业有限公司是一家提倡简约自然的家居品牌，在全球各地均有分公司，利用其遍布全球的线下门店和线上网络商城服务其全球用户。其线上商城系统是基于微软 Azure 服务开发，并就近部署在其全球主要消费者来源国家的 Azure 区域中。中国不但是其全球业务的主要来源，更是其未来重要的业务拓展区域，因此其面向中国消费者的已有线上商城系统采用了 Azure China 的服务，并部署在**东部1区域**中。
 
