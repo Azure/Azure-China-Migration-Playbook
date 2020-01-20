@@ -1,24 +1,26 @@
-- name: 如何使用此指南 
-  href: index.md
 - name: 概述
+  href: index.md
+
+- name: 教程
+  items:
+  - name: 客户搬迁示范案例
+    items:
+    - name: 客户搬迁背景介绍
+      href: china-migration-example-background.md
+    - name: 搬迁准备过程
+      href: china-migration-example-prepare.md
+    - name: 计划、搬迁、验收
+      href: china-migration-example-migrate.md
+
+- name: 概念
   items:
   - name: 区域选择指南
     href: china-migration-region-strategy.md
   - name: 迁移过程详解
     href: china-migration-process.md
 
-- name: 教程
-  items:
-  - name: 迁移示例
-    items:
-    - name: 背景介绍
-      href: china-migration-example-background.md
-    - name: 准备过程
-      href: china-migration-example-prepare.md
-    - name: 迁移过程
-      href: china-migration-example-migrate.md
       
-  - name: 资源迁移方法
+  - name: 操作方法指南
     items:
     - name: 迁移安全资源
       href: china-migration-guidance-security.md
@@ -46,6 +48,7 @@
       href: china-migration-guidance-web.md
     - name: 迁移 IoT 资源
       href: china-migration-guidance-iot.md
+
 - name: 资源
   items:
   - name: 迁移工具介绍
