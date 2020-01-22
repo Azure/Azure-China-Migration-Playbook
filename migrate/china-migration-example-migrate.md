@@ -60,8 +60,8 @@ Contoso 公司在中国东部1区域使用的资源比较简单，只有 计算/
 1.	在 Azure 中国北部区域2 的开发环境订阅中创建新的资源组 CONTOSORG2。
 2.	[在目标区域中创建新的虚拟网络。](https://docs.azure.cn/zh-cn/articles/azure-china-migration-playbook/china-migration-guidance-networking)
 3.	在新区域中创建和配置 VPN 网关的新实例。需要注意的是有一些 PaaS 服务不支持 Vnet Peering，需要手动配对。
-4.	[使用ASR迁移虚拟机到中国北部2 的资源组。](https://docs.azure.cn/zh-cn/site-recovery/azure-to-azure-tutorial-migrate)
-5.	升级并[迁移存储资源。](https://docs.azure.cn/zh-cn/articles/azure-china-migration-playbook/china-migration-guidance-storage)
+4.	升级并[迁移存储资源。](https://docs.azure.cn/zh-cn/articles/azure-china-migration-playbook/china-migration-guidance-storage)
+5.	[使用ASR迁移虚拟机到中国北部2 的资源组。](https://docs.azure.cn/zh-cn/site-recovery/azure-to-azure-tutorial-migrate)
 6.	配置 CONTOSORG2 新建的资源。
 7. 重复步骤1-6依次迁移供应链订阅和网页商成订阅。
 8.	检验迁移过程中是否产生新增数据。如果有，将最新数据同步到目标环境。 
