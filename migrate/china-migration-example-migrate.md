@@ -36,7 +36,9 @@ ms.author: siguo
   * 为了将对客户的影响降到最小，决策团队决定先搬迁开发环境订阅，经过内部测试之后再大规模搬迁 ToB 供应链订阅中的资源，然后迁移ToC 网页商城订阅中的资源。  
   * 您需要协同 **决策V-Team**、**执行V-Team** 和团队成员共同谈论可行的时间线和计划表，保证所有利益相关者知情并同意，能够全力配合本次迁移项目。
 
-**加一个dependency图**
+Contoso 公司制定的时间计划如下：
+![Contoso 资源迁移时间线示例](./media/china-migration-process/ContosoTimeline.JPG)
+
 
 
 ### 商务准备
