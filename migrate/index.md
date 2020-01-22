@@ -7,7 +7,7 @@
 * [区域选择指南](china-migration-region-strategy.md)
 * [迁移过程详解](china-migration-process.md)  
 
-## 客户搬迁示范案例
+## 教程（客户搬迁示范案例）
 * [客户搬迁背景介绍](./china-migration-example-background.md)
 * [搬迁准备过程](./china-migration-example-prepare.md)
 * [计划、搬迁、验收](./china-migration-example-migrate.md)
