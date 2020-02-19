@@ -57,7 +57,7 @@ ms.author: siguo
 * 存储： 
    * 磁盘(P30/P10/P15/P6/S30/S15)： x11 
    * GRS存储/LRS Snapshots： x40 
-   * 数据存储备份在 Azure China 北部1区域的数据中心中
+   * 数据存储备份在 Azure China **北部1区域**的数据中心中
 * 网络：
   * Basic Gateway： x1
   * Standard Static Public IP： x1
