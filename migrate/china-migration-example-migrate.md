@@ -21,7 +21,7 @@ ms.author: siguo
  * 订阅： 
    *  经过评估，Contoso 公司首先需要在新区域中创建 Azure 租户，迁移并改进原有的3个订阅：开发环境、ToB供应链服务、ToC网页商城服务。  
    *  订阅管理员需要重新检查并更新3个新订阅的 RBAC 权限设置。  
-   *  由于迁移后会使用更多托管服务，您需要重新设计 Azure 门户中的 [**Policy**]()、[**Monitor**]()、[**Adviser**]() 中的配置。  
+   *  由于迁移后会使用更多托管服务，您需要重新设计 Azure 门户中的 [**Policy**](https://docs.azure.cn/zh-cn/governance/policy/overview)、[**Monitor**](https://docs.azure.cn/zh-cn/azure-monitor/overview)、[**Adviser**](https://docs.azure.cn/zh-cn/advisor/advisor-overview) 中的配置。  
 
  * 资源：  
    *  根据资源之间复杂度和依赖关系，各个资源之间的搬迁顺序为：网络 → 存储 →  计算。  
